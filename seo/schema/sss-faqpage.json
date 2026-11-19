@@ -1,0 +1,134 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Siparişimi nasıl oluşturabilirim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beğendiğiniz güneş gözlüğü, optik çerçeve veya lens modelini sepetinize ekledikten sonra \"Hemen Al\" veya \"Ödemeye Geç\" butonuna tıklayarak adres ve ödeme bilgilerinizi girip siparişinizi güvenle oluşturabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Siparişimin durumunu nasıl takip edebilirim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Siparişiniz kargoya verildiğinde size e-posta ve SMS yoluyla bir takip numarası iletilecektir. Bu numara ile kargo firmasının sisteminden ürününüzün nerede olduğunu anlık olarak izleyebilirsiniz. Ayrıca üye girişi yaparak \"Siparişlerim\" sekmesinden detaylara ulaşabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kargo ücreti ne kadar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Damla Kuz Optik üzerinden yapacağınız tüm alışverişlerde Türkiye'nin her yerine kargo ücretsizdir. Herhangi bir alt limit olmaksızın, seçtiğiniz ürün kapınıza kadar bedelsiz ulaştırılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kargo teslimat süresi ne kadar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Siparişleriniz genellikle 1-3 iş günü içinde kargoya teslim edilir. Teslimat süresi, bulunduğunuz ile ve kargo şubesinin yoğunluğuna bağlı olarak genellikle 1-3 iş günü sürmektedir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ürünleriniz orijinal mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, sitemizdeki tüm Ray-Ban, Prada, Porsche Design gibi dünya markaları %100 orijinaldir. 1960'tan beri sektörde yer alan ve Türkiye'nin ilk optik zincirlerinden biri olan Damla Kuz Optik, tüm ürünleri resmi distribütör garantisiyle satışa sunar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Paketin içerisinde başka neler mevcut?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Her siparişiniz, markanın orijinal koruma kılıfı/kutusu, mikrofiber temizlik bezi, garanti belgesi ve faturası ile birlikte \"Damla Kuz Optik\" özel korumalı paketinde gönderilmektedir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gözlüklerin garanti süresi nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Satın aldığınız tüm güneş gözlükleri ve optik çerçeveler, üretim hatalarına karşı 2 yıl resmi distribütör garantilidir. Fahri Kuz tecrübesiyle, satış sonrası destek süreçlerinde de yanınızdayız."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "İade ve değişim yapabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, satın aldığınız ürünü teslim aldıktan sonraki 14 gün içerisinde, kullanılmamış ve satılabilirlik özelliğini yitirmemiş olması kaydıyla iade edebilir veya değiştirebilirsiniz. Optik cam montajı yapılmış (kişiye özel hazırlanan) ürünlerde iade yapılamamaktadır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "UV400 koruması nedir ve neden önemlidir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sitemizde satılan tüm güneş gözlükleri UV400 korumalıdır. Bu özellik, gözlerinizi güneşin zararlı UVA ve UVB ışınlarına karşı %100 korur. Göz sağlığınız için sadece sertifikalı ve orijinal camları tercih etmenizi öneririz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Güneş gözlüğünde polarize camın avantajı nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Polarize cam, özellikle deniz kenarı veya karlı yollar gibi yüzeylerden gelen yansımaları (parlamaları) filtreleyerek daha net bir görüş sağlar. Araç kullanıcıları ve outdoor sporcuları için ideal bir konfor sunar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Fiziki mağazanızda optik gözlük yaptırabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, damlakuzoptik.com üzerinden beğendiğiniz çerçeveleri fiziki mağazalarımıza gelerek reçetenize uygun numaralı camlarla birleştirebilirsiniz. 50 yılı aşkın optisyenlik tecrübemizle en hassas odaklama ölçümleriyle hizmet veriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yüz şeklime en uygun gözlük modelini nasıl seçebilirim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Doğru gözlük seçimi hem estetik hem de konfor için kritiktir. Genellikle kare yüz hatlarına sahip kişilere yuvarlak çerçeveler, yuvarlak yüz hatlarına ise köşeli modeller öneriyoruz. Ancak 1960’tan günümüze uzanan tecrübemizle biliyoruz ki her yüz benzersizdir. Sitemizdeki ürün açıklamalarından faydalanabilir veya Damla Kuz Optik uzmanlarından destek almak için Atrium Avm mağazamızı ziyaret edebilirsiniz. Fahri Kuz ekolüyle yetişmiş uzmanlarımız, anatominize en uygun \"sihirli dokunuşu\" yapacaktır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gözlüğümün ömrünü uzatmak için temizlik ve bakımda nelere dikkat etmeliyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gözlük camlarınızın çizilmesini önlemek için sadece size gönderdiğimiz mikrofiber temizlik bezlerini kullanmanızı öneririz. Camları sert kıyafet uçları veya kağıt mendillerle silmekten kaçınmalısınız. Ayrıca gözlüğünüzü kullanmadığınız zamanlarda mutlaka koruyucu kılıfında saklamalı ve yoğun ısıdan (araç torpido üzeri gibi) uzak tutmalısınız. Cam temizleme spreylerimizle yapacağınız düzenli bakım, görüş kalitenizi her zaman en üst seviyede tutar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "İnternet üzerinden kontakt lens siparişi verebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Türkiye Cumhuriyeti Sağlık Bakanlığı mevzuatları ve 5193 sayılı Optisyenlik Hakkında Kanun uyarınca, kontakt lenslerin internet üzerinden satışı yasaktır. Kontakt lensler tıbbi cihaz statüsündedir ve sadece Sağlık Bakanlığı tarafından ruhsatlandırılmış optik mağazalarında, uzman optisyenler aracılığıyla temin edilmelidir. İnternet üzerinden satılan denetimsiz ürünler göz sağlığınız için ciddi riskler oluşturabilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kontakt lens temin ederken nelere dikkat etmeliyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Göz sağlığınız için lenslerinizi mutlaka doktorunuz tarafından verilen güncel reçetenizdeki BC (temel eğri) ve DIA (çap) değerlerine uygun olarak seçmelisiniz. Yanlış değerlere sahip lens kullanımı kornea hasarına yol açabilir. Damla Kuz Optik olarak, dünyaca ünlü markaların orijinal, taze miatlı (son kullanma tarihi güncel) ve Sağlık Bakanlığı onaylı lenslerini mağazalarımızda sunuyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nasıl sipariş verebilirim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reçetenizle birlikte Damla Kuz Optik fiziksel mağazalarımızı ziyaret ederek, 1960'tan gelen tecrübemiz ve uzman optisyenlerimizin desteğiyle kontakt lenslerinizi güvenle temin edebilirsiniz. Size en yakın mağazamızın konumunu öğrenmek veya stok bilgisi almak için bizimle iletişim kanallarımız üzerinden irtibata geçebilirsiniz."
+      }
+    }
+  ]
+}

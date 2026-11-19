@@ -9,12 +9,8 @@ Son güncelleme: 19 Kasım 2026
 
 ## ACİL (bugün)
 
-- [ ] **A.1 Test ürününü kaldırın.** ikas'taki **"deneme"** adlı ürün 2,06 TL fiyatla satışta ve stokta görünüyor: damlakuzoptik.com/deneme. Ürünü silin veya yayından kaldırın.
-- [ ] **A.2 "Kargo" ürününü feed'den çıkarın.** 1,03 TL'lik "Kargo" ürünü Google ve Meta feed'lerinde var. ikas'ta bu ürünün Google ve Facebook satış kanallarındaki işaretini kaldırın.
-- [ ] **A.3 Sohbette paylaşılan iki anahtarı yenileyin.**
-  - **Meta Conversion API token'ı:** Events Manager → Pixel `1032130095734490` → Ayarlar → Conversions API → yeni token oluşturun. Yeni token'ı **yalnızca ikas paneline** girin. Eskisi geçersiz olur.
-  - **GA4 Measurement Protocol gizli anahtarı:** GA4 → Yönetici → Veri Akışları → web akışı → Measurement Protocol API gizli anahtarları → eskisini silin, yenisini oluşturun, **yalnızca ikas paneline** girin.
-  - Bu iki anahtar Claude'un işi için gerekli değildir; ikas'ın sunucu tarafı ölçümü içindir. Bir daha sohbete yazmayın.
+- [~] **A.1 Test ürününü kaldırın.** _(19 Kas: satış kanallarından kaldırıldı. Feed ikas tarafında güncellenince Claude kontrol edecek. Sitedeki /deneme sayfası hâlâ açık; web mağazası kanalından da kaldırılmalı.)_ ikas'taki **"deneme"** adlı ürün 2,06 TL fiyatla satışta ve stokta görünüyor: damlakuzoptik.com/deneme. Ürünü silin veya yayından kaldırın.
+- [~] **A.2 "Kargo" ürününü feed'den çıkarın.** _(19 Kas: kaldırıldı, feed güncellemesi bekleniyor.)_ 1,03 TL'lik "Kargo" ürünü Google ve Meta feed'lerinde var. ikas'ta bu ürünün Google ve Facebook satış kanallarındaki işaretini kaldırın.
 
 ---
 
