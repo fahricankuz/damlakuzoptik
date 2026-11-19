@@ -539,7 +539,7 @@ S("""<div class="k">Meta · 4 + 1 kampanya</div>
 <tr><td><b>M1 · Advantage+ satış</b></td><td>Satış kampanyası (Advantage+), hedef: satın alma</td><td>Türkiye geneli, 25–65, geniş; son 180 gün alıcılar hariç</td><td>6–8 video ve görsel: UGC, ürün videosu, miras, Kuz AI. Katalog açık</td><td class="r">9.000 TL</td><td>Hesabın en verimli yapısı ASC oldu (15 satış). En çok satan reklam bir ürün videosu ("Police", 7 satış).</td></tr>
 <tr><td><b>M2 · Katalog yeniden pazarlama</b></td><td>Satış kampanyası, katalog (dinamik ürün reklamı)</td><td>Son 30 gün ürün görüntüleyen ve sepete ekleyen; alıcılar hariç</td><td>Kişinin baktığı ürün otomatik gösterilir; marka çerçeveli şablon, fiyat ve "2 yıl garanti"</td><td class="r">5.000 TL</td><td>Remarketing en çok satış getiren kampanyaydı (21 satış), ama sıklık 12'ye çıkmıştı. Dinamik ürün ve sıklık tavanıyla yorgunluk önlenir.</td></tr>
 <tr><td><b>M3 · Reels kreatif testi</b></td><td>Satış kampanyası, reklam seti başına ayrı bütçe (test)</td><td>Geniş; 3–4 reklam seti, her biri bir mesaj</td><td>Her hafta 2 yeni Reels: miras, optisyen ipucu, Kuz AI, hediye</td><td class="r">4.500 TL</td><td>389 reklamın ilk 10'u bütçenin %34'ünü aldı, kreatif yenilenmedi. Kazanan kreatif M1'e taşınır.</td></tr>
-<tr><td><b>M5 · Ustanın gözünden</b></td><td>Video izlenme ve satış; Facebook + Instagram</td><td>45+ yaş, Türkiye; İstanbul ağırlıklı</td><td>Fahri Kuz'un anlattığı 30–45 sn videolar</td><td class="r">Kış 4.000 TL</td><td>55+ yaş, 100 TL başına 1,2–1,9 sepete ekleme ile en ilgili kitle; hiç özel mesaj almamış.</td></tr>
+<tr><td><b>M5 · Ustanın gözünden</b></td><td>Video izlenme ve satış; Facebook + Instagram</td><td>45+ yaş, Türkiye; İstanbul ağırlıklı</td><td>Fahri Kuz'u anlatan 30–45 sn videolar: eski ve yeni fotoğraflar, anlatıcı sesi</td><td class="r">Kış 4.000 TL</td><td>55+ yaş, 100 TL başına 1,2–1,9 sepete ekleme ile en ilgili kitle; hiç özel mesaj almamış.</td></tr>
 <tr><td><b>M4 · Yerel mağaza</b></td><td>Erişim veya mağaza trafiği, "Yol tarifi al" düğmesi</td><td>Atrium çevresi ~8 km, 30+ yaş</td><td>Mağaza, optisyen, ekip görüntüleri; "Ataköy Atrium, Zemin Kat"</td><td class="r">4.000 TL</td><td>Siparişlerin %48'i İstanbul'dan. Mağaza hikâyesi hiç reklamlanmamış.</td></tr>
 </table>
 <p class="note"><b>Kapatılacaklar:</b> tıklama hedefli öne çıkarılan gönderiler (34.601 TL, 0 satış), Audience Network yerleşimi (yüksek kaza tıklaması, 0 satış), satış getirmemiş 10 eski kampanya yeniden açılmaz. <b>Yerleşimler:</b> Instagram akış, Reels, hikâye ve Facebook akış. <b>Müşteri listesi</b> yalnızca KVKK açık rızası olan kayıtlarla kullanılır.</p>""")
@@ -581,7 +581,7 @@ S("""<div class="k">Kreatif planı</div>
 <tr><td><b>Optisyen ipucu</b> (orijinallik, yüz şekli, polarize)</td><td>M3, organik</td><td>9:16</td><td>Güven ve uzmanlık; sepete ekleme oranını artırmak</td></tr>
 <tr><td><b>Kuz AI</b> (30 sn'de doğru çerçeve)</td><td>M1, M3</td><td>9:16, 4:5</td><td>Kararsız ziyaretçiyi sepete taşır</td></tr>
 <tr><td><b>Katalog şablonu</b> (çerçeve, fiyat, garanti)</td><td>M2, G1</td><td>1:1, 4:5</td><td>Dinamik ürün reklamlarında marka tutarlılığı</td></tr>
-<tr><td><b>Ustanın gözünden: Fahri Kuz</b> (kendi sesi ve görüntüsü)</td><td>M5, lansman filmi, organik</td><td>9:16, 16:9, 4:5</td><td>Sektörün en saygın ismi; 45+ kitlede güven</td></tr>
+<tr><td><b>Ustanın gözünden: Fahri Kuz</b> (arşiv ve güncel fotoğraflardan, anlatıcı sesi)</td><td>M5, lansman filmi, organik</td><td>9:16, 16:9, 4:5</td><td>Sektörün en saygın ismi; 45+ kitlede güven</td></tr>
 <tr><td><b>Distribütör kreatifleri</b> (marka kampanya görselleri)</td><td>M1, G1, organik</td><td>Tümü (yeniden boyutlandırılarak)</td><td>Markaların kullanım kurallarına uygun; hazır, yüksek kalite</td></tr>
 <tr><td><b>Mağaza</b> (Atrium, ekip, ölçüm)</td><td>M4, G3</td><td>9:16, 1.91:1</td><td>Mağazaya yönlendirme hedefi</td></tr>
 </table>
@@ -644,8 +644,8 @@ S("""<div class="k">Kuz İstanbul lansmanı</div>
 <div class="grid g3">
 <div class="card"><h3>Reklam filmi (60 sn + 30, 15, 6 sn)</h3><ul>
 <li>Kurgu: Yenikapı'daki ilk mağaza → Fahri Kuz'un ustalığı → İstanbul'un ışığı → Kuz İstanbul</li>
-<li>Malzeme: arşiv fotoğrafları, Fahri Kuz çekimi, mağaza ve ürün çekimleri, lisanslı İstanbul görüntüleri</li>
-<li>Seslendirme: tercihen <b>Fahri Kuz'un kendi sesi</b>; anlatıcı için ElevenLabs</li>
+<li>Malzeme: Fahri Kuz'un eski ve yeni fotoğrafları, mağaza ve ürün görselleri, lisanslı İstanbul görüntüleri. <b>Çekim gerekmez.</b></li>
+<li>Seslendirme: ElevenLabs anlatıcı sesi (üçüncü şahıs); müzik ve efekt</li>
 <li>Formatlar: 9:16, 16:9, 1:1, 4:5</li></ul></div>
 <div class="card"><h3>Kanal planı (İstanbul)</h3><ul>
 <li><b>Meta:</b> erişim ve video izlenme hedefi; Reels, hikâye, akış; sıklık tavanı 3/hafta</li>
@@ -670,12 +670,12 @@ S("""<div class="k">Fahri Kuz · otorite olarak</div>
 <tr><td>65+ (kadın ve erkek)</td><td class="r">3.238 TL</td><td class="r">61</td><td class="r pos">1,9</td></tr></table>
 <p class="note">55 yaş üstü, bütçenin küçük bir kısmıyla en yüksek ilgiyi gösteren kitle; şimdiye kadar özel bir mesajla hedeflenmemiş. Instagram takipçilerinin %34'ü 45 yaş üstü.</p></div>
 <div><h3>Planda nerede</h3><ul>
-<li><b>M5 · Ustanın gözünden:</b> 45+ kitleye Fahri Kuz'un anlattığı kısa videolar (Facebook ağırlıklı)</li>
+<li><b>M5 · Ustanın gözünden:</b> 45+ kitleye Fahri Kuz'u anlatan kısa videolar (Facebook ağırlıklı)</li>
 <li><b>Lansman filmi:</b> hikâyenin merkezi</li>
-<li><b>Organik seri:</b> "Fahri Kuz anlatıyor": ayda 2 Reels (ilk titanyum çerçeve, doğru cam, orijinallik)</li>
+<li><b>Organik seri:</b> "Ustanın gözünden": Aralık'ta 3 bölüm + 4 destek içeriği, eski ve yeni fotoğraflardan</li>
 <li><b>SEO:</b> blog yazılarında Fahri Kuz uzman yazar sayfası; Google'ın uzmanlık ve güven sinyalleri</li>
 <li><b>Mağaza:</b> "Fahri Kuz ekolüyle optik ölçüm" mesajı</li></ul>
-<p class="note">Fahri Kuz'un sesi veya görüntüsü yapay zekâyla üretilmez; yalnızca kendi çekimleri ve kendi sesi, yazılı onayıyla kullanılır.</p></div>
+<p class="note">Üretim çekimsiz: şirketin ileteceği fotoğraflar, hareketli kurgu ve anlatıcı sesiyle. Fahri Kuz'un sesi veya görüntüsü yapay zekâyla üretilmez; ekrana yazılacak sözleri onayına sunulur.</p></div>
 </div>""")
 
 # Devir planı

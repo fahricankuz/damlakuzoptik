@@ -103,7 +103,7 @@ Bunları Google Drive'da bir klasöre koyup klasör bağlantısını iletin.
 - [ ] **4.1** Logo: vektör (SVG/AI/PDF), beyaz ve siyah versiyon
 - [ ] **4.2** Ürün fotoğrafları: yüksek çözünürlük, mümkünse model üzerinde çekimler
 - [ ] **4.3** Mağaza, ekip ve optisyen çalışma anlarından fotoğraf ve video (telefon çekimi yeterli, dikey 9:16 tercih)
-- [ ] **4.4** **Arşiv:** 1960'lardan bu yana Fahri Kuz, Yenikapı ilk mağaza, eski reklamlar, gazete kupürleri. Marka mirası içeriklerinin en değerli kaynağı budur.
+- [ ] **4.4** ⏰ **25 Kasım'a kadar: Fahri Kuz fotoğrafları** (eski ve yeni; liste `takvim/2026-12-aralik.md` içinde). Çekim gerekmez. **Arşiv:** 1960'lardan bu yana Fahri Kuz, Yenikapı ilk mağaza, eski reklamlar, gazete kupürleri. Marka mirası içeriklerinin en değerli kaynağı budur.
 - [ ] **4.5** **Kuz İstanbul** rebranding dosyaları: logo taslakları, renkler, fontlar, ajans sunumu (hazır olduğunda)
 
 ---
