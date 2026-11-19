@@ -24,9 +24,9 @@ Son güncelleme: 19 Kasım 2026
   |---|---|
   | Facebook Sayfası | ✅ Bizde |
   | Instagram | ✅ Bizde |
-  | Reklam hesabı | ✅ Ödeme şirket sanal kartından (portföy sahipliği aşağıdaki kontrolle teyit edilecek) |
-  | Pixel `1032130095734490` | ❓ Kontrol edilecek (adımlar aşağıda) |
-  | Ürün kataloğu | ❓ Kontrol edilecek (adımlar aşağıda) |
+  | Reklam hesabı | 🟡 Erişim var, ödeme şirket kartından. **"Sahibi" alanı teyit edilecek** |
+  | Pixel `1032130095734490` | ✅ Portföyde, kullanıcı tam yetkili ("Sahibi" alanı teyit edilecek) |
+  | Ürün kataloğu | 🟡 Erişim var, 340 ürün grubu (feed ile uyumlu). **"Sahibi" alanı teyit edilecek** |
   | Google Tag Manager | ✅ Yönetici şirkette |
   | Google Business Profile | ✅ Bizde |
   | Google Ads | ❓ Görünmüyor, ajansa sorulacak |
