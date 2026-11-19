@@ -385,7 +385,7 @@ if IK:
 </div>
 <div style="display:flex;gap:22px;font-size:13px;margin-bottom:4px"><span><b style="color:{INK}">■</b> Meta reklam harcaması</span><span><b style="color:{GREEN}">■</b> ikas net online ciro</span></div>
 {chart_ikas(h=255)}
-<p class="note">Mağaza içi kayıtlar (ADMIN) ve 5 TL altı siparişler hariç; Kasım 2026 verisi 14 Kasım'a kadar. Net ciro organik, Google ve doğrudan satışları da içerir.</p>""")
+<p class="note">Mağaza içi kayıtlar (ADMIN) ve 5 TL altı siparişler hariç; Kasım 2026 verisi 14 Kasım'a kadar. ikas tüm kanallardan gelen siparişleri içerir; eksik olan satış değil, Google harcamasıdır.</p>""")
 
     S(f"""<div class="k">İki dönem, iki tablo</div>
 <h2>İlkbahar ve yazda sistem çalıştı; Ağustos'tan sonra harcama sürdü, satış durdu.</h2>
@@ -478,7 +478,7 @@ S("""<div class="k">Öneriler · Meta reklamları</div>
 <h2>Az kampanya, doğru hedef, sürekli yenilenen kreatif.</h2>
 <table><tr><th>#</th><th>Öneri</th><th>Neden</th><th>Öncelik</th></tr>
 <tr><td>1</td><td>Tıklama hedefli öne çıkarmaları bırakmak; organik içerik yalnızca satış veya etkileşim hedefiyle desteklenir</td><td>%10,5 bütçe, 0 satış</td><td><span class="tag t-red">Hemen</span></td></tr>
-<tr><td>2</td><td>Yapıyı 3 kampanyaya indirmek: Advantage+ satış (keşif), katalog yeniden pazarlama, yerel mağaza bilinirliği</td><td>14 dağınık kampanya öğrenmeyi bölüyor</td><td><span class="tag t-red">Yüksek</span></td></tr>
+<tr><td>2</td><td>Yapıyı 4 kampanyaya indirmek (Bölüm 6): Advantage+ satış, katalog yeniden pazarlama, Reels testi, yerel mağaza</td><td>14 dağınık kampanya öğrenmeyi bölüyor</td><td><span class="tag t-red">Yüksek</span></td></tr>
 <tr><td>3</td><td>Audience Network'ü kapatmak</td><td>Yüksek tıklama, sıfır satış</td><td><span class="tag t-red">Yüksek</span></td></tr>
 <tr><td>4</td><td>Remarketing'i katalog tabanlı dinamik reklamla yeniden kurmak; sıklık tavanı ve 2 haftalık kreatif döngüsü</td><td>Sıklık 12, yorgunluk</td><td><span class="tag t-amb">Yüksek</span></td></tr>
 <tr><td>5</td><td>Her ay en az 6 yeni kreatif: UGC ve ürün videoları (kanıtlanmış), miras, optisyen uzmanlığı, Kuz AI; tüm formatlarda</td><td>Satış getiren format video; çeşitlilik dar</td><td><span class="tag t-amb">Yüksek</span></td></tr>
@@ -514,8 +514,112 @@ S("""<div class="k">Öneriler · içerik, site, Google</div>
 <li>Google Business Profile: fotoğraf, yorum yönetimi, haftalık gönderi</li></ul></div>
 </div>""")
 
+# Kampanya planı
+S("""<div class="k">Bölüm 6</div><h1 style="margin-top:150px">Kampanya planı:<br><i>hangi platformda, hangi reklam, neden</i></h1>
+<p class="lead" style="margin-top:24px">Devir sonrası Meta ve Google reklamlarının tamamı tek elden kurulup yönetilir.<br>Her kampanya duraklatılmış kurulur, şirket onayıyla yayına alınır.</p>""", "dark")
+
+S("""<div class="k">Mimari · aylık 50.000 TL</div>
+<h2>Her katmanın tek bir işi var: keşfettir, hatırlat, sattır, mağazaya getir.</h2>
+<table class="small"><tr><th>Katman</th><th>Müşterinin durumu</th><th>Meta</th><th>Google</th><th class="r">Bütçe</th></tr>
+<tr><td><b>1 · Talep yakalama</b></td><td>Markayı ya da modeli zaten arıyor</td><td>—</td><td>Arama: marka ve model · Performance Max (Alışveriş)</td><td class="r">22.000 TL</td></tr>
+<tr><td><b>2 · Talep yaratma</b></td><td>Henüz aramıyor, akışta keşfediyor</td><td>Advantage+ satış · Reels kreatif testi</td><td>Performance Max (YouTube, Discover yerleşimleri)</td><td class="r">13.500 TL</td></tr>
+<tr><td><b>3 · Geri getirme</b></td><td>Siteye girdi, ürüne baktı, almadı</td><td>Katalog yeniden pazarlama (dinamik ürün)</td><td>Performance Max yeniden pazarlama sinyalleri</td><td class="r">5.000 TL</td></tr>
+<tr><td><b>4 · Mağaza</b></td><td>Ataköy çevresinde, optik ihtiyacı var</td><td>Yerel bilinirlik (yarıçap ~8 km)</td><td>Yerel arama + konum öğesi</td><td class="r">8.000 TL</td></tr>
+<tr><td><b>5 · Marka koruma</b></td><td>"Damla Kuz", "Kuz İstanbul" arıyor</td><td>—</td><td>Kendi marka araması</td><td class="r">1.500 TL</td></tr>
+</table>
+<div class="grid g3" style="margin-top:18px">
+<div class="card"><h3>Google %55 · 27.500 TL</h3><p>Satın almaya en yakın kişi arama yapan kişidir. ikas verisinde cironun ilk dört markası (Chopard, Maybach, Ray-Ban, Tom Ford) aranarak bulunan markalar.</p></div>
+<div class="card"><h3>Meta %45 · 22.500 TL</h3><p>Lüks gözlük görsel bir karar; ilk temas çoğunlukla Instagram'da olur. Meta'da satış getiren tek format video oldu.</p></div>
+<div class="card"><h3>Dağılım sabit değil</h3><p>İlk 3 hafta veri toplanır, sonra her hafta getiri yüksek kampanyaya kaydırılır. Değişiklikler onayla yapılır.</p></div>
+</div>""")
+
+S("""<div class="k">Meta · 4 kampanya</div>
+<h2 style="font-size:32px">52 dağınık kampanya yerine dört net kampanya</h2>
+<table class="small"><tr><th>Kampanya</th><th>Tür ve hedef</th><th>Kitle</th><th>Kreatif</th><th class="r">Aylık</th><th>Neden (veri)</th></tr>
+<tr><td><b>M1 · Advantage+ satış</b></td><td>Satış kampanyası (Advantage+), hedef: satın alma</td><td>Türkiye geneli, 25–65, geniş; son 180 gün alıcılar hariç</td><td>6–8 video ve görsel: UGC, ürün videosu, miras, Kuz AI. Katalog açık</td><td class="r">9.000 TL</td><td>Hesabın en verimli yapısı ASC oldu (15 satış). En çok satan reklam bir ürün videosu ("Police", 7 satış).</td></tr>
+<tr><td><b>M2 · Katalog yeniden pazarlama</b></td><td>Satış kampanyası, katalog (dinamik ürün reklamı)</td><td>Son 30 gün ürün görüntüleyen ve sepete ekleyen; alıcılar hariç</td><td>Kişinin baktığı ürün otomatik gösterilir; marka çerçeveli şablon, fiyat ve "2 yıl garanti"</td><td class="r">5.000 TL</td><td>Remarketing en çok satış getiren kampanyaydı (21 satış), ama sıklık 12'ye çıkmıştı. Dinamik ürün ve sıklık tavanıyla yorgunluk önlenir.</td></tr>
+<tr><td><b>M3 · Reels kreatif testi</b></td><td>Satış kampanyası, reklam seti başına ayrı bütçe (test)</td><td>Geniş; 3–4 reklam seti, her biri bir mesaj</td><td>Her hafta 2 yeni Reels: miras, optisyen ipucu, Kuz AI, hediye</td><td class="r">4.500 TL</td><td>389 reklamın ilk 10'u bütçenin %34'ünü aldı, kreatif yenilenmedi. Kazanan kreatif M1'e taşınır.</td></tr>
+<tr><td><b>M4 · Yerel mağaza</b></td><td>Erişim veya mağaza trafiği, "Yol tarifi al" düğmesi</td><td>Atrium çevresi ~8 km, 30+ yaş</td><td>Mağaza, optisyen, ekip görüntüleri; "Ataköy Atrium, Zemin Kat"</td><td class="r">4.000 TL</td><td>Siparişlerin %48'i İstanbul'dan. Mağaza hikâyesi hiç reklamlanmamış.</td></tr>
+</table>
+<p class="note"><b>Kapatılacaklar:</b> tıklama hedefli öne çıkarılan gönderiler (34.601 TL, 0 satış), Audience Network yerleşimi (yüksek kaza tıklaması, 0 satış), satış getirmemiş 10 eski kampanya yeniden açılmaz. <b>Yerleşimler:</b> Instagram akış, Reels, hikâye ve Facebook akış. <b>Müşteri listesi</b> yalnızca KVKK açık rızası olan kayıtlarla kullanılır.</p>""")
+
+S("""<div class="k">Google · 4 kampanya</div>
+<h2 style="font-size:32px">Aranan markayı yakala, rakibe bırakma, mağazaya yol göster</h2>
+<table class="small"><tr><th>Kampanya</th><th>Tür ve hedef</th><th>Hedefleme</th><th>İçerik</th><th class="r">Aylık</th><th>Neden</th></tr>
+<tr><td><b>G1 · Performance Max</b></td><td>Merchant Center feed'li, hedef: satın alma değeri</td><td>Türkiye; Google'ın tüm ağları (Alışveriş, Arama, YouTube, Discover, Gmail)</td><td>Ürün grupları marka segmentine göre; düzeltilmiş feed başlıkları; her varlık grubunda video</td><td class="r">14.000 TL</td><td>Alışveriş sonuçları ürün aranırken fiyat ve görselle görünür. ikas cirosunun en büyük kalemleri yüksek fiyatlı markalar.</td></tr>
+<tr><td><b>G2 · Arama: marka ve model</b></td><td>Duyarlı arama reklamı, hedef: satın alma</td><td>Türkiye; tam ve sıralı eşleme</td><td>Marka başına ayrı reklam grubu; "Resmi distribütör, 2 yıl garanti, ücretsiz kargo"</td><td class="r">8.000 TL</td><td>"Chopard gözlük", "Maybach gözlük" arayan kişi satın almaya en yakın kişidir.</td></tr>
+<tr><td><b>G3 · Yerel arama</b></td><td>Arama + konum öğesi, hedef: yol tarifi ve arama</td><td>Ataköy çevresi ~10 km</td><td>"optik", "gözlükçü", "gözlük tamiri", "numaralı gözlük", "lens"; Business Profile bağlı</td><td class="r">4.000 TL</td><td>Kullanıcının ikinci önceliği: mağazaya yönlendirme. Numaralı gözlük ve lens online satılmıyor.</td></tr>
+<tr><td><b>G4 · Marka koruma</b></td><td>Arama, hedef: tıklama payı</td><td>Türkiye</td><td>"damla kuz", "fahri kuz", "kuz optik"; Ocak'tan itibaren "kuz istanbul"</td><td class="r">1.500 TL</td><td>Rakiplerin marka adına reklam vermesini engeller; tıklaması ucuzdur; rebrand geçişinde aramaları yeni ada taşır.</td></tr>
+</table>
+<p class="note"><b>Teklif stratejisi:</b> ilk 30 gün "dönüşüm değerini en üst düzeye çıkar"; 30+ satıştan sonra hedef ROAS. <b>Reklam saatleri:</b> siparişlerin çoğu 12:00–24:00 arasında; gece bütçesi kısılır. <b>Daha sonra (Mart+):</b> Demand Gen ve YouTube Shorts ile sezon öncesi talep yaratma testi.</p>""")
+
+S("""<div class="k">Google ayrıntı · ürün grupları ve anahtar kelimeler</div>
+<h2 style="font-size:32px">Bütçe, kârın geldiği yere gider; fiyat savaşı olan yere değil.</h2>
+<div class="grid g2">
+<div><h3>Performance Max ürün grupları</h3><table class="small"><tr><th>Grup</th><th>Markalar</th><th>Strateji</th></tr>
+<tr><td><b>Üst lüks</b></td><td>Chopard, Maybach, Bvlgari, Tiffany, Porsche Design</td><td>En yüksek öncelik; sepet 20 bin TL üzeri; rakip az</td></tr>
+<tr><td><b>Tasarımcı</b></td><td>Tom Ford, Prada, Miu Miu, Persol, Burberry, Versace</td><td>Orta öncelik; model bazlı izleme</td></tr>
+<tr><td><b>Yoğun rekabet</b></td><td>Ray-Ban, Vogue, Armani Exchange</td><td>Düşük teklif; Özkan, Gürel ve Ersun %25–50 indirimde</td></tr>
+<tr><td><b>Sadece Damla Kuz</b></td><td>Hevi, Löla, Limited Edition</td><td>Rakipsiz; marka hikâyesiyle</td></tr></table>
+<p class="note">ikas verisi: Chopard 221 bin TL, Maybach 182 bin, Ray-Ban 146 bin, Tom Ford 105 bin TL ciro.</p></div>
+<div><h3>Arama anahtar kelime kümeleri</h3><table class="small"><tr><th>Küme</th><th>Örnek</th></tr>
+<tr><td>Marka + ürün</td><td>chopard güneş gözlüğü, maybach gözlük, tom ford güneş gözlüğü kadın</td></tr>
+<tr><td>Model</td><td>tom ford tf 1182, persol 649, miu miu smu 52y</td></tr>
+<tr><td>Orijinallik</td><td>orijinal tom ford gözlük, yetkili satıcı</td></tr>
+<tr><td>Yerel</td><td>optik ataköy, gözlükçü bakırköy, atrium avm optik</td></tr>
+<tr><td>Marka</td><td>damla kuz optik, fahri kuz, kuz istanbul</td></tr></table>
+<h3 style="margin-top:12px">Negatif kelimeler</h3><p style="font-size:13px">ucuz, replika, çakma, ikinci el, sahibinden, imitasyon, nasıl çizilir, iş ilanı, numara hesaplama</p></div>
+</div>""")
+
+S("""<div class="k">Kreatif planı</div>
+<h2 style="font-size:32px">Her ay 6–8 yeni kreatif; her biri tüm formatlarda</h2>
+<table class="small"><tr><th>Kreatif türü</th><th>Kullanıldığı kampanya</th><th>Format</th><th>Neden</th></tr>
+<tr><td><b>Ürün videosu</b> (15 sn, yakın plan, ses tasarımı)</td><td>M1, M3, G1</td><td>9:16, 4:5, 1:1, 16:9</td><td>Hesapta en çok satış getiren format</td></tr>
+<tr><td><b>UGC / müşteri deneyimi</b></td><td>M1, M2</td><td>9:16, 4:5</td><td>"Video New UGC" reklamları 5 satış getirdi</td></tr>
+<tr><td><b>Miras filmi</b> (yarım asır, Fahri Kuz)</td><td>M3, M4, G1 (YouTube)</td><td>9:16, 16:9</td><td>Rakiplerin sahip olmadığı tek hikâye</td></tr>
+<tr><td><b>Optisyen ipucu</b> (orijinallik, yüz şekli, polarize)</td><td>M3, organik</td><td>9:16</td><td>Güven ve uzmanlık; sepete ekleme oranını artırmak</td></tr>
+<tr><td><b>Kuz AI</b> (30 sn'de doğru çerçeve)</td><td>M1, M3</td><td>9:16, 4:5</td><td>Kararsız ziyaretçiyi sepete taşır</td></tr>
+<tr><td><b>Katalog şablonu</b> (çerçeve, fiyat, garanti)</td><td>M2, G1</td><td>1:1, 4:5</td><td>Dinamik ürün reklamlarında marka tutarlılığı</td></tr>
+<tr><td><b>Mağaza</b> (Atrium, ekip, ölçüm)</td><td>M4, G3</td><td>9:16, 1.91:1</td><td>Mağazaya yönlendirme hedefi</td></tr>
+</table>
+<p class="note">Üretim: görseller Canva ve Figma'da; videolar kodla üretilen hareketli grafik + ürün çekimleri + ElevenLabs Türkçe seslendirme. Tüm metinlerde ton "uzmanlık ve seçkinlik"; kalıcı indirim dili kullanılmaz.</p>""")
+
+S("""<div class="k">Ölçüm, optimizasyon ve onay</div>
+<h2 style="font-size:32px">Kararları ikas'taki gerçek satışa göre veriyoruz.</h2>
+<div class="grid g3">
+<div class="card"><h3>Ölçüm</h3><ul>
+<li>ikas = tek doğru kaynak; her hafta Meta ve Google ile karşılaştırma</li>
+<li>Meta: Pixel + Conversions API (ikas, açık)</li>
+<li>Google: GA4 satın alma içe aktarımı + Google Ads etiketi doğrulaması</li>
+<li>Tüm bağlantılarda UTM standardı</li>
+<li>Mağaza: yol tarifi, arama ve Business Profile verisi</li>
+<li>İade oranı ayrıca izlenir</li></ul></div>
+<div class="card"><h3>Optimizasyon kuralları</h3><ul>
+<li>Haftalık bütçe kaydırma, getiri yüksek kampanyaya</li>
+<li>Bir reklam, hedef satış başı maliyetin 2 katını harcayıp satış getirmediyse durdurma önerilir</li>
+<li>Sıklık 3'ü geçerse kreatif yenilenir</li>
+<li>Öğrenme döneminde (ilk 7 gün) yapı değiştirilmez</li>
+<li>Hedef ROAS brüt marja göre belirlenir</li></ul></div>
+<div class="card"><h3>Onay akışı</h3><ul>
+<li>Her kampanya <b>duraklatılmış</b> kurulur; özet ve kreatifler onaya sunulur</li>
+<li>Yayına alma, bütçe artışı ve durdurma yalnızca yazılı onayla</li>
+<li>Haftalık rapor her pazartesi; aylık yönetim raporu</li>
+<li>Google erişimi: şirkete devredilen hesap, Claude'a bağlanan güvenli bağlayıcı (Adspirer veya Windsor.ai) ya da API</li></ul></div>
+</div>""")
+
+S("""<div class="k">Sezon takvimi · bütçe yönü</div>
+<h2 style="font-size:32px">Güneş gözlüğü bir sezon ürünü; bütçe talebi takip etmeli.</h2>
+<table class="small"><tr><th>Dönem</th><th>Talep</th><th>Odak</th><th>Bütçe önerisi</th></tr>
+<tr><td>Aralık</td><td>Hediye</td><td>Hediye rehberi, katalog yeniden pazarlama, "26 Aralık son sipariş"</td><td>50.000 TL</td></tr>
+<tr><td>Ocak</td><td>Düşük</td><td>Kuz İstanbul teaser; marka koruma "kuz istanbul" kelimelerine genişler</td><td>~42.500 TL (yılbaşı sonrası %15 düşüş)</td></tr>
+<tr><td>Şubat</td><td>Sevgililer Günü</td><td>Kuz İstanbul lansmanı (%30 bilinirlik), hediye kataloğu</td><td>50.000 TL</td></tr>
+<tr><td>Mart – Temmuz</td><td><b>Zirve</b></td><td>Yeni sezon, tatil, polarize; YouTube ve Demand Gen testi</td><td>Verimliliğe göre artış önerisi (Şubat–Temmuz 2026'da net ciro harcamanın 3,74 katıydı)</td></tr>
+<tr><td>Ağustos – Kasım</td><td>Düşüş</td><td>Harcama talebe göre kısılır; optik, mağaza ve kış güneşi içerikleri</td><td>Azaltılmış; 2026'daki hata tekrarlanmaz</td></tr>
+</table>
+<p class="note">Kampanya yapısı ve bütçeler, Google Ads verisi ve brüt marj bilgisi geldikten sonra kesinleşir.</p>""")
+
 # Devir planı
-S("""<div class="k">Bölüm 6</div><h1 style="margin-top:160px">Devir<br><i>planı</i></h1>
+S("""<div class="k">Bölüm 7</div><h1 style="margin-top:160px">Devir<br><i>planı</i></h1>
 <p class="lead" style="margin-top:24px">Varsayım: bugün hiçbir hesabın erişimi şirkette değil.<br>Plan, her varlığı bu en kötü senaryodan başlayarak güvenceye alır.</p>""", "dark")
 
 S("""<div class="k">İlkeler</div>
@@ -597,7 +701,7 @@ S("""<div class="k">Ajanstan resmi teslim listesi</div>
 S("""<div class="k">Devir sonrası · ilk 90 gün</div>
 <h2>Aylık 50.000 TL bütçeyle ölçülebilir, kârlılığa odaklı bir yapı</h2>
 <div class="grid g3">
-<div class="phase"><div class="when">0–30 gün · Temel</div><ul><li>Ölçüm doğrulama: Meta, Google ve ikas aynı rakamı söylüyor</li><li>Feed düzeltmeleri, barkod, schema</li><li>3 kampanyalık yeni Meta yapısı (onayla)</li><li>Google: PMax, marka ve model araması, yerel arama</li><li>Aralık içerik takvimi (onaylandı)</li></ul></div>
+<div class="phase"><div class="when">0–30 gün · Temel</div><ul><li>Ölçüm doğrulama: Meta, Google ve ikas aynı rakamı söylüyor</li><li>Feed düzeltmeleri, barkod, schema</li><li>Meta: 4 kampanya (M1–M4), onayla</li><li>Google: 4 kampanya (G1–G4), onayla</li><li>Aralık içerik takvimi (onaylandı)</li></ul></div>
 <div class="phase"><div class="when">30–60 gün · Kuz İstanbul geçişi</div><ul><li>Teaser serisi ve hesap adı geçişi</li><li>Kreatif yenileme: miras filmi, Kuz AI, hediye</li><li>Site fiyat politikası ve taksit kararı</li><li>Haftalık optimizasyon ve bütçe kaydırma</li></ul></div>
 <div class="phase"><div class="when">60–90 gün · Ölçekleme</div><ul><li>Kârlı kanallara bütçe artışı önerisi</li><li>İlkbahar ve yaz sezonu hazırlığı</li><li>Influencer ve iş birliği testleri</li><li>Aylık yönetim raporu: ROAS, satış başı maliyet, mağaza yönlendirmesi</li></ul></div>
 </div>

@@ -13,16 +13,19 @@
 
 ### Aralık dağılımı (hediye sezonu, satış odaklı)
 
-| Kanal | Kampanya | Amaç | Aylık | Pay |
-|---|---|---|---|---|
-| **Google** | Performance Max (ürün feed'i) | Online satış | 14.000 | 28% |
-| | Arama: marka + model ("tom ford güneş gözlüğü", "miu miu güneş gözlüğü", "chopard gözlük" vb.) | Online satış | 8.000 | 16% |
-| | Arama: kendi markamız ("damla kuz", "fahri kuz", "kuz optik") | Marka koruma | 1.500 | 3% |
-| | Yerel arama + konum öğesi (Ataköy çevresi ~10 km: "optik ataköy", "gözlükçü bakırköy") | Maps yol tarifi ve arama | 4.000 | 8% |
-| **Meta** | Advantage+ satış kampanyası (katalog, dinamik ürün) | Online satış + yeniden pazarlama | 12.000 | 24% |
-| | Reels kreatif testleri (miras hikâyesi, Kuz AI, stil) | Yeni kitle + satış | 6.500 | 13% |
-| | Yerel bilinirlik (Atrium çevresi ~8 km, "Yol tarifi al") | Mağaza ziyareti | 4.000 | 8% |
-| | | **Toplam** | **50.000** | 100% |
+| Kanal | Kod | Kampanya | Tür | Amaç | Aylık |
+|---|---|---|---|---|---|
+| **Google** | G1 | Performance Max (Merchant Center feed'i; ürün grupları: üst lüks, tasarımcı, yoğun rekabet, sadece Damla Kuz) | PMax | Online satış | 14.000 |
+| | G2 | Arama: marka ve model ("chopard gözlük", "tom ford tf 1182" vb.) | Arama (RSA) | Online satış | 8.000 |
+| | G3 | Yerel arama + konum öğesi (Ataköy ~10 km: "optik", "gözlükçü", "gözlük tamiri", "lens") | Arama | Yol tarifi ve arama | 4.000 |
+| | G4 | Marka koruma ("damla kuz", "fahri kuz", "kuz optik", Ocak'tan "kuz istanbul") | Arama | Marka koruma | 1.500 |
+| **Meta** | M1 | Advantage+ satış (geniş kitle, katalog açık, 6–8 video/görsel) | Satış | Online satış | 9.000 |
+| | M2 | Katalog yeniden pazarlama (son 30 gün görüntüleyen/sepete ekleyen, sıklık tavanı) | Satış, dinamik ürün | Online satış | 5.000 |
+| | M3 | Reels kreatif testi (3–4 reklam seti, haftada 2 yeni Reels) | Satış (test) | Kreatif öğrenme | 4.500 |
+| | M4 | Yerel mağaza (Atrium ~8 km, "Yol tarifi al") | Erişim / mağaza trafiği | Mağaza ziyareti | 4.000 |
+| | | | | **Toplam** | **50.000** |
+
+Ayrıntılı gerekçeler ve kreatif planı: `raporlar/2026-11-19-denetim-ve-devir-plani.pdf`, Bölüm 6.
 
 **Gerekçe:**
 - Google'da arama niyeti hazır: "Tom Ford güneş gözlüğü" arayan kişi satın almaya en yakın kişidir. Bu yüzden Google'a biraz daha fazla (%55).
