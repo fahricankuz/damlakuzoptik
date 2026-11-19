@@ -17,7 +17,7 @@ Son güncelleme: 19 Kasım 2026
 
 ## AŞAMA 0: Mevcut ajanstan devir (bu hafta, Black Friday'i bozmadan)
 
-> Mevcut ajans Black Friday kampanyasını (27 Kasım) ve Cyber Monday'i (30 Kasım) yönetirken hesaplarda değişiklik yapmıyoruz. Devir **1 Aralık** itibarıyla başlar. Bu hafta sadece hazırlık yapılır.
+> Mevcut ajans Black Friday kampanyasını (27 Kasım) ve Cyber Monday'i (30 Kasım) yönetirken hesaplarda değişiklik yapmıyoruz. Devir tarihi **şirket sahibinin talimatıyla** belirlenecek; o güne kadar Claude hiçbir kampanyaya dokunmaz, yalnızca veri okur.
 
 - [~] **0.1 Sahiplik kontrolü.** _(19 Kas durumu)_
   | Varlık | Durum |

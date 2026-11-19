@@ -48,12 +48,14 @@ Huni (90 gün): 11.076 ürün görüntüleme → 63 sepete ekleme (%0,6) → 16 
 
 ## 4. Öneriler
 
+> **Hiçbiri uygulanmadı.** Şirket sahibinin 19 Kasım talimatı: açıkça söylenene kadar hiçbir kampanyaya dokunulmayacak. Tarihler yalnızca önerilen sıralamadır.
+
 | Ne zaman | Öneri |
 |---|---|
-| **Şimdi (onayla)** | 5 "Instagram post" trafik kampanyasını durdurmak. Satış getirmiyorlar; Black Friday satış kampanyalarını etkilemez. |
-| 1 Aralık | Remarketing kampanyasını yeniden kurmak: katalog tabanlı dinamik reklam, son 30 gün ziyaretçi ve sepete ekleyenler |
-| 1 Aralık | ASC kampanyasına yeni kreatif seti eklemek (miras serisi, Kuz AI, hediye rehberi; tüm formatlarda) |
-| 1 Aralık | Meta katalog için ek veri kaynağı: renk, cinsiyet ve yaş grubu |
+| Talimatla | 5 "Instagram post" trafik kampanyasını durdurmak. Satış getirmiyorlar; Black Friday satış kampanyalarını etkilemez. |
+| Talimatla | Remarketing kampanyasını yeniden kurmak: katalog tabanlı dinamik reklam, son 30 gün ziyaretçi ve sepete ekleyenler |
+| Talimatla | ASC kampanyasına yeni kreatif seti eklemek (miras serisi, Kuz AI, hediye rehberi; tüm formatlarda) |
+| Talimatla | Meta katalog için ek veri kaynağı: renk, cinsiyet ve yaş grubu |
 | Aralık | **İşletme doğrulaması** (business.facebook.com → Güvenlik Merkezi). Gelişmiş API erişimi, alan adı ve reklam güvenilirliği için gerekli. |
 | Aralık | Eski reklam hesabındaki ödenmemiş bakiyeyi kapatmak. Açık bakiye, portföydeki diğer hesapların güven puanını etkileyebilir. |
 | Sürekli | Haftalık raporda Meta satışlarını ikas sipariş verisiyle karşılaştırmak |
