@@ -3,7 +3,7 @@
 Sırayla ilerleyin. Bir adım bitmeden sonrakine geçmeyin. Her adımın sonunda **"Bana iletin"** satırındakileri sohbete yazın.
 Token, şifre ve API anahtarlarını **asla sohbete yazmayın**. Bunlar için size güvenli bir form açılacak.
 
-Son güncelleme: 19 Kasım 2026
+Son güncelleme: 20 Kasım 2026
 
 ---
 
@@ -11,6 +11,7 @@ Son güncelleme: 19 Kasım 2026
 
 - [~] **A.1 Test ürününü kaldırın.** _(19 Kas: satış kanallarından kaldırıldı. Feed ikas tarafında güncellenince Claude kontrol edecek. Sitedeki /deneme sayfası hâlâ açık; web mağazası kanalından da kaldırılmalı.)_ ikas'taki **"deneme"** adlı ürün 2,06 TL fiyatla satışta ve stokta görünüyor: damlakuzoptik.com/deneme. Ürünü silin veya yayından kaldırın.
 - [~] **A.2 "Kargo" ürününü feed'den çıkarın.** _(19 Kas: kaldırıldı, feed güncellemesi bekleniyor.)_ 1,03 TL'lik "Kargo" ürünü Google ve Meta feed'lerinde var. ikas'ta bu ürünün Google ve Facebook satış kanallarındaki işaretini kaldırın.
+- [ ] **A.3 Telefon tutarlılığı.** ikas → Mağaza ayarlarındaki iletişim telefonunu **0 212 529 33 33** yapın. Şu an sitenin arka planda Google'a gönderdiği kodda 0551 212 16 49 görünüyor.
 
 ---
 

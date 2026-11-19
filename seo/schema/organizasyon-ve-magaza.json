@@ -18,15 +18,16 @@
       "logo": "https://cdn.myikas.com/images/6feb21e8-9c3d-40d3-9367-6d0731824bc1/0a832800-7ed5-430a-ba1c-65af45807d66/image_1080.webp",
       "sameAs": [
         "https://www.instagram.com/damlakuzoptik",
-        "https://www.facebook.com/__FACEBOOK_SAYFA_ADI__"
+        "https://www.facebook.com/damlakuzoptic.by.fahrikuz"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "__ANA_TELEFON__",
+        "telephone": "+90-212-529-33-33",
         "contactType": "customer service",
         "areaServed": "TR",
         "availableLanguage": "Turkish"
-      }
+      },
+      "email": "info@damlakuzoptik.com"
     },
     {
       "@type": "Optician",
@@ -36,24 +37,19 @@
         "@id": "https://damlakuzoptik.com/#organization"
       },
       "url": "https://damlakuzoptik.com/pages/iletisim",
-      "telephone": "__MAGAZA_TELEFON__",
-      "email": "__EPOSTA__",
+      "telephone": "+90-212-529-33-33",
+      "email": "info@damlakuzoptik.com",
       "priceRange": "₺₺₺",
       "image": "https://cdn.myikas.com/images/theme-images/9aa854a6-f52a-4fd5-adbf-807d701f983b/image_1080.jpg",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Ataköy Atrium AVM, __KAT_MAGAZA_NO__",
+        "streetAddress": "Ataköy Atrium AVM, Zemin Kat, Ana Giriş",
         "addressLocality": "Bakırköy",
         "addressRegion": "İstanbul",
-        "postalCode": "__POSTA_KODU__",
+        "postalCode": "34158",
         "addressCountry": "TR"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "__ENLEM__",
-        "longitude": "__BOYLAM__"
-      },
-      "hasMap": "__GOOGLE_MAPS_LINKI__",
+      "hasMap": "https://share.google/CkJ2tgsbVcgiOh8KV",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -66,7 +62,7 @@
             "Saturday",
             "Sunday"
           ],
-          "opens": "10:00",
+          "opens": "09:00",
           "closes": "22:00"
         }
       ]
