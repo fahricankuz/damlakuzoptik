@@ -1,0 +1,13 @@
+# Gizli bilgiler ASLA repoya girmez
+.env
+.env.*
+*token*
+*secret*
+*credential*
+*.key
+# Büyük ham medya dosyaları (Drive'da tutulur)
+*.mov
+*.mp4
+*.wav
+!icerik/**/onizleme-*.mp4
+.DS_Store
