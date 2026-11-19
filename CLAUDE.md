@@ -11,6 +11,7 @@ Bu repo Damla Kuz Optik'in (Ocak 2027 sonundan itibaren Kuz İstanbul) sosyal me
 5. **İletişim dili:** Marka mirası için "1960" yerine **"yarım asır"** ifadesi tercih edilir (kullanıcının 19 Kasım tercihi; kapsamı netleşene kadar içerik metinlerinde uygulanır).
 
 6. **Fahri Kuz'un sesi ve görüntüsü** yapay zekâyla üretilmez veya klonlanmaz. Yalnızca kendi çekimleri ve kendi sesi, yazılı onayıyla kullanılır. ElevenLabs yalnızca anlatıcı sesi ve müzik/efekt için.
+8. **Paylaşım yapılmaz (19 Kasım 2026).** Organik paylaşımları ajans yapmaya devam ediyor. Claude içerik üretir ve takvim hazırlar ama kullanıcı açıkça söyleyene kadar Instagram veya Facebook'ta hiçbir paylaşım yayınlamaz.
 7. **Distribütör kreatifleri** ilgili markanın kullanım kurallarına uygun kullanılır (logo, metin, süre kısıtları).
 
 ## Başvuru dosyaları
