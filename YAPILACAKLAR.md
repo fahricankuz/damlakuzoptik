@@ -24,9 +24,9 @@ Son güncelleme: 19 Kasım 2026
   |---|---|
   | Facebook Sayfası | ✅ Bizde |
   | Instagram | ✅ Bizde |
-  | Reklam hesabı | 🟡 Erişim var, ödeme şirket kartından. **"Sahibi" alanı teyit edilecek** |
-  | Pixel `1032130095734490` | ✅ Portföyde, kullanıcı tam yetkili ("Sahibi" alanı teyit edilecek) |
-  | Ürün kataloğu | 🟡 Erişim var, 340 ürün grubu (feed ile uyumlu). **"Sahibi" alanı teyit edilecek** |
+  | Reklam hesabı | ✅ Sahibi DamlaKuzOptik (API ile doğrulandı) |
+  | Pixel `1032130095734490` | ✅ Sahibi DamlaKuzOptik (API ile doğrulandı) |
+  | Ürün kataloğu | ✅ Sahibi DamlaKuzOptik, 512 ürün (API ile doğrulandı) |
   | Google Tag Manager | ✅ Yönetici şirkette |
   | Google Business Profile | ✅ Bizde |
   | Google Ads | ❓ Görünmüyor, ajansa sorulacak |
@@ -51,7 +51,9 @@ Son güncelleme: 19 Kasım 2026
 
 ---
 
-## AŞAMA 1: Meta (Facebook + Instagram)
+## AŞAMA 1: Meta (Facebook + Instagram) ✅ BAĞLANDI (19 Kasım)
+
+> Bağlantı kuruldu ve test edildi. Kalan: 1.3 alan adı doğrulama, **işletme doğrulaması** (Güvenlik Merkezi), eski reklam hesabının (`act_640771468722072`) ödenmemiş bakiyesi. Ayrıntılar: `raporlar/2026-11-19-meta-baslangic-durumu.md`
 
 - [ ] **1.1** business.facebook.com → İşletme Ayarları'nda şunların **aynı portföyde** olduğunu doğrulayın: Facebook Sayfası, Instagram profesyonel hesabı (Sayfaya bağlı), Reklam Hesabı (ödeme yöntemi tanımlı), Pixel.
 - [ ] **1.2 Katalog.** ikas paneli → Satış Kanalları → **Facebook & Instagram** entegrasyonunu açın. Ürünler Meta kataloğuna otomatik aktarılır.

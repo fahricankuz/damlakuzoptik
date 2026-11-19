@@ -44,10 +44,11 @@ Gerekli araçlar (bulut ortamında hazır): Node 18+, ffmpeg, Playwright + Chrom
 | GA4 Measurement Protocol | ikas üzerinden açık. Gizli anahtar yalnızca ikas panelinde. |
 | Ürün feed'leri | ikas paneli → Satış Kanalları (Google XML, Meta CSV). Denetim: `reklam/feed-denetimi.md` |
 | Meta Business ID | `448685278892739` |
+| Meta sistem kullanıcısı | `claude-ajans` (`122096799393559156`). Token ortamda saklı, repoda yok. |
 | Meta uygulaması | `Damla Kuz Optik` · App ID `1691755884806585` |
-| Meta Reklam Hesabı | _bekleniyor_ |
-| Facebook Sayfa ID | _bekleniyor_ |
-| Instagram hesap ID | _bekleniyor_ |
-| Meta Katalog ID | _bekleniyor_ |
+| Meta Reklam Hesabı | `act_668335292879203` (eski: `act_640771468722072`, ödenmemiş bakiye) |
+| Facebook Sayfa ID | `102141373241402` |
+| Instagram hesap ID | `17841402357718660` (@damlakuzoptik) |
+| Meta Katalog ID | `518476831352210` |
 | Google Ads müşteri no | _bekleniyor_ |
 | Merchant Center ID | _bekleniyor_ |
