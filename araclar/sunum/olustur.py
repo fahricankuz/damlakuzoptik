@@ -8,7 +8,10 @@ import sys
 import html as H
 
 meta_path, font_dir, out_html = sys.argv[1], sys.argv[2], sys.argv[3]
+ikas_path = sys.argv[4] if len(sys.argv) > 4 else None
 R = json.load(open(meta_path, encoding="utf-8"))
+# ikas aylık özet: ay -> [web sipariş adedi, brüt ciro, iade tutarı, tam iade adedi]  (kişisel veri içermez)
+IK = json.load(open(ikas_path, encoding="utf-8")) if ikas_path else {}
 
 
 def A(r, k, key="actions"):
@@ -116,6 +119,48 @@ def chart_funnel(w=1100, h=280):
         out.append(f'<text x="{310+bwid:.1f}" y="{y+rowh/2+5:.1f}" fill="{INK}" font-weight="700">{n(v)}<tspan fill="{MUTED}" font-weight="400">{rate}</tspan></text>')
     out.append("</svg>")
     return "".join(out)
+
+
+def spend_by_month():
+    sp = {r["date_start"][:7]: float(r["spend"]) for r in R["monthly"]}
+    for r in R["monthly2"]:
+        m = r["date_start"][:7]; sp[m] = sp.get(m, 0) + float(r["spend"])
+    return sp
+
+
+def chart_ikas(w=1100, h=330):
+    sp = spend_by_month()
+    ms = [m for m in sorted(set(sp) | set(IK)) if m >= "2025-07"]
+    vals = [(m, sp.get(m, 0), IK.get(m, [0, 0, 0, 0])[1] - IK.get(m, [0, 0, 0, 0])[2], IK.get(m, [0])[0]) for m in ms]
+    pad_l, pad_b, pad_t = 70, 46, 20
+    mx = max(max(s, v) for _, s, v, _ in vals) * 1.08
+    bw = (w - pad_l - 20) / len(vals)
+    out = [f'<svg viewBox="0 0 {w} {h}" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat" font-size="13">']
+    for i in range(5):
+        y = pad_t + (h - pad_t - pad_b) * i / 4
+        out.append(f'<line x1="{pad_l}" x2="{w-10}" y1="{y:.1f}" y2="{y:.1f}" stroke="{LINE}"/>')
+        out.append(f'<text x="{pad_l-10}" y="{y+4:.1f}" text-anchor="end" fill="{MUTED}">{mx*(1-i/4)/1000:.0f}b</text>')
+    for i, (m, s_, v, o) in enumerate(vals):
+        x = pad_l + i * bw; base = h - pad_b
+        hs = (h - pad_t - pad_b) * s_ / mx; hv = (h - pad_t - pad_b) * v / mx
+        out.append(f'<rect x="{x+bw*0.14:.1f}" y="{base-hs:.1f}" width="{bw*0.34:.1f}" height="{hs:.1f}" fill="{INK}" rx="2"/>')
+        out.append(f'<rect x="{x+bw*0.52:.1f}" y="{base-hv:.1f}" width="{bw*0.34:.1f}" height="{hv:.1f}" fill="{GREEN}" rx="2"/>')
+        lab = AYLAR[m[5:]] + ("\u00a0'" + m[2:4] if m[5:] in ("01", "07") else "")
+        out.append(f'<text x="{x+bw/2:.1f}" y="{h-24}" text-anchor="middle" fill="{INK}">{lab}</text>')
+        out.append(f'<text x="{x+bw/2:.1f}" y="{h-6}" text-anchor="middle" fill="{MUTED}" font-size="11">{o} sipariş</text>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+def ikas_period(a, b):
+    sp = spend_by_month()
+    S = sum(v for m, v in sp.items() if a <= m <= b)
+    N = sum(v[1] - v[2] for m, v in IK.items() if a <= m <= b)
+    O = sum(v[0] for m, v in IK.items() if a <= m <= b)
+    G = sum(v[1] for m, v in IK.items() if a <= m <= b)
+    Rf = sum(v[2] for m, v in IK.items() if a <= m <= b)
+    F = sum(v[3] for m, v in IK.items() if a <= m <= b)
+    return dict(spend=S, net=N, orders=O, gross=G, refund=Rf, fullref=F)
 
 
 def chart_split(w=1100, h=90):
@@ -247,18 +292,18 @@ S(f"""<div class="k">Gizli · Yönetim için</div>
 
 # 2 Yönetici özeti
 S(f"""<div class="k">Yönetici özeti</div>
-<h2>Nisan 2025'ten bu yana {tl(tot_spend + old_spend)} reklam harcaması, karşılığında ölçülen ciro harcamayı ancak karşılıyor.</h2>
+<h2>Nisan 2025'ten bu yana {tl(tot_spend + old_spend)} Meta harcaması. İlkbahar ve yazda reklam satış getirdi; son dört ayda harcama kadar ciro bile gelmedi.</h2>
 <div class="grid g4" style="margin-bottom:28px">
-<div class="kpi"><div class="v">{tl(tot_spend)}</div><div class="l">Aktif reklam hesabında toplam harcama ({first_month} – Kas 2026)</div></div>
-<div class="kpi"><div class="v">{int(tot_pur)}</div><div class="l">Meta'nın ölçtüğü online satış</div></div>
-<div class="kpi"><div class="v">{d(roas_all,2)}</div><div class="l">ROAS: 1 TL reklama karşılık ölçülen ciro</div></div>
-<div class="kpi"><div class="v">{tl(cpa)}</div><div class="l">Satış başına reklam maliyeti</div></div>
+<div class="kpi"><div class="v">126</div><div class="l">Online sipariş (ikas, Tem 2025 – 14 Kas 2026). Meta yalnızca {int(tot_pur)}'unu ölçebilmiş</div></div>
+<div class="kpi"><div class="v">985.150 TL</div><div class="l">Net online ciro (iadeler düşülmüş)</div></div>
+<div class="kpi"><div class="v">2,98</div><div class="l">Net ciro / Meta harcaması, tüm dönem (Google harcaması hariç)</div></div>
+<div class="kpi"><div class="v" style="color:#B4483C">0,99</div><div class="l">Net ciro / Meta harcaması, Ağustos – Kasım 2026</div></div>
 </div>
 <div class="grid g2">
 <div><h3>Temel bulgular</h3><ul>
-<li>Reklam harcaması, ürün maliyeti düşülmeden bile ancak kendini çıkarıyor; <b>brüt kâr bazında zarar</b>.</li>
+<li>ikas'a göre aynı dönemde <b>126 online sipariş, 985 bin TL net ciro</b>; Meta bunların yalnızca 39'unu ölçebilmiş. Ölçüm ve raporlama zayıf.</li><li>Ağustos–Kasım 2026: 71 bin TL harcama, <b>13 sipariş</b>, net ciro harcamaya eşit (0,99).</li>
 <li>Bütçenin <b>{tl(boost_spend)}</b>'si satış hedefi olmayan "öne çıkarılan gönderi"lere gitti: <b>0 satış</b>.</li>
-<li>Son 3 ayda performans çöktü: Eylül–Kasım ROAS 0,2 / 1,4 / 0.</li>
+<li>Siparişlerin %21'i tamamen iade edilmiş; iade tutarı brüt cironun %16'sı.</li>
 <li>Instagram etkileşimi %{d(er,2)}; gönderi başına ortalama {med_like} beğeni, 60 gönderide {comments} yorum.</li>
 <li>Site ve feed hijyeni ihmal edilmiş: test ürünü 2,06 TL'ye satışta, barkodlar geçersiz, başlıklar zayıf.</li>
 </ul></div>
@@ -294,7 +339,7 @@ S("""<div class="k">Bölüm 1</div><h1 style="margin-top:160px">Meta reklamları
 
 # 5 Aylık
 S(f"""<div class="k">Aylık harcama ve ölçülen ciro</div>
-<h2>Harcama Haziran'a kadar arttı, satış onu izlemedi; son üç ayda sistem neredeyse durdu.</h2>
+<h2>Meta'nın kendi ölçtüğü satış, harcamanın çok gerisinde kaldı; son üç ayda neredeyse sıfıra indi.</h2>
 <div style="display:flex;gap:22px;font-size:13px;margin-bottom:8px"><span><b style="color:{INK}">■</b> Reklam harcaması</span><span><b style="color:{GOLD}">■</b> Ölçülen satış cirosu</span></div>
 {chart_monthly()}
 <p class="note">Eylül–Ekim 2025'te harcama yok. Aralık 2025'teki yüksek ciro tek bir yüksek tutarlı siparişten geliyor (1 satış, 89.627 TL); bu ay hariç tutulduğunda dönemin ROAS'ı {d((tot_val-89627)/(tot_spend-20907),2)}.</p>""")
@@ -312,7 +357,7 @@ S(f"""<div class="k">Dönüşüm hunisi (ömür boyu, Meta reklamlarından gelen
 <div class="grid g3" style="margin-top:18px">
 <div class="card"><h3>Sepete ekleme %{d(funnel['add_to_cart']/funnel['landing_page_view']*100,1)}</h3><p>E-ticaret sektör ortalaması genellikle %3 ile %7 arasındadır. Ürün sayfası güveni, fiyat algısı ve taksit seçenekleri birlikte incelenmeli.</p></div>
 <div class="card"><h3>Ödeme adımları kayıplı</h3><p>193 ödeme başlatmadan 39 satış (%{d(39/193*100,0)}). Ödeme adımında sürtünme var: kargo ve taksit bilgisi, güven rozetleri, ödeme seçenekleri.</p></div>
-<div class="card"><h3>Ölçüm teyidi gerekli</h3><p>Meta'nın 39 satışı ikas siparişleriyle karşılaştırılmadan nihai yargı verilmemeli. İlk iş bu karşılaştırma.</p></div>
+<div class="card"><h3>Ölçüm eksik</h3><p>Aynı dönemde ikas'ta 126 online sipariş var; Meta yalnızca 39'unu kendisine bağlayabilmiş. Bir sonraki sayfada gerçek satış verisi.</p></div>
 </div>""")
 
 # 8 Yerleşim ve kitle
@@ -326,6 +371,39 @@ S(f"""<div class="k">Yerleşim, kitle ve kreatif</div>
 <div class="card" style="margin-bottom:14px"><h3>Kreatif çeşitliliği dar</h3><p>389 reklamın ilk 10'u harcamanın %34'ünü alıyor. Satış getiren reklamlar: video UGC, "Rayban" ve "Police" ürün videoları. Marka mirası, uzmanlık ve Kuz AI hikâyesi reklamda neredeyse hiç kullanılmamış.</p></div>
 <div class="card"><h3>Kitle yaşı ve marka uyumu</h3><p>Harcamanın en büyük payı 35–54 yaş kadın. Sepete ekleme oranı 55+ yaşta belirgin biçimde daha yüksek. Lüks ürün için bu segment ayrıca test edilmeli.</p></div>
 </div></div>""")
+
+# ikas karşılaştırması
+if IK:
+    T = ikas_period("2025-07", "2026-11"); P1 = ikas_period("2026-02", "2026-07"); P2 = ikas_period("2026-08", "2026-11")
+    S(f"""<div class="k">Gerçek satış verisi · ikas</div>
+<h2>Meta satışların yalnızca üçte birini görüyor; gerçek tablo daha iyi ama son dört aydaki çöküş gerçek.</h2>
+<div class="grid g4" style="margin-bottom:14px">
+<div class="kpi"><div class="v">{T['orders']}</div><div class="l">Online sipariş (Tem 2025 – 14 Kas 2026). Meta bunların {int(tot_pur)}'unu (%{d(tot_pur/T['orders']*100,0)}) görmüş</div></div>
+<div class="kpi"><div class="v">{tl(T['net'])}</div><div class="l">Net online ciro (iadeler düşülmüş). Brüt {tl(T['gross'])}</div></div>
+<div class="kpi"><div class="v">{d(T['net']/T['spend'],2)}</div><div class="l">Net ciro / Meta harcaması. Google harcaması bilinmediği için gerçek oran daha düşük</div></div>
+<div class="kpi"><div class="v">{tl(T['spend']/T['orders'])}</div><div class="l">Sipariş başına Meta harcaması</div></div>
+</div>
+<div style="display:flex;gap:22px;font-size:13px;margin-bottom:4px"><span><b style="color:{INK}">■</b> Meta reklam harcaması</span><span><b style="color:{GREEN}">■</b> ikas net online ciro</span></div>
+{chart_ikas(h=255)}
+<p class="note">Mağaza içi kayıtlar (ADMIN) ve 5 TL altı siparişler hariç; Kasım 2026 verisi 14 Kasım'a kadar. Net ciro organik, Google ve doğrudan satışları da içerir.</p>""")
+
+    S(f"""<div class="k">İki dönem, iki tablo</div>
+<h2>İlkbahar ve yazda sistem çalıştı; Ağustos'tan sonra harcama sürdü, satış durdu.</h2>
+<div class="grid g2" style="margin-bottom:20px">
+<div class="card"><h3>Şubat – Temmuz 2026</h3><table class="small">
+<tr><td>Meta harcaması</td><td class="r">{tl(P1['spend'])}</td></tr><tr><td>Online sipariş</td><td class="r">{P1['orders']}</td></tr>
+<tr><td>Net ciro</td><td class="r">{tl(P1['net'])}</td></tr><tr><td>Net ciro / harcama</td><td class="r pos">{d(P1['net']/P1['spend'],2)}</td></tr>
+<tr><td>Sipariş başına harcama</td><td class="r">{tl(P1['spend']/P1['orders'])}</td></tr></table></div>
+<div class="card"><h3>Ağustos – Kasım 2026</h3><table class="small">
+<tr><td>Meta harcaması</td><td class="r">{tl(P2['spend'])}</td></tr><tr><td>Online sipariş</td><td class="r">{P2['orders']}</td></tr>
+<tr><td>Net ciro</td><td class="r">{tl(P2['net'])}</td></tr><tr><td>Net ciro / harcama</td><td class="r neg">{d(P2['net']/P2['spend'],2)}</td></tr>
+<tr><td>Sipariş başına harcama</td><td class="r neg">{tl(P2['spend']/P2['orders'])}</td></tr></table></div>
+</div>
+<div class="grid g3">
+<div class="card"><h3>Sezon etkisi var</h3><p>Güneş gözlüğü talebi yaz sonunda düşer; düşüşün bir kısmı doğaldır. Ancak harcama Ağustos'ta 30 bin TL ile Temmuz seviyesinde sürdü, yapı ve mesaj sezona göre uyarlanmadı.</p></div>
+<div class="card"><h3>Kasım kampanyası sonuç vermedi</h3><p>“Net %30” Kasım kampanyası ve 13 bin TL harcamaya karşın 14 Kasım'a kadar 1 online sipariş.</p></div>
+<div class="card"><h3>İadeler yüksek</h3><p>{T['fullref']} sipariş tamamen iade (%{d(T['fullref']/T['orders']*100,0)}); iade tutarı brüt cironun %{d(T['refund']/T['gross']*100,0)}'sı. Haziran'da %35. Ürün beklentisi, renk ve beden uyumu incelenmeli.</p></div>
+</div>""")
 
 # 9 Organik bölüm
 S("""<div class="k">Bölüm 2</div><h1 style="margin-top:160px">Instagram:<br><i>organik görünüm</i></h1>""", "dark")
@@ -383,14 +461,14 @@ S("""<div class="k">Bölüm 4</div><h1 style="margin-top:160px">Ajanstan ayrılm
 S(f"""<div class="k">Gerekçeler · veriye dayalı</div>
 <h2 style="font-size:32px;margin-bottom:12px">Ayrılık kararı kişisel değil, ölçülebilir sonuçlara dayanıyor.</h2>
 <div class="grid g2" style="gap:6px 40px">
-<div class="reason"><div class="num">1</div><div><h3>Yatırımın geri dönüşü yok</h3><p>{tl(tot_spend)} harcamaya karşılık {tl(tot_val)} ölçülen ciro (ROAS {d(roas_all,2)}). Ürün maliyeti düşüldüğünde reklam faaliyeti zarar ediyor.</p></div></div>
+<div class="reason"><div class="num">1</div><div><h3>Son dört ayda geri dönüş yok</h3><p>Ağustos–Kasım 2026'da Meta'ya 71 bin TL harcandı; ikas'ta 13 sipariş, 71 bin TL net ciro. Ürün maliyeti düşülünce zarar.</p></div></div>
 <div class="reason"><div class="num">2</div><div><h3>Bütçe yanlış hedefe harcandı</h3><p>{tl(boost_spend)} (%{d(boost_spend/tot_spend*100,1)}), satış değil tıklama hedefli 34 öne çıkarmaya gitti: 0 satış. Uygulama bugün de sürüyor.</p></div></div>
-<div class="reason"><div class="num">3</div><div><h3>Son 3 ayda düşüş, müdahale yok</h3><p>Eylül–Kasım'da {tl(sum(s for m,s,v,p in monthly[-3:]))} harcama, 3 satış. Black Friday döneminde yapı değiştirilmedi.</p></div></div>
+<div class="reason"><div class="num">3</div><div><h3>Sezona uyum ve müdahale yok</h3><p>Yaz sonunda talep düşerken harcama ve yapı aynı kaldı. Kasım “net %30” kampanyası 14 Kasım'a kadar 1 online sipariş getirdi.</p></div></div>
 <div class="reason"><div class="num">4</div><div><h3>Dağınık yapı, yorgun kreatif</h3><p>14 satış kampanyasından {len(sales_zero)}'i sıfır satış. Remarketing sıklığı 12. Kreatifler aylarca yenilenmemiş.</p></div></div>
 <div class="reason"><div class="num">5</div><div><h3>Altyapı hijyeni ihmal edildi</h3><p>Test ürünü feed'de ve satışta; barkodlar geçersiz; feed başlıkları optimize edilmemiş; Audience Network kapatılmamış.</p></div></div>
 <div class="reason"><div class="num">6</div><div><h3>Organik iletişimde strateji yok</h3><p>Etkileşim %{d(er,2)}, Reels %{d(reels_share,0)}. Marka mirası, uzmanlık ve Kuz AI gibi ayrıştırıcılar kullanılmamış; dil indirim ağırlıklı.</p></div></div>
 <div class="reason"><div class="num">7</div><div><h3>Sahiplik ve şeffaflık riski</h3><p>Google Ads ve Merchant Center şirketin erişiminde değil. Harcama ve sonuçlar şirket tarafından denetlenemiyor.</p></div></div>
-<div class="reason"><div class="num">8</div><div><h3>Raporlama yetersiz</h3><p>Ölçülen satışlar ikas verisiyle karşılaştırılmamış; ROAS, satış başı maliyet ve huni gibi temel göstergelerle yönetim yapılmamış.</p></div></div>
+<div class="reason"><div class="num">8</div><div><h3>Ölçüm ve raporlama yetersiz</h3><p>Meta, siparişlerin yalnızca %31'ini görüyor; ikas ile karşılaştırma ve iade takibi (%16) yapılmamış. Kararlar eksik veriyle alınmış.</p></div></div>
 </div>""")
 
 # 16-18 Düzeltme önerileri
@@ -535,8 +613,8 @@ S("""<div class="k">Kararlar ve sonraki adımlar</div>
 <table><tr><th>#</th><th>Karar</th><th>Not</th></tr>
 <tr><td>1</td><td>Devir tarihi (T günü) ve fesih bildirim zamanı</td><td>Sözleşme süresine göre</td></tr>
 <tr><td>2</td><td>Hesap envanteri e-postasının gönderilmesi</td><td>Taslak hazır; ajansla ilişkiyi bozmadan sahipliği güvenceye alır</td></tr>
-<tr><td>3</td><td>ikas'tan son 12 ayın sipariş ve ciro verisi</td><td>Meta'nın ölçtüğü 39 satışla karşılaştırma</td></tr>
-<tr><td>4</td><td>Brüt marj oranı</td><td>Başa baş ROAS hedefinin belirlenmesi</td></tr>
+<tr><td>3</td><td>Google Ads harcama verisi (ajanstan)</td><td>ikas cirosuyla birlikte gerçek toplam getiri hesabı</td></tr>
+<tr><td>4</td><td>Brüt marj oranı</td><td>ikas'ta ürün alış fiyatları boş; başa baş hedef için gerekli</td></tr>
 <tr><td>5</td><td>Fiyat politikası (kalıcı %30) ve taksit sayısı</td><td>Dönüşüm ve marka algısı</td></tr>
 <tr><td>6</td><td>İşletme doğrulaması ve eski hesabın bakiyesi</td><td>Meta hesap sağlığı</td></tr>
 <tr><td>7</td><td>Mevcut kampanyalara müdahale zamanı</td><td>Şu an hiçbir şeye dokunulmuyor; yalnızca izleniyor</td></tr>
@@ -556,7 +634,7 @@ S(f"""<div class="k">Ek · tanımlar ve kaynaklar</div>
 <li>Meta Marketing API v23, 19 Kasım 2026; aktif hesap {first_month}–Kas 2026, eski hesap Nis–Eyl 2025.</li>
 <li>Instagram Graph API: son 100 paylaşım (27 Şub – 18 Kas 2026).</li>
 <li>Hesap etkinlik kaydı: ajans sistem kullanıcılarının işlemleri.</li>
-<li>damlakuzoptik.com ve ikas feed'leri, 19 Kasım 2026.</li>
+<li>damlakuzoptik.com ve ikas feed'leri, 19 Kasım 2026.</li><li>ikas sipariş dökümü (Haz 2025 – 14 Kas 2026), yalnızca toplulaştırılmış olarak kullanıldı.</li>
 <li>Rakip siteleri: Atasun, Kuvars, Opmar, Özkan, Bilge Karga, Gürel, Ersun.</li>
 <li>Tüm veriler okuma yetkisiyle alındı; hiçbir hesap ayarı değiştirilmedi.</li></ul>
 <p class="note">Ayrıntılı çalışma dosyaları: github.com/fahricankuz/damlakuzoptik</p></div>

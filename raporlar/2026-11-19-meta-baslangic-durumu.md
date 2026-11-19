@@ -64,3 +64,17 @@ Huni (90 gün): 11.076 ürün görüntüleme → 63 sepete ekleme (%0,6) → 16 
 
 - ikas'tan son 90 günün **toplam online sipariş sayısı ve cirosu**. Meta'nın ölçtüğü 4 satışla karşılaştırılacak.
 - "Instagram post" kampanyalarını kim açıyor: ajans mı, şirket içinden biri mi? Portföyde ajans tanımlı değil.
+
+## 6. ikas sipariş verisiyle karşılaştırma (19 Kasım, şirketten gelen döküm)
+
+| Dönem | Meta harcaması | ikas online sipariş | Net ciro (iadeler düşülmüş) | Net ciro / Meta harcaması |
+|---|---|---|---|---|
+| Tem 2025 – 14 Kas 2026 | 330.806 TL | 126 (Meta'nın gördüğü: 39) | 985.150 TL | 2,98 |
+| Şub – Tem 2026 | 178.581 TL | 93 | 668.676 TL | 3,74 |
+| Ağu – Kas 2026 | 71.295 TL | 13 | 70.914 TL | 0,99 |
+
+- Meta, siparişlerin yalnızca ~%31'ini kendisine bağlayabiliyor. Ölçüm eksik.
+- İade: 27 sipariş tamamen iade (%21); iade tutarı brüt cironun %16'sı.
+- ikas'ta ürün alış fiyatları boş; kârlılık için brüt marj bilgisi gerekli.
+- Google Ads harcaması bilinmediği için gerçek toplam getiri daha düşüktür.
+- Toplulaştırılmış veri: `raporlar/veri/ikas-aylik-ozet.json`. Ham sipariş dosyası kişisel veri içerdiği için repoya eklenmedi.
