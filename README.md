@@ -43,7 +43,8 @@ Gerekli araçlar (bulut ortamında hazır): Node 18+, ffmpeg, Playwright + Chrom
 | Meta Conversion API | ikas üzerinden açık (sunucu tarafı). Token yalnızca ikas panelinde. |
 | GA4 Measurement Protocol | ikas üzerinden açık. Gizli anahtar yalnızca ikas panelinde. |
 | Ürün feed'leri | ikas paneli → Satış Kanalları (Google XML, Meta CSV). Denetim: `reklam/feed-denetimi.md` |
-| Meta Business ID | _bekleniyor_ |
+| Meta Business ID | `448685278892739` |
+| Meta uygulaması | `Damla Kuz Optik` · App ID `1691755884806585` |
 | Meta Reklam Hesabı | _bekleniyor_ |
 | Facebook Sayfa ID | _bekleniyor_ |
 | Instagram hesap ID | _bekleniyor_ |
