@@ -32,6 +32,29 @@ Ayrıntılı gerekçeler ve kreatif planı: `raporlar/2026-11-19-denetim-ve-devi
 - Meta, katalog reklamlarıyla siteyi ziyaret edip almayanları geri getirir. Bu, rakiplerin Criteo ile yaptığı işin ek maliyetsiz karşılığıdır.
 - Fiyat savaşının yoğun olduğu modellerde (Ray-Ban, bazı Miu Miu ve Prada modelleri) Shopping teklifleri düşük tutulur. Bütçe, rekabetin daha az olduğu üst lüks markalara (Chopard, Maybach, Tom Ford, Persol) ve Damla Kuz'a özel ürünlere yönlendirilir.
 
+### Kış planı: Aralık – Şubat (19 Kasım güncellemesi)
+
+Güneş gözlüğü talebi düşük olduğundan kış aylarında mağaza yönlendirmesi, Fahri Kuz otoritesi, SEO ve Kuz İstanbul geçişi ağırlık kazanır. Online satış kesilmez: Kasım–Aralık 2025'te 12 sipariş ve 197 bin TL net ciro geldi.
+
+| Kampanya | Aralık | Ocak | Şubat |
+|---|---|---|---|
+| G1 Performance Max | 10.000 | 6.000 | 8.000 |
+| G2 Arama: marka ve model | 5.000 | 3.500 | 3.500 |
+| G3 Yerel arama | 8.000 | 8.000 | 6.000 |
+| G4 Marka koruma (+ "kuz istanbul") | 1.500 | 2.000 | 2.500 |
+| M1 Advantage+ satış | 7.000 | 4.000 | 5.000 |
+| M2 Katalog yeniden pazarlama | 5.000 | 4.000 | 5.000 |
+| M3 Reels testi | 3.500 | 3.500 | — |
+| M4 Yerel mağaza | 6.000 | 6.000 | 4.000 |
+| M5 Ustanın gözünden (45+, Fahri Kuz) | 4.000 | — | — |
+| L1 Kuz İstanbul teaser/lansman (Meta, İstanbul) | — | 6.000 | 10.000 |
+| L2 Kuz İstanbul lansman (YouTube, İstanbul) | — | — | 6.000 |
+| **Toplam** | **50.000** | **43.000** | **50.000** |
+
+**Audience Network:** Lansman duyurusu için önerilmez. Gösterimler ucuzdur ama çoğu mobil oyun ve uygulamalarda çıkar; hesap verisinde tıklama oranı %18–36, satış 0. İstenirse lansman bütçesinin en fazla %10'u, yalnızca erişim hedefiyle ve oyun kategorisi engellenerek test edilir.
+
+**Fahri Kuz:** Kurucu, iletişimin otorite figürüdür; özellikle 45+ kitlede. Meta verisinde 55+ yaş, 100 TL harcama başına 1,2–1,9 sepete ekleme ile en ilgili kitle. Fahri Kuz'un sesi ve görüntüsü yapay zekâyla üretilmez; yalnızca kendi çekimleri ve kendi sesi, yazılı onayıyla kullanılır.
+
 ### Ocak (rebrand geçişi)
 - **1–20 Ocak:** Aralık yapısı korunur. Yılbaşı sonrası düşük talebe göre bütçenin ~%15'i kısılabilir.
 - **20–31 Ocak:** Satış kampanyaları devam eder. ~7.500 TL "Kuz İstanbul geliyor" teaser videolarına (mevcut takipçiler ve site ziyaretçileri) ayrılır.
@@ -63,7 +86,7 @@ Ayrıntılı gerekçeler ve kreatif planı: `raporlar/2026-11-19-denetim-ve-devi
 |---|---|---|
 | **Ürün ve stil** | 40% | Yeni gelenler, yüz şekline göre 3 model, kombin, "Sadece Damla Kuz'da" |
 | **Optisyen uzmanlığı** | 25% | Polarize gerçekten gerekli mi? Orijinal nasıl anlaşılır? Kış güneşi ve kar yansıması. Cam teknolojileri. |
-| **Miras / Kuz hikâyesi** | 15% | 1960 arşiv fotoğrafları, "ilk"ler, Fahri Kuz'dan bir cümle, Kuz İstanbul'a giden yol |
+| **Fahri Kuz ve miras** | 15% | 1960 arşiv fotoğrafları, "ilk"ler, Fahri Kuz'dan bir cümle, Kuz İstanbul'a giden yol |
 | **Kuz AI ve etkileşim** | 10% | "Yüzüne en uygun gözlüğü 30 sn'de bul", anketler, "hangisi sen?" |
 | **Kampanya ve mağaza** | 10% | Hediye rehberi, Atrium mağazası, ekip, servis/tamir |
 

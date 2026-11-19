@@ -530,15 +530,16 @@ S("""<div class="k">Mimari · aylık 50.000 TL</div>
 <div class="grid g3" style="margin-top:18px">
 <div class="card"><h3>Google %55 · 27.500 TL</h3><p>Satın almaya en yakın kişi arama yapan kişidir. ikas verisinde cironun ilk dört markası (Chopard, Maybach, Ray-Ban, Tom Ford) aranarak bulunan markalar.</p></div>
 <div class="card"><h3>Meta %45 · 22.500 TL</h3><p>Lüks gözlük görsel bir karar; ilk temas çoğunlukla Instagram'da olur. Meta'da satış getiren tek format video oldu.</p></div>
-<div class="card"><h3>Dağılım sabit değil</h3><p>İlk 3 hafta veri toplanır, sonra her hafta getiri yüksek kampanyaya kaydırılır. Değişiklikler onayla yapılır.</p></div>
+<div class="card"><h3>Bu tablo zirve sezon yapısıdır</h3><p>Mart–Temmuz için. Aralık–Şubat kış planı ayrı sayfada: mağaza, Fahri Kuz ve Kuz İstanbul ağırlıklı.</p></div><div class="card" style="display:none"><h3>Dağılım sabit değil</h3><p>İlk 3 hafta veri toplanır, sonra her hafta getiri yüksek kampanyaya kaydırılır. Değişiklikler onayla yapılır.</p></div>
 </div>""")
 
-S("""<div class="k">Meta · 4 kampanya</div>
-<h2 style="font-size:32px">52 dağınık kampanya yerine dört net kampanya</h2>
+S("""<div class="k">Meta · 4 + 1 kampanya</div>
+<h2 style="font-size:32px">52 dağınık kampanya yerine dört temel kampanya ve Fahri Kuz serisi</h2>
 <table class="small"><tr><th>Kampanya</th><th>Tür ve hedef</th><th>Kitle</th><th>Kreatif</th><th class="r">Aylık</th><th>Neden (veri)</th></tr>
 <tr><td><b>M1 · Advantage+ satış</b></td><td>Satış kampanyası (Advantage+), hedef: satın alma</td><td>Türkiye geneli, 25–65, geniş; son 180 gün alıcılar hariç</td><td>6–8 video ve görsel: UGC, ürün videosu, miras, Kuz AI. Katalog açık</td><td class="r">9.000 TL</td><td>Hesabın en verimli yapısı ASC oldu (15 satış). En çok satan reklam bir ürün videosu ("Police", 7 satış).</td></tr>
 <tr><td><b>M2 · Katalog yeniden pazarlama</b></td><td>Satış kampanyası, katalog (dinamik ürün reklamı)</td><td>Son 30 gün ürün görüntüleyen ve sepete ekleyen; alıcılar hariç</td><td>Kişinin baktığı ürün otomatik gösterilir; marka çerçeveli şablon, fiyat ve "2 yıl garanti"</td><td class="r">5.000 TL</td><td>Remarketing en çok satış getiren kampanyaydı (21 satış), ama sıklık 12'ye çıkmıştı. Dinamik ürün ve sıklık tavanıyla yorgunluk önlenir.</td></tr>
 <tr><td><b>M3 · Reels kreatif testi</b></td><td>Satış kampanyası, reklam seti başına ayrı bütçe (test)</td><td>Geniş; 3–4 reklam seti, her biri bir mesaj</td><td>Her hafta 2 yeni Reels: miras, optisyen ipucu, Kuz AI, hediye</td><td class="r">4.500 TL</td><td>389 reklamın ilk 10'u bütçenin %34'ünü aldı, kreatif yenilenmedi. Kazanan kreatif M1'e taşınır.</td></tr>
+<tr><td><b>M5 · Ustanın gözünden</b></td><td>Video izlenme ve satış; Facebook + Instagram</td><td>45+ yaş, Türkiye; İstanbul ağırlıklı</td><td>Fahri Kuz'un anlattığı 30–45 sn videolar</td><td class="r">Kış 4.000 TL</td><td>55+ yaş, 100 TL başına 1,2–1,9 sepete ekleme ile en ilgili kitle; hiç özel mesaj almamış.</td></tr>
 <tr><td><b>M4 · Yerel mağaza</b></td><td>Erişim veya mağaza trafiği, "Yol tarifi al" düğmesi</td><td>Atrium çevresi ~8 km, 30+ yaş</td><td>Mağaza, optisyen, ekip görüntüleri; "Ataköy Atrium, Zemin Kat"</td><td class="r">4.000 TL</td><td>Siparişlerin %48'i İstanbul'dan. Mağaza hikâyesi hiç reklamlanmamış.</td></tr>
 </table>
 <p class="note"><b>Kapatılacaklar:</b> tıklama hedefli öne çıkarılan gönderiler (34.601 TL, 0 satış), Audience Network yerleşimi (yüksek kaza tıklaması, 0 satış), satış getirmemiş 10 eski kampanya yeniden açılmaz. <b>Yerleşimler:</b> Instagram akış, Reels, hikâye ve Facebook akış. <b>Müşteri listesi</b> yalnızca KVKK açık rızası olan kayıtlarla kullanılır.</p>""")
@@ -580,6 +581,8 @@ S("""<div class="k">Kreatif planı</div>
 <tr><td><b>Optisyen ipucu</b> (orijinallik, yüz şekli, polarize)</td><td>M3, organik</td><td>9:16</td><td>Güven ve uzmanlık; sepete ekleme oranını artırmak</td></tr>
 <tr><td><b>Kuz AI</b> (30 sn'de doğru çerçeve)</td><td>M1, M3</td><td>9:16, 4:5</td><td>Kararsız ziyaretçiyi sepete taşır</td></tr>
 <tr><td><b>Katalog şablonu</b> (çerçeve, fiyat, garanti)</td><td>M2, G1</td><td>1:1, 4:5</td><td>Dinamik ürün reklamlarında marka tutarlılığı</td></tr>
+<tr><td><b>Ustanın gözünden: Fahri Kuz</b> (kendi sesi ve görüntüsü)</td><td>M5, lansman filmi, organik</td><td>9:16, 16:9, 4:5</td><td>Sektörün en saygın ismi; 45+ kitlede güven</td></tr>
+<tr><td><b>Distribütör kreatifleri</b> (marka kampanya görselleri)</td><td>M1, G1, organik</td><td>Tümü (yeniden boyutlandırılarak)</td><td>Markaların kullanım kurallarına uygun; hazır, yüksek kalite</td></tr>
 <tr><td><b>Mağaza</b> (Atrium, ekip, ölçüm)</td><td>M4, G3</td><td>9:16, 1.91:1</td><td>Mağazaya yönlendirme hedefi</td></tr>
 </table>
 <p class="note">Üretim: görseller Canva ve Figma'da; videolar kodla üretilen hareketli grafik + ürün çekimleri + ElevenLabs Türkçe seslendirme. Tüm metinlerde ton "uzmanlık ve seçkinlik"; kalıcı indirim dili kullanılmaz.</p>""")
@@ -610,13 +613,70 @@ S("""<div class="k">Ölçüm, optimizasyon ve onay</div>
 S("""<div class="k">Sezon takvimi · bütçe yönü</div>
 <h2 style="font-size:32px">Güneş gözlüğü bir sezon ürünü; bütçe talebi takip etmeli.</h2>
 <table class="small"><tr><th>Dönem</th><th>Talep</th><th>Odak</th><th>Bütçe önerisi</th></tr>
-<tr><td>Aralık</td><td>Hediye</td><td>Hediye rehberi, katalog yeniden pazarlama, "26 Aralık son sipariş"</td><td>50.000 TL</td></tr>
-<tr><td>Ocak</td><td>Düşük</td><td>Kuz İstanbul teaser; marka koruma "kuz istanbul" kelimelerine genişler</td><td>~42.500 TL (yılbaşı sonrası %15 düşüş)</td></tr>
-<tr><td>Şubat</td><td>Sevgililer Günü</td><td>Kuz İstanbul lansmanı (%30 bilinirlik), hediye kataloğu</td><td>50.000 TL</td></tr>
+<tr><td>Aralık</td><td>Hediye</td><td>Hediye, mağaza (%28), Fahri Kuz serisi; "26 Aralık son sipariş"</td><td>50.000 TL</td></tr>
+<tr><td>Ocak</td><td>Düşük</td><td>Kuz İstanbul teaser, mağaza ve SEO; marka koruma "kuz istanbul" kelimelerine genişler</td><td>~42.500 TL (yılbaşı sonrası %15 düşüş)</td></tr>
+<tr><td>Şubat</td><td>Sevgililer Günü</td><td>Kuz İstanbul lansman filmi (Meta + YouTube, İstanbul), Sevgililer Günü kataloğu</td><td>50.000 TL</td></tr>
 <tr><td>Mart – Temmuz</td><td><b>Zirve</b></td><td>Yeni sezon, tatil, polarize; YouTube ve Demand Gen testi</td><td>Verimliliğe göre artış önerisi (Şubat–Temmuz 2026'da net ciro harcamanın 3,74 katıydı)</td></tr>
 <tr><td>Ağustos – Kasım</td><td>Düşüş</td><td>Harcama talebe göre kısılır; optik, mağaza ve kış güneşi içerikleri</td><td>Azaltılmış; 2026'daki hata tekrarlanmaz</td></tr>
 </table>
 <p class="note">Kampanya yapısı ve bütçeler, Google Ads verisi ve brüt marj bilgisi geldikten sonra kesinleşir.</p>""")
+
+S("""<div class="k">Kış planı · Aralık – Şubat</div>
+<h2 style="font-size:31px">Güneş gözlüğü talebi düşükken: hediye, mağaza, Fahri Kuz ve Kuz İstanbul geçişi</h2>
+<table class="small"><tr><th>Kampanya</th><th class="r">Aralık</th><th class="r">Ocak</th><th class="r">Şubat</th><th>Rolü</th></tr>
+<tr><td>G1 · Performance Max</td><td class="r">10.000</td><td class="r">6.000</td><td class="r">8.000</td><td>Hediye ve Sevgililer Günü; üst lüks markalar</td></tr>
+<tr><td>G2 · Arama: marka ve model</td><td class="r">5.000</td><td class="r">3.500</td><td class="r">3.500</td><td>Aranan talebi kaçırmamak</td></tr>
+<tr><td>G3 · Yerel arama</td><td class="r">8.000</td><td class="r">8.000</td><td class="r">6.000</td><td>Optik çerçeve, cam, lens, tamir: mağazaya</td></tr>
+<tr><td>G4 · Marka koruma</td><td class="r">1.500</td><td class="r">2.000</td><td class="r">2.500</td><td>Ocak'tan "kuz istanbul" kelimeleri</td></tr>
+<tr><td>M1 · Advantage+ satış</td><td class="r">7.000</td><td class="r">4.000</td><td class="r">5.000</td><td>Hediye kreatifleri</td></tr>
+<tr><td>M2 · Katalog yeniden pazarlama</td><td class="r">5.000</td><td class="r">4.000</td><td class="r">5.000</td><td>Sürekli</td></tr>
+<tr><td>M3 · Reels testi</td><td class="r">3.500</td><td class="r">3.500</td><td class="r">—</td><td>Fahri Kuz ve miras kreatifleri test edilir</td></tr>
+<tr><td>M4 · Yerel mağaza</td><td class="r">6.000</td><td class="r">6.000</td><td class="r">4.000</td><td>Atrium çevresi; 45+ dahil</td></tr>
+<tr><td>M5 · Ustanın gözünden (45+)</td><td class="r">4.000</td><td class="r">—</td><td class="r">—</td><td>Fahri Kuz otoritesi; Facebook + Instagram</td></tr>
+<tr><td>L1 · Kuz İstanbul teaser / lansman (Meta, İstanbul)</td><td class="r">—</td><td class="r">6.000</td><td class="r">10.000</td><td>Reklam filmi, erişim ve video izlenme hedefi</td></tr>
+<tr><td>L2 · Kuz İstanbul lansman (YouTube, İstanbul)</td><td class="r">—</td><td class="r">—</td><td class="r">6.000</td><td>Bumper 6 sn, atlanabilir reklam, Shorts</td></tr>
+<tr><td><b>Toplam</b></td><td class="r"><b>50.000</b></td><td class="r"><b>43.000</b></td><td class="r"><b>50.000</b></td><td></td></tr>
+</table>
+<p class="note">Online satış payı Aralık'ta %54'e, Ocak'ta %41'e iner; mağaza ve marka payı artar. Online tamamen kesilmez: ikas'ta Kasım–Aralık 2025'te 12 sipariş ve 197 bin TL net ciro var (hediye sezonu). Reklamsız iş: SEO ve Kuz İstanbul alan adı geçişi bu dönemin ana teknik işi.</p>""")
+
+S("""<div class="k">Kuz İstanbul lansmanı</div>
+<h2 style="font-size:32px">"Yarım asırdır İstanbul'un gözü": Fahri Kuz'dan Kuz İstanbul'a</h2>
+<div class="grid g3">
+<div class="card"><h3>Reklam filmi (60 sn + 30, 15, 6 sn)</h3><ul>
+<li>Kurgu: Yenikapı'daki ilk mağaza → Fahri Kuz'un ustalığı → İstanbul'un ışığı → Kuz İstanbul</li>
+<li>Malzeme: arşiv fotoğrafları, Fahri Kuz çekimi, mağaza ve ürün çekimleri, lisanslı İstanbul görüntüleri</li>
+<li>Seslendirme: tercihen <b>Fahri Kuz'un kendi sesi</b>; anlatıcı için ElevenLabs</li>
+<li>Formatlar: 9:16, 16:9, 1:1, 4:5</li></ul></div>
+<div class="card"><h3>Kanal planı (İstanbul)</h3><ul>
+<li><b>Meta:</b> erişim ve video izlenme hedefi; Reels, hikâye, akış; sıklık tavanı 3/hafta</li>
+<li><b>YouTube:</b> 6 sn bumper + atlanabilir film + Shorts</li>
+<li><b>Google:</b> "kuz istanbul" marka araması açık</li>
+<li><b>Organik:</b> hesap adı geçişi, sabitlenmiş 3 gönderi, hikâye serisi</li>
+<li>Başarı ölçütü: "kuz istanbul" arama hacmi, video izlenme oranı, profil ziyareti, mağaza yol tarifi</li></ul></div>
+<div class="card"><h3>Audience Network kullanılmalı mı?</h3><p><b>Önerimiz: hayır, en fazla küçük bir test.</b></p><ul>
+<li>Bin gösterim başına ucuz ama gösterimin çoğu mobil oyun ve uygulamalarda; lüks marka için uygunsuz ortam</li>
+<li>Hesap verisi: %18–36 tıklama oranı, 0 satış; kaza tıklaması işareti</li>
+<li>Duyuru için aynı bütçe Reels ve YouTube'da daha nitelikli izlenme getirir</li>
+<li>Test istenirse: lansman bütçesinin en fazla %10'u, yalnızca erişim hedefi, oyun kategorisi engelli</li></ul></div>
+</div>""")
+
+S("""<div class="k">Fahri Kuz · otorite olarak</div>
+<h2 style="font-size:32px">Türkiye'de gözlükte en saygın isim; özellikle 45 yaş üstünde güçlü bir güven unsuru</h2>
+<div class="grid g2">
+<div><h3>Veri ne diyor</h3><table class="small"><tr><th>Meta kitle (son 12 ay)</th><th class="r">Harcama</th><th class="r">Sepete ekleme</th><th class="r">100 TL başına</th></tr>
+<tr><td>Kadın 35–44</td><td class="r">11.082 TL</td><td class="r">22</td><td class="r">0,2</td></tr>
+<tr><td>Kadın 55–64</td><td class="r">4.036 TL</td><td class="r">49</td><td class="r pos">1,2</td></tr>
+<tr><td>Erkek 45–54</td><td class="r">5.290 TL</td><td class="r">23</td><td class="r">0,4</td></tr>
+<tr><td>65+ (kadın ve erkek)</td><td class="r">3.238 TL</td><td class="r">61</td><td class="r pos">1,9</td></tr></table>
+<p class="note">55 yaş üstü, bütçenin küçük bir kısmıyla en yüksek ilgiyi gösteren kitle; şimdiye kadar özel bir mesajla hedeflenmemiş. Instagram takipçilerinin %34'ü 45 yaş üstü.</p></div>
+<div><h3>Planda nerede</h3><ul>
+<li><b>M5 · Ustanın gözünden:</b> 45+ kitleye Fahri Kuz'un anlattığı kısa videolar (Facebook ağırlıklı)</li>
+<li><b>Lansman filmi:</b> hikâyenin merkezi</li>
+<li><b>Organik seri:</b> "Fahri Kuz anlatıyor": ayda 2 Reels (ilk titanyum çerçeve, doğru cam, orijinallik)</li>
+<li><b>SEO:</b> blog yazılarında Fahri Kuz uzman yazar sayfası; Google'ın uzmanlık ve güven sinyalleri</li>
+<li><b>Mağaza:</b> "Fahri Kuz ekolüyle optik ölçüm" mesajı</li></ul>
+<p class="note">Fahri Kuz'un sesi veya görüntüsü yapay zekâyla üretilmez; yalnızca kendi çekimleri ve kendi sesi, yazılı onayıyla kullanılır.</p></div>
+</div>""")
 
 # Devir planı
 S("""<div class="k">Bölüm 7</div><h1 style="margin-top:160px">Devir<br><i>planı</i></h1>
