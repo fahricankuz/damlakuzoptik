@@ -5,7 +5,7 @@
 | `organizasyon-ve-magaza.json` | **Tüm sayfalar** (sitenin `<head>` bölümü) | Google'a markayı (1960, kurucu, logo, sosyal hesaplar) ve Atrium mağazasını (`Optician` türü: adres, saat, konum) tanıtır. Yerel aramalar, Maps ve bilgi paneli için. |
 | `sss-faqpage.json` | **Yalnızca** `/pages/sss` | SSS'deki 16 soru-cevap. Not: Google 2023'ten beri SSS zengin sonucunu yalnızca resmi ve sağlık sitelerinde gösteriyor. Bu kod zengin sonuç için değil, Google'ın ve yapay zekâ asistanlarının (ChatGPT, Gemini, Perplexity) içeriği doğru anlaması içindir. |
 
-## Kullanılan bilgiler (20 Kasım 2026, şirketten)
+## Kullanılan bilgiler (19 Kasım 2026, şirketten)
 
 | Alan | Değer |
 |---|---|

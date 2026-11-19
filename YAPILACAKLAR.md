@@ -3,7 +3,7 @@
 Sırayla ilerleyin. Bir adım bitmeden sonrakine geçmeyin. Her adımın sonunda **"Bana iletin"** satırındakileri sohbete yazın.
 Token, şifre ve API anahtarlarını **asla sohbete yazmayın**. Bunlar için size güvenli bir form açılacak.
 
-Son güncelleme: 20 Kasım 2026
+Son güncelleme: 19 Kasım 2026
 
 ---
 
