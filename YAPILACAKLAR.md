@@ -7,6 +7,17 @@ Son güncelleme: 19 Kasım 2026
 
 ---
 
+## ACİL (bugün)
+
+- [ ] **A.1 Test ürününü kaldırın.** ikas'taki **"deneme"** adlı ürün 2,06 TL fiyatla satışta ve stokta görünüyor: damlakuzoptik.com/deneme. Ürünü silin veya yayından kaldırın.
+- [ ] **A.2 "Kargo" ürününü feed'den çıkarın.** 1,03 TL'lik "Kargo" ürünü Google ve Meta feed'lerinde var. ikas'ta bu ürünün Google ve Facebook satış kanallarındaki işaretini kaldırın.
+- [ ] **A.3 Sohbette paylaşılan iki anahtarı yenileyin.**
+  - **Meta Conversion API token'ı:** Events Manager → Pixel `1032130095734490` → Ayarlar → Conversions API → yeni token oluşturun. Yeni token'ı **yalnızca ikas paneline** girin. Eskisi geçersiz olur.
+  - **GA4 Measurement Protocol gizli anahtarı:** GA4 → Yönetici → Veri Akışları → web akışı → Measurement Protocol API gizli anahtarları → eskisini silin, yenisini oluşturun, **yalnızca ikas paneline** girin.
+  - Bu iki anahtar Claude'un işi için gerekli değildir; ikas'ın sunucu tarafı ölçümü içindir. Bir daha sohbete yazmayın.
+
+---
+
 ## AŞAMA 0: Mevcut ajanstan devir (bu hafta, Black Friday'i bozmadan)
 
 > Mevcut ajans Black Friday kampanyasını (27 Kasım) ve Cyber Monday'i (30 Kasım) yönetirken hesaplarda değişiklik yapmıyoruz. Devir **1 Aralık** itibarıyla başlar. Bu hafta sadece hazırlık yapılır.
@@ -54,7 +65,9 @@ Son güncelleme: 19 Kasım 2026
 ## AŞAMA 2: Google (Ads + Merchant Center + Business Profile)
 
 - [ ] **2.1 GA4 ↔ Google Ads bağlantısı.** GA4 → Yönetici → Ürün Bağlantıları → Google Ads bağlantıları → hesabı bağlayın. Ardından Google Ads → Hedefler → Dönüşümler → **İçe aktar → GA4 → `purchase`**.
-- [ ] **2.2 Merchant Center.** ikas paneli → Satış Kanalları → **Google** entegrasyonunu açın. Ürün feed'i Merchant Center'a gider. Merchant Center'da damlakuzoptik.com'u **doğrulayıp sahiplenin**, sonra Google Ads hesabına bağlayın.
+- [ ] **2.2 Merchant Center.** ikas'ın Google feed bağlantısını (ikas paneli → Satış Kanalları → Google) Merchant Center'a **birincil veri kaynağı** olarak ekleyin. Merchant Center'da damlakuzoptik.com'u **doğrulayıp sahiplenin**, sonra Google Ads hesabına bağlayın.
+- [ ] **2.2b Ek feed.** Repodaki `reklam/google/merchant-ek-feed.tsv` dosyasını Merchant Center'a **ek veri kaynağı** olarak yükleyin. Bu dosya ürün başlıklarını, renk ve cinsiyet bilgisini düzeltir. Adımlar `reklam/feed-denetimi.md` dosyasında.
+- [ ] **2.2c Barkodlar.** Distribütörlerden (Luxottica, Kering, Safilo vb.) ürünlerin **EAN-13 barkod** listesini isteyin. Barkodların ikas'taki ürünlere girilmesi Google Shopping performansını belirgin artırır. Şu an barkod alanında ürün kodları var; bunlar geçersizdir.
 - [ ] **2.3 Google Business Profile.** Ataköy Atrium AVM mağazasının profilinin sizin hesabınızda olduğunu doğrulayın. Profilde telefon, saat ve fotoğraflar güncel olsun. Google Ads → Öğeler → **Konum öğesi** ile profili bağlayın.
 - [ ] **2.4 Reklam yönetim bağlantısı.** Google Ads'i Claude'a bağlamak için claude.ai → Ayarlar → Bağlayıcılar (Connectors) bölümünden **Adspirer Search Ads** veya **Windsor.ai for Paid Media**'yı ekleyin ve Google hesabınızla yetkilendirin. Ücretlendirmesini ve gizlilik koşullarını kontrol edip birini seçin.
 

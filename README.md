@@ -32,6 +32,9 @@ Bu repo, Damla Kuz Optik'in (Ocak 2027 sonundan itibaren **Kuz İstanbul**) sosy
 | Meta Pixel | `1032130095734490` |
 | Google Analytics 4 | `G-8BTM6DPJRS` |
 | Google Tag Manager | `GTM-5VJ9GD74` |
+| Meta Conversion API | ikas üzerinden açık (sunucu tarafı). Token yalnızca ikas panelinde. |
+| GA4 Measurement Protocol | ikas üzerinden açık. Gizli anahtar yalnızca ikas panelinde. |
+| Ürün feed'leri | ikas paneli → Satış Kanalları (Google XML, Meta CSV). Denetim: `reklam/feed-denetimi.md` |
 | Meta Business ID | _bekleniyor_ |
 | Meta Reklam Hesabı | _bekleniyor_ |
 | Facebook Sayfa ID | _bekleniyor_ |
