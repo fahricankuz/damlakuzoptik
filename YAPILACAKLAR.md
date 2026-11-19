@@ -19,11 +19,25 @@ Son güncelleme: 19 Kasım 2026
 
 > Mevcut ajans Black Friday kampanyasını (27 Kasım) ve Cyber Monday'i (30 Kasım) yönetirken hesaplarda değişiklik yapmıyoruz. Devir **1 Aralık** itibarıyla başlar. Bu hafta sadece hazırlık yapılır.
 
-- [ ] **0.1 Sahiplik kontrolü.** Aşağıdaki her varlığın **sahibinin kim olduğunu** kontrol edin: Damla Kuz Optik mi, ajans mı?
-  - Meta Business Portfolio, Facebook Sayfası, Instagram hesabı, Reklam Hesabı, Pixel (`1032130095734490`)
-  - Google Ads, Google Analytics 4 (`G-8BTM6DPJRS`), Google Tag Manager (`GTM-5VJ9GD74`), Merchant Center, Google Business Profile (Atrium AVM)
-  - Kontrol yeri: Meta için business.facebook.com → İşletme Ayarları → Hesaplar. Google için her ürünün "Yönetici / Kullanıcı erişimi" ekranı.
-  - **Ajansın sahibi olduğu bir varlık varsa**, devir için ajanstan şunu isteyin: varlık Damla Kuz Optik Business Portfolio'suna taşınsın, ajans "partner" olarak kalsın.
+- [~] **0.1 Sahiplik kontrolü.** _(19 Kas durumu)_
+  | Varlık | Durum |
+  |---|---|
+  | Facebook Sayfası | ✅ Bizde |
+  | Instagram | ✅ Bizde |
+  | Reklam hesabı | ✅ Ödeme şirket sanal kartından (portföy sahipliği aşağıdaki kontrolle teyit edilecek) |
+  | Pixel `1032130095734490` | ❓ Kontrol edilecek (adımlar aşağıda) |
+  | Ürün kataloğu | ❓ Kontrol edilecek (adımlar aşağıda) |
+  | Google Tag Manager | ✅ Yönetici şirkette |
+  | Google Business Profile | ✅ Bizde |
+  | Google Ads | ❓ Görünmüyor, ajansa sorulacak |
+  | Merchant Center | ❓ Görünmüyor, ajansa sorulacak |
+  | Google Analytics 4 | ❓ Kontrol edilecek: analytics.google.com → Yönetici → Hesap erişim yönetimi |
+
+  **Pixel kontrolü:** business.facebook.com → İşletme Ayarları → **Veri kaynakları → Veri setleri** (eski adı Pikseller). Listede `1032130095734490` var mı? Varsa üzerine tıklayın, sağ tarafta "Sahibi" satırında hangi işletme yazıyor? Listede yoksa pixel ajansın veya ikas'ın oluşturduğu başka bir portföydedir. ikas "otomatik kurulan Pixel" ifadesini kullandığı için ikas entegrasyonunu kimin yaptığına da bakın (ikas → Satış Kanalları → Facebook → bağlı hesap).
+  **Katalog kontrolü:** İşletme Ayarları → **Veri kaynakları → Kataloglar**. Bir katalog görünüyor mu, ürün sayısı ~514 mü, sahibi kim? Alternatif yol: business.facebook.com/commerce (Commerce Manager).
+  **Reklam hesabı sahipliği:** İşletme Ayarları → Hesaplar → Reklam hesapları → hesabın yanında "Sahibi" kim yazıyor?
+
+  **Ajansta olanlar için:** `strateji/ajans-devir-epostasi.md` taslağını gönderin (1 Aralık'tan sonra işlem yapılmasını ister, Black Friday'i etkilemez).
 - [ ] **0.2 Ajanstan arşiv talebi** (yazılı, e-posta ile):
   - Son 12 ayın Meta ve Google reklam raporları (kampanya bazında harcama, satış, ROAS)
   - Tüm kreatiflerin açık dosyaları (PSD/AI/Figma/Canva bağlantıları), video projeleri

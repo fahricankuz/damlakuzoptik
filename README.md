@@ -25,6 +25,14 @@ Bu repo, Damla Kuz Optik'in (Ocak 2027 sonundan itibaren **Kuz İstanbul**) sosy
 | `reklam/` | Kampanya planları, reklam metinleri, test kayıtları |
 | `raporlar/` | Haftalık ve aylık performans raporları |
 
+## Skill'ler (video, hareket ve tasarım)
+
+`.claude/skills/` klasöründe 37 skill kuruludur: HyperFrames, motion-design, GSAP, Three.js, design-dna, cast/paint/bunshin, brag-slim, find-skills. Repo bir Claude oturumuna bağlandığında **otomatik yüklenir**; her oturumda yeniden kurmaya gerek yoktur. Sürümler `skills-lock.json` dosyasında tutulur. Güncelleme komutu: `npx skills update -p`.
+
+Gerekli araçlar (bulut ortamında hazır): Node 18+, ffmpeg, Playwright + Chromium, Python (numpy, Pillow).
+
+> Başka projelere ait sahne şablonları, marka varlıkları ve render betikleri (ör. "Anahtar için Anahtar" işleri) bu repoya **alınmaz**. Damla Kuz / Kuz İstanbul şablonları burada sıfırdan, bu markanın kimliğiyle kurulur.
+
 ## Hesap kimlikleri (gizli değildir)
 
 | Varlık | Kimlik |
