@@ -1,6 +1,6 @@
 # Yarım Asır, Bölüm 7: Devir (metin taslağı)
 
-Durum: **Taslak, kullanıcı onayı bekliyor** (20 Kasım 2026)
+Durum: **Onaylandı, üretimde** (20 Kasım 2026). Kullanıcı yanıtları: başlık ve "ertesi gün" doğru; ortaklık hem büyüklüğüyle hem sektörde ilk olmasıyla anlatılır; Fahri Kuz alıntısı kullanılmaz (devirle ilgili değil, negatif anlaşılabilir); Ataköy'e dönüş ve Damla Kuz Optik Bölüm 8'de.
 Süre: yaklaşık 40–45 sn, 9:16. Görsel dil Bölüm 1–6 ile aynı; bu bölümde renk daha soluk, tempo daha yavaş.
 
 ## Dil kuralları (kullanıcı, 20 Kasım 2026)
@@ -26,23 +26,21 @@ Bölüm 6 "Ama zirve, aynı zamanda bir yol ayrımıydı." diye bitti. Bölüm 7
 | 32–37 | Fahri Kuz yakın plan, renk yavaşça geri gelir | **Anlatıcı:** Ama Fahri Kuz için hikâye bitmemişti. | Kelime kelime altyazı |
 | 37–44 | Kapanış kartı | **Anlatıcı:** Yarım Asır. Devir. | **Yarım Asır** / *Devir* / BÖLÜM 7 / *Hikâye devam ediyor.* |
 
-## Anlatıcı metni (Cem)
+## Anlatıcı metni (Cem, son hali)
 
-> İki binli yıllarda Fahri Kuz Optik, Türkiye'de o güne kadar eşi benzeri görülmemiş bir adım attı: yabancı bir ortaklık.
+> İki binli yıllarda Fahri Kuz Optik, sektörde bir ilke imza attı: Türkiye'de o güne kadar eşi benzeri görülmemiş büyüklükte bir yabancı ortaklık.
 >
 > İki yıl süren bu ortaklığın ardından şirket, tamamen yabancı ortaklara devredildi.
 >
 > Ertesi gün gazeteler şöyle yazdı: "Güle güle gözlüklü papağan."
 >
-> Ama Fahri Kuz için hikâye bitmemişti.
+> Bir dönem kapanmıştı. Ama Fahri Kuz için hikâye bitmemişti.
 >
 > Yarım Asır. Devir.
 
-## Fahri Kuz'un kendi sesinden
+## Görüntü (son hali)
 
-| Kaynak | Zaman | Cümle | Not |
-|---|---|---|---|
-| `videoplayback (1).mp4` | 347,4–358,2 sn | "Çünkü bu devirde ayakta durmak da kolay bir şey değil. Yani mevcudu muhafaza etmek belki kazanmaktan daha zor." | Görüntüyle senkron, filigransız. Programda sunucu "O günlerden bu günlere neler değişti?" diye soruyor. "Çünkü" kelimesi kesilir. |
+Fahri Kuz alıntısı çıkarıldı; bölüm yalnızca anlatıcıyla, sakin ve tipografik. Daha önce kullanılmamış arşiv: 2000'deki 30. yıl kutlamasında lazerle yazılan "30. YIL" (`videoplayback (1).mp4` ~843 sn), arka planda Fahri Kuz yazan defile sahnesi (~668 sn), papağan logosunun yavaşça solması, gazete başlığı yalnızca yazı olarak (kupür yok; gazete sayfası taklit edilmez), sonda bugünden Fahri Kuz (`videoplayback (2).mp4` 44,4–51,5 sn, renk geri gelir).
 
 ## Onay gereken noktalar
 
