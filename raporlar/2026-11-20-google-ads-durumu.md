@@ -60,3 +60,26 @@ Son dört ayda reklama harcanan her 1 TL'ye karşılık 0,60 TL net online ciro 
 | 4 | Merchant Center ek feed'ini yüklemek (başlık, renk, cinsiyet) | PMax'in ürün eşleşmesi |
 | 5 | Ölçüm onarıldıktan sonra 2–3 hafta veri toplamak, ardından kampanya planı G1–G4'e geçiş | Plan, sunum Bölüm 6 |
 | 6 | Eski Google Ads hesabının (405-297-4129) durumunu kontrol etmek | Açık bakiye veya aktif harcama olmamalı |
+
+## 6. Dönüşüm ekranı incelemesi (20 Kasım, şirketin ekran görüntüsü)
+
+| Dönüşüm | Kaynak | Durum | Rol | Not |
+|---|---|---|---|---|
+| **purchase** | Web sitesi (Google Ads etiketi) | ❌ **Hatalı yapılandırılmış** | **Birincil** (teklif buna göre veriliyor) | 0 dönüşüm |
+| add_to_cart | Web sitesi | ✅ Etkin | İkincil | 2 dönüşüm |
+| view_item, view_item_list | Web sitesi | ✅ Etkin | İkincil | Sayfa görüntüleme olayları çalışıyor |
+| begin_checkout, view_cart, remove_from_cart | Web sitesi | ⏳ Dönüşümler bekleniyor | İkincil | Hiç veri yok |
+| add_shipping_info, add_payment_info | Web sitesi | ❌ Hatalı yapılandırılmış | İkincil | |
+| Yol tarifi, tıklayarak arama, web sitesi ziyareti, diğer yerel işlemler, mağaza ziyaretleri | Google | ❌ **Kaldırıldı** | Birincil | Mağaza yönlendirmesi ölçülmüyor |
+
+**Teşhis:** Ürün ve liste sayfalarındaki etiket çalışıyor, ama **ödeme ve satın alma adımlarında etiket çalışmıyor**. En olası neden ikas'ın ödeme sayfalarında Google Ads etiketinin tetiklenmemesi veya satın alma olayının gerekli bilgileri (tutar, para birimi, sipariş no) taşımaması. Mağaza işlemleri (yol tarifi, arama) ise tamamen kaldırılmış; Business Profile bağlantısı kopmuş olabilir.
+
+**Önerilen onarım (uygulama talimatla; Black Friday/Cyber Monday sonrası, 1 Aralık önerilir):**
+1. GA4'te satın almaların kaydedildiğini doğrulamak (ikas, Measurement Protocol ile sunucu tarafından GA4'e satın alma gönderiyor). GA4 → Raporlar → Para kazanma → E-ticaret satın alımları.
+2. Google Ads'e **GA4 `purchase` olayını içe aktarmak** ve birincil dönüşüm yapmak. Sunucu tarafı veri olduğu için tarayıcı ve ödeme sayfası sorunlarından etkilenmez.
+3. Hatalı `purchase` (web sitesi) dönüşümünü **silmeden ikincile almak** (çift sayımı önler, geçmiş korunur).
+4. Gelişmiş dönüşümleri (enhanced conversions) açmak.
+5. Google Ads ↔ Business Profile bağlantısını yeniden kurup **yol tarifi ve arama** dönüşümlerini geri açmak (mağaza hedefi için şart).
+6. ikas desteğine sormak: Google Ads entegrasyonunun ödeme ve teşekkür sayfasında etiketi tetikleyip tetiklemediği.
+
+Not: Birincil dönüşümün değişmesi Performance Max'te öğrenme sürecini yeniden başlatır. Bu yüzden Black Friday dönemi bitince yapılması önerilir. Şu an kampanyalar zaten neredeyse hiç satış sinyali almıyor, bu yüzden değişiklik büyük olasılıkla olumlu etki eder.
