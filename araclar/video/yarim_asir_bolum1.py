@@ -63,9 +63,9 @@ def build_shots():
             look = ("eq=contrast=1.04:saturation=0.85,vignette=PI/4.5"
                     if archive else "eq=contrast=1.03:saturation=1.0,vignette=PI/6")
             vf = (f"crop={w}:{h}:{x}:{y},scale={big}:{big}:flags=lanczos,{zoom},{look},"
-                  f"fps={FPS},setsar=1,format=yuv420p")
+                  f"setpts=N/{FPS}/TB,fps={FPS},setsar=1,format=yuv420p")
             run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ss:.3f}", "-t", f"{dur:.3f}",
-                 "-i", str(SRC / f"{src}.mp4"), "-an", "-vf", vf,
+                 "-i", str(SRC / f"{src}.mp4"), "-an", "-vf", vf, "-t", f"{dur:.3f}",
                  "-c:v", "libx264", "-crf", "18", "-preset", "veryfast", str(out)])
         clips.append((out, dur))
         if nxt is not None:
@@ -140,10 +140,10 @@ def compose(kart, ass):
         f"[bg]drawbox=x={CARD_X-3}:y={CARD_Y-3}:w={CARD+6}:h={CARD+6}:color=0xB89B6A@0.55:t=2:enable='lt(t,38.0)'[bgb];"
         f"[0:v]setpts=PTS-STARTPTS[k];"
         f"[bgb][k]overlay=x={CARD_X}:y={CARD_Y}:shortest=1[v1];"
-        f"[v1]noise=alls=7:allf=t,subtitles={ass}:fontsdir={FONTS},fade=t=in:st=0:d=0.8,fade=t=out:st={TOTAL-0.8}:d=0.8[v]"
+        f"[v1]noise=alls=5:allf=t,subtitles={ass}:fontsdir={FONTS},fade=t=in:st=0:d=0.8,fade=t=out:st={TOTAL-0.8}:d=0.8[v]"
     )
     run(["ffmpeg", "-v", "error", "-y", "-i", str(kart), "-filter_complex", fc, "-map", "[v]",
-         "-t", f"{TOTAL}", "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-pix_fmt", "yuv420p", str(out)])
+         "-t", f"{TOTAL}", "-c:v", "libx264", "-crf", "22", "-preset", "medium", "-maxrate", "12M", "-bufsize", "24M", "-pix_fmt", "yuv420p", str(out)])
     return out
 
 def audio():
@@ -163,12 +163,12 @@ def audio():
                  "afade=t=in:d=0.12,afade=t=out:st=7.8:d=0.3,adelay=30000:all=1[q]")
     labels.append("[q]")
     voice = "".join(labels)
-    parts.append(f"{voice}amix=inputs={len(labels)}:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11[vo]")
+    parts.append(f"{voice}amix=inputs={len(labels)}:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={TOTAL}[vo]")
     parts.append(f"[2:a]atrim=0:{TOTAL},asetpts=PTS-STARTPTS,volume=0.55,"
                  f"afade=t=in:d=1.5,afade=t=out:st={TOTAL-3}:d=3[mu]")
     # anlatım sırasında müziği hafifçe kıs (sidechain)
     parts.append("[vo]asplit=2[vo1][vo2];[mu][vo2]sidechaincompress=threshold=0.03:ratio=4:attack=30:release=600[mud]")
-    parts.append("[vo1][mud]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.0:LRA=11,aresample=48000[a]")
+    parts.append("[vo1][mud]amix=inputs=2:normalize=0:duration=longest,atrim=0:44,loudnorm=I=-14:TP=-1.0:LRA=11,aresample=48000[a]")
     out = WORK / "ses.m4a"
     run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(parts), "-map", "[a]",
          "-t", f"{TOTAL}", "-c:a", "aac", "-b:a", "192k", str(out)])
