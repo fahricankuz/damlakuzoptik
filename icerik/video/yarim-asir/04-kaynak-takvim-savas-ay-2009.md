@@ -6,7 +6,7 @@ Başlık: "Bozkır Köyü'nde erkek boz eşek". Kullanıcı tarafından iletildi
 
 | Konu | Söyleşide geçen | Not |
 |---|---|---|
-| İlk mağaza | "O benim ilk mağazamdı… Yenikapı'da odun depoları arasında açtımdı orayı." (70'lerin başı) | Hikâye özetinde ilk mağaza **Aksaray**. Kullanıcının ilk mesajında da "Yenikapı'da 1970'li yıllarda açıldı" geçiyor. **Netleştirilecek.** |
+| İlk mağaza | "O benim ilk mağazamdı… Yenikapı'da odun depoları arasında açtımdı orayı." (70'lerin başı) | **Netleşti (kullanıcı, 20 Kasım 2026):** Aynı yer. Semtin asıl adı Aksaray; son birkaç yıldır Yenikapı diye anılıyor. Seride **Aksaray** kullanılır. |
 | Alay edenler | "Berduş yatağında ne gözlüğü satacaksın yahu?" diyordu eş dost. | Bölüm 3'teki "tutunamaz diyenler" ile örtüşüyor. |
 | Çıraklık | "Ufacık bir çocukken Sirkeci'de gözlükçü çırağı olarak başladım işe." | Bölüm 2 ile örtüşüyor. |
 | Köken | Konya, Bozkır'a yakın bir köy; yoksulluk ("bizim köyde bir eşeği olan zengin sayılırdı"). | Yeni bilgi; seride henüz kullanılmadı. |

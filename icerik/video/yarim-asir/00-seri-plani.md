@@ -115,3 +115,5 @@ Not: Kapanışta, tanıtım filminden Fahri Kuz'un kendi sesiyle kısa bir cüml
 
 - Fahri Kuz Optik'in ikonik bir **gözlüklü papağan** logosu vardı. Bölüm 5'te tanıtılır.
 - Devir gerçekleştiğinde basında "Güle güle gözlüklü papağan" gibi haberler çıktı. Bölüm 7 (devir) için kullanılabilir.
+- İlk mağazanın yeri: Aksaray ve Yenikapı aynı yer; asıl adı Aksaray, son yıllarda Yenikapı diye anılıyor. Seride "Aksaray" kullanılır (kullanıcı, 20 Kasım 2026).
+- Takvim 2009 Savaş Ay söyleşisi kaynak olarak eklendi (`04-kaynak-takvim-savas-ay-2009.md`); söyleşi cümleleri videoda yazı olarak, kaynağıyla gösterilir.
