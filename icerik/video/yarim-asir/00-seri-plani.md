@@ -60,7 +60,7 @@ Not: Kapanışta, tanıtım filminden Fahri Kuz'un kendi sesiyle kısa bir cüml
 
 ## Açık konular
 
-- Arşiv videolarının ses deşifresi: hikâyeye dair gerçek bilgiler ve Fahri Kuz'un kendi cümleleri için. ElevenLabs kredisi harcar, onay bekliyor.
-- Anlatıcı sesi seçimi (öneri: Cem veya Emir), deneme okumaları.
+- Arşiv videolarının (2 x 14 dk) ses deşifresi: dosyalar 4,2 MB yükleme sınırına takıldı; tanıtım filmi deşifre edildi (`01-desifre-tanitim-filmi.md`). Not: 98 sn deşifre 539 kredi tuttu; 28 dk yaklaşık 9.000 kredi eder.
+- Anlatıcı sesi seçimi: Cem ve Emir denemeleri `ses-denemeleri/` klasöründe.
 - Bölüm 1 metninin son onayı.
 - Aile bölümü için görüntüler.
