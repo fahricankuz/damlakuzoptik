@@ -10,7 +10,7 @@ Bu repo Damla Kuz Optik'in (Ocak 2027 sonundan itibaren Kuz İstanbul) sosyal me
 4. **Para harcatan her adım** (kullanıcı bir işi açıkça istese bile) önce özetlenir ve onay alınır. Yeni kampanyalar her zaman duraklatılmış kurulur.
 5. **İletişim dili:** Marka mirası için "1960" yerine **"yarım asır"** ifadesi tercih edilir (kullanıcının 19 Kasım tercihi; kapsamı netleşene kadar içerik metinlerinde uygulanır).
 
-6. **Fahri Kuz'un sesi ve görüntüsü** yapay zekâyla üretilmez veya klonlanmaz. Yalnızca kendi çekimleri ve kendi sesi, yazılı onayıyla kullanılır. ElevenLabs yalnızca anlatıcı sesi ve müzik/efekt için.
+6. **Fahri Kuz'un sesi:** Başka birinin sesi (yapay zekâ ile üretilmiş ya da klonlanmış ses dahil) Fahri Kuz'un sesiymiş gibi sunulmaz. Anlatıcı sesi her zaman anlatıcı olarak kullanılır. Fahri Kuz'un **kendi** kayıtları ve görüntüleri üzerinde her türlü iyileştirme ve düzenleme serbesttir: müzik ayrıştırma, gürültü temizleme, ses iyileştirme, yapay zekâ ile netleştirme ve büyütme, renk düzeltme, derinlik efekti (kullanıcı kararı, 20 Kasım 2026). Görüntü ve ses kullanımı için Fahri Kuz'un onayı alınmıştır.
 7. **Distribütör kreatifleri** ilgili markanın kullanım kurallarına uygun kullanılır (logo, metin, süre kısıtları).
 8. **Paylaşım yapılmaz (19 Kasım 2026).** Organik paylaşımları ajans yapmaya devam ediyor. Claude içerik üretir ve takvim hazırlar ama kullanıcı açıkça söyleyene kadar Instagram veya Facebook'ta hiçbir paylaşım yayınlamaz.
 

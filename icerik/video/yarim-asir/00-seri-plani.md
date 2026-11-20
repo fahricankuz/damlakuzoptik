@@ -7,7 +7,7 @@ Durum: **Taslak, kullanıcıyla mutabakat aşamasında** (20 Kasım 2026)
 | Konu | Karar |
 |---|---|
 | Kuruluş | İlk mağaza **Yenikapı'da, 1970'li yıllarda** açıldı. Arşivdeki "30. Yıl / 2000" filmi kuruluşu 1970'e yerleştiriyor. |
-| Fahri Kuz'un görüntüsü ve kendi sesi | Kullanımı **onaylandı** (kendi çekimleri ve kendi kayıtları). Yapay zekâyla üretim veya klonlama yine yok. |
+| Fahri Kuz'un görüntüsü ve kendi sesi | Kullanımı **onaylandı**. Kendi kayıtlarında her türlü iyileştirme serbest (netleştirme, büyütme, ses temizleme). Yalnızca başkasının sesi onun sesiymiş gibi sunulmaz. |
 | TV arşivi | Yayın hakkı kanalda değil. Kanal logoları videoda gösterilmez (kırpılır veya kapatılır). |
 | Etkinliklerdeki manken görüntüleri | Claude'un takdirine bırakıldı. Karar: kullanılmaz veya çok kısa, geniş planda kullanılır. |
 | "1960" | Ürünlerdeki "Fahri Kuz 1960" imzası görüntüde görünebilir. Anlatım ve yazılar **"yarım asır"** vurgusuyla yapılır. |
@@ -31,6 +31,16 @@ Yerel çalışma kopyaları oturum geçicidir; kaynak her zaman Drive'dır.
 - Kanal logoları (STV, TRT, Kanal 7 vb.) kırpılır veya kapatılır.
 - Çözünürlük düşük. Arşiv kareleri tam ekran büyütülmez; eski film veya TV karesi içinde, gren dokusuyla kullanılır.
 - Röportajlardaki üçüncü kişiler (sunucular, konuklar) öne çıkarılmaz.
+
+## Görsel dil (20 Kasım 2026, kullanıcı geri bildirimi sonrası)
+
+- İlk taslak (kutu içinde arşiv, koyu zemin) **amatör bulundu**. Hedef: premium ve modern belgesel.
+- Görüntü tam ekran (9:16); arşiv kareleri yapay zekâ ile netleştirilir (Topaz), Fahri Kuz'un göründüğü kareler dahil.
+- Tipografi: ince serif başlıklar (Cormorant Garamond) + modern sans altyazı (Inter), kelime kelime belirme.
+- Yer işaretleri **yalnızca yer adı** (SİRKECİ, AKSARAY, BEYAZIT, AKMERKEZ), yıl yok.
+- Renk hikâyesi: arşiv sıcak siyah-beyaz → 90'lar soluk renk → bugün tam renk.
+- Kapanışta marka adı yok (Damla Kuz Optik yazısı kaldırıldı; hesap adı zaten görünüyor).
+- Instagram arayüz güvenli alanlarına uyulur.
 
 ## Seri yapısı (öneri)
 
