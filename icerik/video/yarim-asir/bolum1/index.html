@@ -34,9 +34,11 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:var(--grou
 .w, .qw { display:inline; }
 #who { position:absolute; left:90px; top:1300px; z-index:60; }
 .label, .place-in { font-family:'Inter Local',Inter,sans-serif; font-weight:600; font-size:28px; letter-spacing:.38em; color:var(--gold); text-transform:uppercase; white-space:nowrap; }
+.place-in, #marker-in { font-size:36px; letter-spacing:.3em; color:var(--paper); text-shadow:0 2px 22px rgba(0,0,0,.9), 0 0 4px rgba(0,0,0,.7); }
 .rule { display:inline-block; width:56px; height:1px; background:var(--gold); vertical-align:middle; margin-right:22px; }
 .place { position:absolute; left:90px; z-index:60; }
-.place-in { display:inline-block; text-shadow:0 1px 18px rgba(0,0,0,.85), 0 0 3px rgba(0,0,0,.6); }
+.place-in { display:inline-block; }
+#scrim { position:absolute; left:0; top:0; width:1080px; height:900px; z-index:55; background:radial-gradient(120% 90% at 0% 18%, rgba(11,9,7,.78) 0%, rgba(11,9,7,.45) 38%, rgba(11,9,7,0) 70%); }
 #c10 { top:1300px; }
 #marker { position:absolute; left:90px; top:250px; z-index:60; }
 #open { position:absolute; left:0; right:0; top:760px; z-index:60; text-align:center; }
@@ -64,15 +66,17 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:var(--grou
 <div id="s-muayene" class="clip shot" data-start="6.6" data-duration="2.4" data-track-index="1" style="z-index:12"><img id="s-muayene-m" class="shot-media" src="assets/media/muayene.jpg" alt=""></div>
 <div id="s-el" class="clip shot" data-start="9.0" data-duration="2.6" data-track-index="1" style="z-index:13"><img id="s-el-m" class="shot-media" src="assets/media/muayene_el.jpg" alt=""></div>
 <div id="s-grup" class="clip shot" data-start="11.6" data-duration="1.8" data-track-index="1" style="z-index:14"><img id="s-grup-m" class="shot-media" src="assets/media/grup.jpg" alt=""></div>
-<div id="s-doksan-w" class="shot-wrap" style="z-index:15"><video id="s-doksan" class="clip shot-video" data-start="13.4" data-duration="4.8" data-track-index="2" data-media-start="0" src="assets/media/doksanlar.mp4" muted playsinline></video></div>
-<div id="s-bugun-w" class="shot-wrap" style="z-index:16"><video id="s-bugun" class="clip shot-video" data-start="18.2" data-duration="4.1" data-track-index="2" data-media-start="0.9" src="assets/media/bugun.mp4" muted playsinline></video></div>
-<div id="s-alinti-w" class="shot-wrap" style="z-index:17"><video id="s-alinti" class="clip shot-video" data-start="26.6" data-duration="8.6" data-track-index="2" data-media-start="0" src="assets/media/alinti.mp4" muted playsinline></video></div>
-<div id="band" class="clip" data-start="22.3" data-duration="4.3" data-track-index="1">
+<div id="s-doksan-w" class="shot-wrap" style="z-index:15"><video id="s-doksan" class="clip shot-video" data-start="13.4" data-duration="5.3" data-track-index="2" data-media-start="0" src="assets/media/doksanlar.mp4" muted playsinline></video></div>
+<div id="s-bugun-w" class="shot-wrap" style="z-index:16"><video id="s-bugun" class="clip shot-video" data-start="18.2" data-duration="4.6" data-track-index="2" data-media-start="0" src="assets/media/bugun.mp4" muted playsinline></video></div>
+<div id="s-alintia-w" class="shot-wrap" style="z-index:17"><video id="s-alintia" class="clip shot-video" data-start="27.1" data-duration="2.5" data-track-index="2" data-media-start="0" src="assets/media/alinti_a.mp4" muted playsinline></video></div>
+<div id="s-alintib-w" class="shot-wrap" style="z-index:18"><video id="s-alintib" class="clip shot-video" data-start="29.1" data-duration="2.5" data-track-index="2" data-media-start="0" src="assets/media/alinti_b.mp4" muted playsinline></video></div>
+<div id="s-alintic-w" class="shot-wrap" style="z-index:19"><video id="s-alintic" class="clip shot-video" data-start="31.1" data-duration="4.9" data-track-index="2" data-media-start="0" src="assets/media/alinti_c.mp4" muted playsinline></video></div>
+<div id="band" class="clip" data-start="22.3" data-duration="5.3" data-track-index="1">
   <img id="band-img" src="assets/media/imza.jpg" alt="">
   <div id="band-top" class="label">Kişiye özel tasarım</div>
   <div id="band-bot">Her gözlükten yalnızca bir tane.</div>
 </div>
-<div id="end" data-layout-allow-occlusion class="clip" data-start="35.1" data-duration="8.9" data-track-index="1">
+<div id="end" data-layout-allow-occlusion class="clip" data-start="34.9" data-duration="9.1" data-track-index="1">
   <img id="end-img" src="assets/media/kapanis_zemin.jpg" alt="">
   <div id="end-t" data-layout-allow-occlusion>
     <div id="end-h">Yarım Asır</div>
@@ -88,7 +92,8 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:var(--grou
   <div id="open-s">BİR GÖZLÜKÇÜNÜN HİKÂYESİ</div>
 </div>
 <div id="marker" class="clip" data-start="3.5" data-duration="7.9" data-track-index="3"><span id="marker-in" class="label"><span class="rule"></span>Aksaray</span></div>
-<div id="p-aksaray" class="clip place" data-start="13.55" data-duration="4.35" data-track-index="3" style="top:250px"><span class="place-in"><span class="rule"></span>Aksaray</span></div><div id="p-beyazit" class="clip place" data-start="14.05" data-duration="3.85" data-track-index="3" style="top:314px"><span class="place-in"><span class="rule"></span>Beyazıt</span></div><div id="p-akmerkez" class="clip place" data-start="14.55" data-duration="3.35" data-track-index="3" style="top:378px"><span class="place-in"><span class="rule"></span>Akmerkez</span></div><div id="p-atakoy" class="clip place" data-start="15.05" data-duration="2.85" data-track-index="3" style="top:442px"><span class="place-in"><span class="rule"></span>Ataköy</span></div>
+<div id="scrim" class="clip" data-start="13.4" data-duration="4.6" data-track-index="3"></div>
+<div id="p-aksaray" class="clip place" data-start="13.55" data-duration="4.35" data-track-index="3" style="top:250px"><span class="place-in"><span class="rule"></span>Aksaray</span></div><div id="p-beyazit" class="clip place" data-start="14.05" data-duration="3.85" data-track-index="3" style="top:326px"><span class="place-in"><span class="rule"></span>Beyazıt</span></div><div id="p-atakoy" class="clip place" data-start="14.55" data-duration="3.35" data-track-index="3" style="top:402px"><span class="place-in"><span class="rule"></span>Ataköy</span></div><div id="p-akmerkez" class="clip place" data-start="15.05" data-duration="2.85" data-track-index="3" style="top:478px"><span class="place-in"><span class="rule"></span>Akmerkez</span></div>
 <p id="c1" class="clip cap" data-start="2.38" data-duration="1.78" data-track-index="4"><span class="w">Yarım</span> <span class="w">asır</span> <span class="w">önce,</span> <span class="w">Aksaray'da</span></p>
 <p id="c2" class="clip cap" data-start="4.08" data-duration="2.12" data-track-index="4"><span class="w">küçük</span> <span class="w">bir</span> <span class="w">gözlükçü</span> <span class="w">dükkânı</span> <span class="w">açıldı.</span></p>
 <p id="c3" class="clip cap" data-start="6.70" data-duration="2.40" data-track-index="4"><span class="w">Gözler</span> <span class="w">ölçüldü,</span> <span class="w">camlar</span> <span class="w">kesildi,</span></p>
@@ -118,19 +123,23 @@ tl.fromTo("#marker-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"powe
 tl.to("#marker-in",{opacity:0,duration:0.3},11.0);
 tl.fromTo("#s-kapi-m",{scale:1.0,y:0},{scale:1.07,y:0,duration:3.8,ease:"none"},0.0);
 tl.fromTo("#s-kapiyakin-m",{scale:1.1,y:0},{scale:1.03,y:0,duration:2.8,ease:"none"},3.8);
-tl.fromTo("#s-kapiyakin",{opacity:0},{opacity:1,duration:0.25,ease:"power1.out"},3.8);
+tl.fromTo("#s-kapiyakin",{opacity:0},{opacity:1,duration:0.25,ease:"power1.inOut"},3.8);
 tl.fromTo("#s-muayene-m",{scale:1.02,y:0},{scale:1.08,y:-20,duration:2.4,ease:"none"},6.6);
-tl.fromTo("#s-muayene",{opacity:0},{opacity:1,duration:0.25,ease:"power1.out"},6.6);
+tl.fromTo("#s-muayene",{opacity:0},{opacity:1,duration:0.25,ease:"power1.inOut"},6.6);
 tl.fromTo("#s-el-m",{scale:1.08,y:0},{scale:1.02,y:0,duration:2.6,ease:"none"},9.0);
-tl.fromTo("#s-el",{opacity:0},{opacity:1,duration:0.25,ease:"power1.out"},9.0);
+tl.fromTo("#s-el",{opacity:0},{opacity:1,duration:0.25,ease:"power1.inOut"},9.0);
 tl.fromTo("#s-grup-m",{scale:1.0,y:0},{scale:1.06,y:0,duration:1.8,ease:"none"},11.6);
-tl.fromTo("#s-grup",{opacity:0},{opacity:1,duration:0.25,ease:"power1.out"},11.6);
-tl.fromTo("#s-doksan-w",{scale:1.0,y:0},{scale:1.05,y:0,duration:4.8,ease:"none"},13.4);
-tl.fromTo("#s-doksan",{opacity:0},{opacity:1,duration:0.25,ease:"power1.out"},13.4);
-tl.fromTo("#s-bugun-w",{scale:1.0,y:0},{scale:1.04,y:0,duration:4.1,ease:"none"},18.2);
-tl.fromTo("#s-bugun",{opacity:0},{opacity:1,duration:0.25,ease:"power1.out"},18.2);
-tl.fromTo("#s-alinti-w",{scale:1.0,y:0},{scale:1.03,y:0,duration:8.6,ease:"none"},26.6);
-tl.fromTo("#s-alinti",{opacity:0},{opacity:1,duration:0.25,ease:"power1.out"},26.6);
+tl.fromTo("#s-grup",{opacity:0},{opacity:1,duration:0.25,ease:"power1.inOut"},11.6);
+tl.fromTo("#s-doksan-w",{scale:1.0,y:0},{scale:1.05,y:0,duration:5.3,ease:"none"},13.4);
+tl.fromTo("#s-doksan",{opacity:0},{opacity:1,duration:0.35,ease:"power1.inOut"},13.4);
+tl.fromTo("#s-bugun-w",{scale:1.0,y:0},{scale:1.04,y:0,duration:4.6,ease:"none"},18.2);
+tl.fromTo("#s-bugun",{opacity:0},{opacity:1,duration:0.5,ease:"power1.inOut"},18.2);
+tl.fromTo("#s-alintia-w",{scale:1.0,y:0},{scale:1.03,y:0,duration:2.5,ease:"none"},27.1);
+tl.fromTo("#s-alintia",{opacity:0},{opacity:1,duration:0.5,ease:"power1.inOut"},27.1);
+tl.fromTo("#s-alintib-w",{scale:1.03,y:0},{scale:1.0,y:0,duration:2.5,ease:"none"},29.1);
+tl.fromTo("#s-alintib",{opacity:0},{opacity:1,duration:0.5,ease:"power1.inOut"},29.1);
+tl.fromTo("#s-alintic-w",{scale:1.0,y:0},{scale:1.04,y:0,duration:4.9,ease:"none"},31.1);
+tl.fromTo("#s-alintic",{opacity:0},{opacity:1,duration:0.5,ease:"power1.inOut"},31.1);
 tl.fromTo("#c1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},2.38);
 tl.to("#c1",{opacity:0,duration:0.2,ease:"power1.in"},3.94);
 tl.fromTo("#c1 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},2.50);
@@ -224,21 +233,25 @@ tl.fromTo("#p-aksaray .place-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.4,e
 tl.to("#p-aksaray .place-in",{opacity:0,duration:0.3},17.55);
 tl.fromTo("#p-beyazit .place-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.4,ease:"power3.out"},14.05);
 tl.to("#p-beyazit .place-in",{opacity:0,duration:0.3},17.55);
-tl.fromTo("#p-akmerkez .place-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.4,ease:"power3.out"},14.55);
-tl.to("#p-akmerkez .place-in",{opacity:0,duration:0.3},17.55);
-tl.fromTo("#p-atakoy .place-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.4,ease:"power3.out"},15.05);
+tl.fromTo("#p-atakoy .place-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.4,ease:"power3.out"},14.55);
 tl.to("#p-atakoy .place-in",{opacity:0,duration:0.3},17.55);
+tl.fromTo("#p-akmerkez .place-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.4,ease:"power3.out"},15.05);
+tl.to("#p-akmerkez .place-in",{opacity:0,duration:0.3},17.55);
 // imza şeridi
 tl.fromTo("#band",{opacity:0},{opacity:1,duration:0.3},22.3);
 tl.fromTo("#band-img",{scale:1.06},{scale:1.0,duration:4.3,ease:"power1.out"},22.3);
 tl.fromTo("#band-top",{opacity:0,y:10},{opacity:1,y:0,duration:0.5,ease:"power3.out"},22.55);
 tl.fromTo("#band-bot",{opacity:0,y:12},{opacity:1,y:0,duration:0.6,ease:"power3.out"},23.6);
+tl.to("#band-top,#band-bot",{opacity:0,duration:0.35,ease:"power1.in"},26.35);
+tl.to("#band",{opacity:0,duration:0.6,ease:"power1.inOut"},26.8);
+tl.fromTo("#scrim",{opacity:0},{opacity:1,duration:0.4},13.4);
+tl.to("#scrim",{opacity:0,duration:0.4},17.55);
 // alıntı imzası
 tl.fromTo("#who-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},27.0);
 tl.to("#who-in",{opacity:0,duration:0.3},34.75);
 // kapanış
-tl.fromTo("#end",{opacity:0},{opacity:1,duration:0.7,ease:"power1.inOut"},35.1);
-tl.fromTo("#end-img",{scale:1.08},{scale:1.0,duration:8.9,ease:"none"},35.1);
+tl.fromTo("#end",{opacity:0},{opacity:1,duration:1.1,ease:"power1.inOut"},34.9);
+tl.fromTo("#end-img",{scale:1.08},{scale:1.0,duration:9.1,ease:"none"},34.9);
 tl.fromTo("#end-h",{opacity:0,y:16},{opacity:1,y:0,duration:0.9,ease:"power3.out"},36.3);
 tl.fromTo("#end-bar",{scaleX:0},{scaleX:1,duration:0.7,ease:"power2.inOut"},37.0);
 tl.fromTo("#end-tag",{opacity:0,y:10},{opacity:1,y:0,duration:0.7,ease:"power3.out"},37.35);

@@ -35,7 +35,9 @@ Yerel çalışma kopyaları oturum geçicidir; kaynak her zaman Drive'dır.
 ## Görsel dil (20 Kasım 2026, kullanıcı geri bildirimi sonrası)
 
 - İlk taslak (kutu içinde arşiv, koyu zemin) **amatör bulundu**. Hedef: premium ve modern belgesel.
-- Görüntü tam ekran (9:16); arşiv kareleri yapay zekâ ile netleştirilir (Topaz), Fahri Kuz'un göründüğü kareler dahil.
+- Görüntü tam ekran (9:16). **Yapay zekâ ile netleştirme (Topaz) kullanılmaz** (kullanıcı kararı, 20 Kasım 2026: yüzleri bozdu, kredi yedi). Orijinal kaynak + klasik işlemler: kare ortalamasıyla gürültü azaltma, lanczos büyütme, hafif keskinlik, renk ve gren.
+- Kaynak videolardaki kesmeler (ör. tanıtım filminde 73.48, 75.48, 77.48 sn) kullanılan klibin içine düşmez; parçalar arası yumuşak çapraz geçiş.
+- Yer işareti sırası: Aksaray, Beyazıt, Ataköy, Akmerkez.
 - Tipografi: ince serif başlıklar (Cormorant Garamond) + modern sans altyazı (Inter), kelime kelime belirme.
 - Yer işaretleri **yalnızca yer adı** (SİRKECİ, AKSARAY, BEYAZIT, AKMERKEZ), yıl yok.
 - Renk hikâyesi: arşiv sıcak siyah-beyaz → 90'lar soluk renk → bugün tam renk.

@@ -11,10 +11,14 @@ SHOTS = [
     ("s-muayene",  "img",   "muayene.jpg",    6.6,  2.4,  (1.02, 1.08, -20)),
     ("s-el",       "img",   "muayene_el.jpg", 9.0,  2.6,  (1.08, 1.02, 0)),
     ("s-grup",     "img",   "grup.jpg",       11.6, 1.8,  (1.00, 1.06, 0)),
-    ("s-doksan",   "video", "doksanlar.mp4",  13.4, 4.8,  (1.00, 1.05, 0)),
-    ("s-bugun",    "video", "bugun.mp4",      18.2, 4.1,  (1.00, 1.04, 0)),
-    ("s-alinti",   "video", "alinti.mp4",     26.6, 8.6,  (1.00, 1.03, 0)),
+    ("s-doksan",   "video", "doksanlar.mp4",  13.4, 5.3,  (1.00, 1.05, 0)),
+    ("s-bugun",    "video", "bugun.mp4",      18.2, 4.6,  (1.00, 1.04, 0)),
+    ("s-alintia",  "video", "alinti_a.mp4",   27.1, 2.5,  (1.00, 1.03, 0)),
+    ("s-alintib",  "video", "alinti_b.mp4",   29.1, 2.5,  (1.03, 1.00, 0)),
+    ("s-alintic",  "video", "alinti_c.mp4",   31.1, 4.9,  (1.00, 1.04, 0)),
 ]
+# giriş geçişi (sn): görüntüler 0.25, videolar yumuşak çapraz geçiş
+FADE = {"s-doksan": 0.35, "s-bugun": 0.5, "s-alintia": 0.5, "s-alintib": 0.5, "s-alintic": 0.5}
 
 # altyazı grupları: id, [(kelime, zaman)], bitiş
 O1, O2, O3, O4 = 2.40, 2.92, 3.36, 6.20
@@ -37,7 +41,7 @@ QUOTES = [
     ("q3", [("ne", 77.68+OQ), ("tip", 77.88+OQ), ("yüze", 78.10+OQ), ("ne", 78.38+OQ), ("tip", 78.52+OQ), ("gözlük", 78.74+OQ), ("uyacağı", 79.12+OQ)], 33.12),
     ("q4", [("konusunda", 79.56+OQ), ("bir", 80.00+OQ), ("estetisyeniz.”", 80.26+OQ)], 35.10),
 ]
-PLACES = [("p-aksaray", "Aksaray", 13.55), ("p-beyazit", "Beyazıt", 14.05), ("p-akmerkez", "Akmerkez", 14.55), ("p-atakoy", "Ataköy", 15.05)]
+PLACES = [("p-aksaray", "Aksaray", 13.55), ("p-beyazit", "Beyazıt", 14.05), ("p-atakoy", "Ataköy", 14.55), ("p-akmerkez", "Akmerkez", 15.05)]
 
 def fontfaces():
     out = []
@@ -54,7 +58,7 @@ def fontfaces():
 def words(ws, cls):
     return " ".join(f'<span class="{cls}">{w}</span>' for w, _ in ws)
 
-MEDIA_START = {'s-bugun': 0.9}
+MEDIA_START = {}
 shots_html = []
 for i, (sid, kind, src, st, du, _) in enumerate(SHOTS):
     z = 10 + i
@@ -77,7 +81,7 @@ for qid, ws, end in QUOTES:
     caps_html.append(f'<p id="{qid}" class="clip quote" data-start="{st:.2f}" data-duration="{end-st:.2f}" data-track-index="4">{words(ws, "qw")}</p>')
 
 places_html = "".join(
-    f'<div id="{pid}" class="clip place" data-start="{t:.2f}" data-duration="{17.9-t:.2f}" data-track-index="3" style="top:{250+i*64}px">'
+    f'<div id="{pid}" class="clip place" data-start="{t:.2f}" data-duration="{17.9-t:.2f}" data-track-index="3" style="top:{250+i*76}px">'
     f'<span class="place-in"><span class="rule"></span>{name}</span></div>'
     for i, (pid, name, t) in enumerate(PLACES))
 
@@ -88,7 +92,7 @@ for sid, kind, src, st, du, (s0, s1, dy) in SHOTS:
     # kısa geçiş: bir sonraki klip 0.25 sn içinde opaklıkla gelir
     if st > 0:
         el = f"#{sid}"
-        tl.append(f'tl.fromTo("{el}",{{opacity:0}},{{opacity:1,duration:0.25,ease:"power1.out"}},{st});')
+        tl.append(f'tl.fromTo("{el}",{{opacity:0}},{{opacity:1,duration:{FADE.get(sid,0.25)},ease:"power1.inOut"}},{st});')
 for cid, ws, end in CAPS:
     st = ws[0][1] - 0.12
     tl.append(f'tl.fromTo("#{cid}",{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.35,ease:"power3.out"}},{st:.2f});')
@@ -130,9 +134,11 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
 .w, .qw {{ display:inline; }}
 #who {{ position:absolute; left:90px; top:1300px; z-index:60; }}
 .label, .place-in {{ font-family:'Inter Local',Inter,sans-serif; font-weight:600; font-size:28px; letter-spacing:.38em; color:var(--gold); text-transform:uppercase; white-space:nowrap; }}
+.place-in, #marker-in {{ font-size:36px; letter-spacing:.3em; color:var(--paper); text-shadow:0 2px 22px rgba(0,0,0,.9), 0 0 4px rgba(0,0,0,.7); }}
 .rule {{ display:inline-block; width:56px; height:1px; background:var(--gold); vertical-align:middle; margin-right:22px; }}
 .place {{ position:absolute; left:90px; z-index:60; }}
-.place-in {{ display:inline-block; text-shadow:0 1px 18px rgba(0,0,0,.85), 0 0 3px rgba(0,0,0,.6); }}
+.place-in {{ display:inline-block; }}
+#scrim {{ position:absolute; left:0; top:0; width:1080px; height:900px; z-index:55; background:radial-gradient(120% 90% at 0% 18%, rgba(11,9,7,.78) 0%, rgba(11,9,7,.45) 38%, rgba(11,9,7,0) 70%); }}
 #c10 {{ top:1300px; }}
 #marker {{ position:absolute; left:90px; top:250px; z-index:60; }}
 #open {{ position:absolute; left:0; right:0; top:760px; z-index:60; text-align:center; }}
@@ -156,12 +162,12 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{D}" data-width="1080" data-height="1920">
 {chr(10).join(shots_html)}
-<div id="band" class="clip" data-start="22.3" data-duration="4.3" data-track-index="1">
+<div id="band" class="clip" data-start="22.3" data-duration="5.3" data-track-index="1">
   <img id="band-img" src="assets/media/imza.jpg" alt="">
   <div id="band-top" class="label">Kişiye özel tasarım</div>
   <div id="band-bot">Her gözlükten yalnızca bir tane.</div>
 </div>
-<div id="end" data-layout-allow-occlusion class="clip" data-start="35.1" data-duration="{D-35.1:.1f}" data-track-index="1">
+<div id="end" data-layout-allow-occlusion class="clip" data-start="34.9" data-duration="{D-34.9:.1f}" data-track-index="1">
   <img id="end-img" src="assets/media/kapanis_zemin.jpg" alt="">
   <div id="end-t" data-layout-allow-occlusion>
     <div id="end-h">Yarım Asır</div>
@@ -177,6 +183,7 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
   <div id="open-s">BİR GÖZLÜKÇÜNÜN HİKÂYESİ</div>
 </div>
 <div id="marker" class="clip" data-start="3.5" data-duration="7.9" data-track-index="3"><span id="marker-in" class="label"><span class="rule"></span>Aksaray</span></div>
+<div id="scrim" class="clip" data-start="13.4" data-duration="4.6" data-track-index="3"></div>
 {places_html}
 {chr(10).join(caps_html)}
 <div id="who" class="clip" data-start="26.9" data-duration="8.2" data-track-index="3"><span id="who-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
@@ -198,12 +205,16 @@ tl.fromTo("#band",{{opacity:0}},{{opacity:1,duration:0.3}},22.3);
 tl.fromTo("#band-img",{{scale:1.06}},{{scale:1.0,duration:4.3,ease:"power1.out"}},22.3);
 tl.fromTo("#band-top",{{opacity:0,y:10}},{{opacity:1,y:0,duration:0.5,ease:"power3.out"}},22.55);
 tl.fromTo("#band-bot",{{opacity:0,y:12}},{{opacity:1,y:0,duration:0.6,ease:"power3.out"}},23.6);
+tl.to("#band-top,#band-bot",{{opacity:0,duration:0.35,ease:"power1.in"}},26.35);
+tl.to("#band",{{opacity:0,duration:0.6,ease:"power1.inOut"}},26.8);
+tl.fromTo("#scrim",{{opacity:0}},{{opacity:1,duration:0.4}},13.4);
+tl.to("#scrim",{{opacity:0,duration:0.4}},17.55);
 // alıntı imzası
 tl.fromTo("#who-in",{{opacity:0,x:-16}},{{opacity:1,x:0,duration:0.45,ease:"power3.out"}},27.0);
 tl.to("#who-in",{{opacity:0,duration:0.3}},34.75);
 // kapanış
-tl.fromTo("#end",{{opacity:0}},{{opacity:1,duration:0.7,ease:"power1.inOut"}},35.1);
-tl.fromTo("#end-img",{{scale:1.08}},{{scale:1.0,duration:8.9,ease:"none"}},35.1);
+tl.fromTo("#end",{{opacity:0}},{{opacity:1,duration:1.1,ease:"power1.inOut"}},34.9);
+tl.fromTo("#end-img",{{scale:1.08}},{{scale:1.0,duration:9.1,ease:"none"}},34.9);
 tl.fromTo("#end-h",{{opacity:0,y:16}},{{opacity:1,y:0,duration:0.9,ease:"power3.out"}},36.3);
 tl.fromTo("#end-bar",{{scaleX:0}},{{scaleX:1,duration:0.7,ease:"power2.inOut"}},37.0);
 tl.fromTo("#end-tag",{{opacity:0,y:10}},{{opacity:1,y:0,duration:0.7,ease:"power3.out"}},37.35);
