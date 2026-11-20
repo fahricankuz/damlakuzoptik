@@ -24,12 +24,12 @@ def dagit(a, b, metin, off):
         out.append((w, round(t + off, 2))); t += (b - a) * k / tot
     return out
 
-B = dagit(0.91, 4.40, "Kuz Optik'e bir damla ekledi ve yoluna kızının adıyla devam etti:", 1.46)
+B = dagit(0.95, 4.51, "Kuz Optik'e bir damla ekledi ve yoluna kızının adıyla devam etti:", 1.42)
 CAPS = [
     ("c1", dagit(0.00, 0.55, "Durmadı.", 1.5), B[0][1] - 0.14),
     ("c2", B[:5], B[5][1] - 0.14),
     ("c3", B[5:], 6.2),
-    ("c3b", dagit(5.08, 6.18, "Damla Kuz Optik.", 1.17), 7.5),
+    ("c3b", dagit(5.23, 6.31, "Damla Kuz Optik.", 1.14), 7.55),
     ("c4", dagit(4.18, 6.36, "Kendi adıyla ilk mağazasını açtığı yere,", 6.42), 12.81),
     ("c5", dagit(6.53, 8.82, "Ataköy Atrium AVM'ye geri dönmüştü.", 6.42), 15.4),
     ("c6", dagit(9.10, 10.16, "Bugün hâlâ orada.", 6.42), 16.8),
@@ -41,8 +41,8 @@ CAPS = [
     ("c12", dagit(20.81, 21.48, "Ve hikâye,", 21.39) + dagit(21.66, 23.41, "çok yakında yeni bir sayfa açacak.", 21.39), 45.3),
 ]
 QUOTES = [
-    ("q1", [("“On", 7.72), ("sene", 7.90), ("aradan", 8.16), ("sonra", 8.52)], 8.80),
-    ("q2", [("tekrar", 8.86), ("Ataköy", 9.62), ("Atrium", 9.80), ("AVM'deyiz.”", 9.96)], 10.6),
+    ("q1", [("“On", 7.80), ("sene", 7.98), ("aradan", 8.24), ("sonra", 8.60)], 8.88),
+    ("q2", [("tekrar", 8.94), ("Ataköy", 9.70), ("Atrium", 9.88), ("AVM'deyiz.”", 10.04)], 10.6),
     ("q3", [("“Beyazı", 21.70), ("daha", 22.10), ("beyaz,", 22.36)], 22.6),
     ("q4", [("siyahı", 22.68), ("daha", 22.98), ("siyah", 23.24), ("gören", 23.52)], 24.5),
     ("q5", [("dünyanın", 24.60), ("en", 24.98), ("kaliteli", 25.14)], 25.5),

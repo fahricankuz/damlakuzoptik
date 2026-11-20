@@ -40,14 +40,14 @@ for i in 0 1 2 3 4 5; do
   F+="[0:a]atrim=$a:$b,asetpts=PTS-STARTPTS,afade=t=in:d=0.04,afade=t=out:st=$d:d=0.06,adelay=$ms:all=1[n$n];"; L+="[n$n]"; n=$((n+1))
 done
 # yeni ilk cümle: "Durmadı." / "Kuz Optik'e bir damla ekledi ve yoluna kızının adıyla devam etti:" / "Damla Kuz Optik."
-P=(0.00 0.60 1.50   0.84 4.45 1.46   4.98 6.25 1.17)
+P=(0.00 0.60 1.50   0.88 4.72 1.42   5.16 6.42 1.14)
 for i in 0 1 2; do
   a=${P[$((i*3))]}; b=${P[$((i*3+1))]}; t=${P[$((i*3+2))]}
   d=$(awk -v a=$a -v b=$b 'BEGIN{printf "%.2f", b-a-0.06}'); ms=$(awk -v t=$t -v a=$a 'BEGIN{printf "%d", (t+a)*1000}')
   F+="[4:a]atrim=$a:$b,asetpts=PTS-STARTPTS,afade=t=in:d=0.04,afade=t=out:st=$d:d=0.06,adelay=$ms:all=1[n$n];"; L+="[n$n]"; n=$((n+1))
 done
 # Fahri Kuz: "On sene aradan sonra tekrar Ataköy AVM'deyiz." ve "Beyazı daha beyaz…"
-Q=(19.72 22.62 7.62   45.62 51.98 21.52)
+Q=(19.72 22.62 7.70   45.62 51.98 21.52)
 for i in 0 1; do
   a=${Q[$((i*3))]}; b=${Q[$((i*3+1))]}; t=${Q[$((i*3+2))]}
   d=$(awk -v a=$a -v b=$b 'BEGIN{printf "%.2f", b-a-0.12}'); ms=$(awk -v t=$t 'BEGIN{printf "%d", t*1000}')

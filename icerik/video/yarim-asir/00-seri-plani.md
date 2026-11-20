@@ -117,3 +117,5 @@ Not: Kapanışta, tanıtım filminden Fahri Kuz'un kendi sesiyle kısa bir cüml
 - Devir gerçekleştiğinde basında "Güle güle gözlüklü papağan" gibi haberler çıktı. Bölüm 7 (devir) için kullanılabilir.
 - İlk mağazanın yeri: Aksaray ve Yenikapı aynı yer; asıl adı Aksaray, son yıllarda Yenikapı diye anılıyor. Seride "Aksaray" kullanılır (kullanıcı, 20 Kasım 2026).
 - Takvim 2009 Savaş Ay söyleşisi kaynak olarak eklendi (`04-kaynak-takvim-savas-ay-2009.md`); söyleşi cümleleri videoda yazı olarak, kaynağıyla gösterilir.
+- Bölüm 9 (final): lansman 1 Şubat 2027, adres kuz.istanbul, tabela ve Instagram Kuz İstanbul. Demo 1 hazır (`bolum9/01-demo-notlar.md`). Fahri Kuz son cümleyi kendi sesiyle kaydedecek; NORD font dosyaları bekleniyor.
+- Türkçe telaffuz: "Kuz Optik'e" yazılır, "Kuz Optiğe" okunur; seslendirme metnine okunuşu yazılır, altyazıda yazımı korunur (Bölüm 8 düzeltmesi).
