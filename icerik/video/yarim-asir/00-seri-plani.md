@@ -1,12 +1,12 @@
 # Yarım Asır: Video Serisi Planı
 
-Durum: **Taslak, kullanıcıyla mutabakat aşamasında** (20 Kasım 2026)
+Durum: **Üretimde** (20 Kasım 2026). Bölüm 1–2 taslakları hazır.
 
 ## Alınan kararlar (20 Kasım 2026, kullanıcı)
 
 | Konu | Karar |
 |---|---|
-| Kuruluş | İlk mağaza **Yenikapı'da, 1970'li yıllarda** açıldı. Arşivdeki "30. Yıl / 2000" filmi kuruluşu 1970'e yerleştiriyor. |
+| Kuruluş | İlk kendi mağazası **Aksaray'da**, ailesiyle birlikte **Kuz Optik** adıyla (30. Yıl filmine göre 1970). Anlatımda "Aksaray" kullanılır. |
 | Fahri Kuz'un görüntüsü ve kendi sesi | Kullanımı **onaylandı**. Kendi kayıtlarında her türlü iyileştirme serbest (netleştirme, büyütme, ses temizleme). Yalnızca başkasının sesi onun sesiymiş gibi sunulmaz. |
 | TV arşivi | Yayın hakkı kanalda değil. Kanal logoları videoda gösterilmez (kırpılır veya kapatılır). |
 | Etkinliklerdeki manken görüntüleri | Claude'un takdirine bırakıldı. Karar: kullanılmaz veya çok kısa, geniş planda kullanılır. |
@@ -44,19 +44,38 @@ Yerel çalışma kopyaları oturum geçicidir; kaynak her zaman Drive'dır.
 - Kapanışta marka adı yok (Damla Kuz Optik yazısı kaldırıldı; hesap adı zaten görünüyor).
 - Instagram arayüz güvenli alanlarına uyulur.
 
-## Seri yapısı (öneri)
+## Hikâyenin doğru özeti (kullanıcı, 20 Kasım 2026)
 
-Her bölüm 35–45 saniyelik, 9:16 dikey Reels. Belgesel tonunda, üçüncü şahıstan anlatıcı sesiyle (ElevenLabs) yapılır; altyazı her zaman olur. Müzik sakin piyano ve yaylılar. Paylaşımı ajans yapar.
+Bu özet seri için **ana kaynaktır**; arşiv filmleri ve tanıtım filmi bununla çelişirse bu geçerlidir.
 
-| # | Bölüm | Ana malzeme |
-|---|---|---|
-| 1 | Başlangıç: Yenikapı'da bir gözlükçü | 30. Yıl filmindeki sepya kareler + bugünkü Fahri Kuz |
-| 2 | Usta eli | Muayene ve atölye arşivi |
-| 3 | İlk zincir | Eski mağaza görüntüleri, Akmerkez, Aksaray, Atrium |
-| 4 | Dünyayı İstanbul'a getirmek | Röportajlar, markalar, lansmanlar |
-| 5 | Tek ve kişiye özel | "Fahri Kuz 1960" tasarımları |
-| 6 | Aile ve yeni nesil | Kullanıcıdan gelecek görüntüler |
-| 7 | Final: Kuz İstanbul tanıtım filmi | Dikey Reels + site/YouTube için yatay versiyon |
+1. **Sirkeci:** Fahri Kuz işe çok küçük yaşta (on yaşında) Sirkeci'de, saat ve gözlük piyasasında başlar; işi orada çalışarak öğrenir. (Röportajda: "Çekirdekten yetiştirildik.")
+2. **Kuz Optik, Aksaray:** İlk kez kendi mağazasını Aksaray'da, **ailesiyle birlikte**, **Kuz Optik** adıyla açar (30. Yıl filmine göre 1970).
+3. **Beyazıt ve diğer Kuz Optik mağazaları.**
+4. **Gözlük fabrikası:** Türkiye'de birçok şeyin ilki olan, **tamamen kendi kendine yetebilen** bir gözlük fabrikası kurar.
+5. **Fahri Kuz Optik (90'ların başı):** Tamamen kendine ait markayı kurar. Bu markanın ilk mağazası **Ataköy Atrium AVM**.
+6. **Büyüme:** Ardından **Akmerkez**, sonra **Carousel**; zamanla Türkiye'nin dört bir yanında **26 mağazalık, Türkiye'nin en büyük optik ve saat zinciri**.
+7. **Yabancı ortaklık:** Türkiye'de daha önce eşi benzeri görülmemiş şekilde **2 yıllık yabancı ortaklık süreci**; ardından şirket tamamen yabancı ortaklara devredilir.
+8. **Bugün:** Kendi başına açtığı ilk mağaza olan **Ataköy Atrium AVM** mağazasında hizmet vermeye devam eder.
+
+Sonraki adım (seri finali): Ocak 2027 sonunda **Kuz İstanbul** (sürpriz; ipucu yalnızca kullanıcı onayıyla).
+
+## Seri yapısı (20 Kasım 2026, hikâye özetine göre güncellendi)
+
+Her bölüm 40–55 saniyelik, 9:16 dikey Reels. Belgesel tonunda anlatıcı (ElevenLabs, Cem) + Fahri Kuz'un kendi sesinden alıntılar; kelime kelime altyazı. Müzik: seri teması (Bölüm 1'in enstrümantal müziği). Paylaşımı ajans yapar. Aralık başından Ocak sonuna haftada bir bölüm.
+
+| # | Bölüm | Konu | Durum |
+|---|---|---|---|
+| 1 | Başlangıç | Yarım asır önce Aksaray'da bir dükkân; bugünkü Fahri Kuz | Taslak 3 hazır |
+| 2 | Usta eli | Sirkeci'de çıraklık, göz ölçüsü, cam ve çerçeve; optisyen, danışman, estetisyen | Taslak 2 hazır |
+| 3 | Aile dükkânı | Aksaray'da ailesiyle Kuz Optik; "tutunamaz" diyenlerin yanılması; Beyazıt ve diğer Kuz Optik mağazaları | Metin taslağı (yeniden yazıldı) |
+| 4 | Fabrika | Türkiye'de kendi kendine yeten ilk gözlük fabrikası | Bilgi bekleniyor |
+| 5 | Kendi adı | 90'ların başı: Fahri Kuz Optik; ilk mağaza Ataköy Atrium, sonra Akmerkez, Carousel | Bilgi bekleniyor |
+| 6 | Zirve | 26 mağaza, Türkiye'nin en büyük optik ve saat zinciri; TV, lansmanlar, markalar (arşiv) | Bilgi bekleniyor |
+| 7 | Devir | 2 yıllık yabancı ortaklık ve şirketin devri (dengeli, saygılı bir dille) | Bilgi bekleniyor |
+| 8 | Bugün | İlk kendi mağazası Ataköy Atrium'da hâlâ; kişiye özel tasarım | Bilgi bekleniyor |
+| 9 | Final | Kuz İstanbul tanıtım filmi (dikey + yatay) | Ocak 2027 sonu |
+
+Not: Damla Kuz Optik markasının (adı kızından) hikâyedeki yeri henüz netleşmedi; 8. bölüm veya finalle ilişkisi kullanıcıya sorulacak.
 
 ## Bölüm 1 taslağı (yaklaşık 40 sn)
 
