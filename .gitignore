@@ -12,3 +12,5 @@
 !icerik/**/onizleme-*.mp4
 .DS_Store
 !icerik/video/yarim-asir/teslim/*.mp4
+.hyperframes/
+__pycache__/
