@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-300-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-ext-300-normal.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-300-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-ext-300-italic.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-400-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-ext-400-italic.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-500-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-ext-500-italic.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter Local';font-style:normal;font-weight:500;font-display:block;src:url('assets/fonts/inter-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Inter Local';font-style:normal;font-weight:500;font-display:block;src:url('assets/fonts/inter-latin-ext-500-normal.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter Local';font-style:normal;font-weight:600;font-display:block;src:url('assets/fonts/inter-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Inter Local';font-style:normal;font-weight:600;font-display:block;src:url('assets/fonts/inter-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+:root { --ground:#0b0907; --paper:rgba(255,250,240,.95); --gold:#d6c29a; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1920px; overflow:hidden; background:var(--ground); }
+#root { position:relative; width:100%; height:100%; overflow:hidden; background:var(--ground); }
+.shot, .shot-wrap { position:absolute; left:0; top:0; width:1080px; height:1920px; overflow:hidden; }
+.shot-media { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; transform-origin:50% 40%; }
+.shot-wrap { transform-origin:50% 40%; }
+.shot-video { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; }
+#shade { position:absolute; inset:0; z-index:40; pointer-events:none;
+  background:linear-gradient(180deg, rgba(11,9,7,.55) 0%, rgba(11,9,7,0) 20%, rgba(11,9,7,0) 46%, rgba(11,9,7,.62) 60%, rgba(11,9,7,.86) 72%, rgba(11,9,7,.9) 100%); }
+.cap { position:absolute; left:90px; right:170px; top:1110px; z-index:60; font-family:'Inter Local',Inter,sans-serif; font-weight:500;
+  font-size:54px; line-height:1.28; letter-spacing:-.008em; color:var(--paper); }
+.quote { position:absolute; left:90px; right:150px; top:1040px; z-index:60; font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-weight:400; font-size:86px; line-height:1.06; color:var(--paper); }
+.w, .qw { display:inline; }
+#who, #who2 { position:absolute; left:90px; top:1300px; z-index:60; }
+.label, .place-in { font-family:'Inter Local',Inter,sans-serif; font-weight:600; font-size:28px; letter-spacing:.38em; color:var(--gold); text-transform:uppercase; white-space:nowrap; }
+.place-in, #marker-in, .marker-in { font-size:36px; letter-spacing:.3em; color:var(--paper); text-shadow:0 2px 22px rgba(0,0,0,.9), 0 0 4px rgba(0,0,0,.7); }
+.rule { display:inline-block; width:56px; height:1px; background:var(--gold); vertical-align:middle; margin-right:22px; }
+.place { position:absolute; left:90px; z-index:60; }
+.place-in { display:inline-block; }
+#scrim { position:absolute; left:0; top:0; width:1080px; height:900px; z-index:55; background:radial-gradient(120% 90% at 0% 18%, rgba(11,9,7,.78) 0%, rgba(11,9,7,.45) 38%, rgba(11,9,7,0) 70%); }
+#marker, .marker { position:absolute; left:90px; top:250px; z-index:60; }
+#yanil { position:absolute; inset:0; z-index:50; background:#050403; }
+#yanil-h { position:absolute; left:0; right:0; top:860px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:150px; color:var(--paper); }
+#open { position:absolute; left:0; right:0; top:760px; z-index:60; text-align:center; }
+#open-h { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:184px; line-height:1; letter-spacing:-.01em; color:var(--paper); }
+#open-s { margin-top:44px; font-family:'Inter Local',Inter,sans-serif; font-weight:500; font-size:28px; letter-spacing:.34em; color:rgba(255,250,240,.66); padding-left:.34em; }
+#band { position:absolute; inset:0; z-index:45; background:var(--ground); }
+#band-img { position:absolute; left:0; top:656px; width:1080px; height:608px; object-fit:cover; }
+#band-top { position:absolute; left:0; right:0; top:540px; text-align:center; }
+#band-bot { position:absolute; left:0; right:0; top:1320px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:58px; color:rgba(255,250,240,.82); }
+#end { position:absolute; inset:0; z-index:45; }
+#end-img { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; }
+#end-t { position:absolute; left:0; right:0; top:720px; text-align:center; }
+#end-h { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:176px; line-height:1; color:var(--paper); }
+#end-bar { width:72px; height:1px; background:var(--gold); margin:58px auto 46px; }
+#end-tag { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:58px; color:rgba(255,250,240,.82); }
+#end-ep { margin-top:52px; font-family:'Inter Local',Inter,sans-serif; font-weight:500; font-size:28px; letter-spacing:.6em; padding-left:.6em; color:var(--gold); }
+#end-next { margin-top:120px; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:44px; color:rgba(255,250,240,.58); }
+#black { position:absolute; inset:0; z-index:90; background:#000; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="36.5" data-width="1080" data-height="1920">
+<div id="s-acilis" class="clip shot" data-start="0.0" data-duration="3.1999999999999997" data-track-index="1" style="z-index:10"><img id="s-acilis-m" class="shot-media" src="assets/media/acilis.jpg" alt=""></div>
+<div id="s-sirkeci-w" class="shot-wrap" style="z-index:11"><video id="s-sirkeci" class="clip shot-video" data-start="2.8" data-duration="3.0500000000000003" data-track-index="2" data-media-start="0" src="assets/media/sirkeci.mp4" muted playsinline></video></div>
+<div id="s-aksaray" class="clip shot" data-start="5.4" data-duration="5.5" data-track-index="1" style="z-index:12"><img id="s-aksaray-m" class="shot-media" src="assets/media/aksaray.jpg" alt=""></div>
+<div id="s-kitap" class="clip shot" data-start="10.4" data-duration="4.3" data-track-index="1" style="z-index:13"><img id="s-kitap-m" class="shot-media" src="assets/media/kitap.jpg" alt=""></div>
+<div id="s-vitrin" class="clip shot" data-start="16.8" data-duration="3.599999999999999" data-track-index="1" style="z-index:14"><img id="s-vitrin-m" class="shot-media" src="assets/media/vitrin.jpg" alt=""></div>
+<div id="s-goz" class="clip shot" data-start="20.0" data-duration="2.8499999999999983" data-track-index="1" style="z-index:15"><img id="s-goz-m" class="shot-media" src="assets/media/goz.jpg" alt=""></div>
+<div id="s-kapi" class="clip shot" data-start="22.4" data-duration="3.7500000000000013" data-track-index="1" style="z-index:16"><img id="s-kapi-m" class="shot-media" src="assets/media/kapi.jpg" alt=""></div>
+<div id="s-kapiyakin" class="clip shot" data-start="25.5" data-duration="3.6" data-track-index="1" style="z-index:17"><img id="s-kapiyakin-m" class="shot-media" src="assets/media/kapi_yakin.jpg" alt=""></div>
+<div id="end" data-layout-allow-occlusion class="clip" data-start="29.0" data-duration="7.5" data-track-index="1">
+  <img id="end-img" src="assets/media/kapanis_zemin.jpg" alt="">
+  <div id="end-t" data-layout-allow-occlusion>
+    <div id="end-h">Yarım Asır</div>
+    <div id="end-bar"></div>
+    <div id="end-tag">Aile dükkânı</div>
+    <div id="end-ep">BÖLÜM 3</div>
+    <div id="end-next">Hikâye devam ediyor.</div>
+  </div>
+</div>
+<div id="shade"></div>
+<div id="open" class="clip" data-start="0" data-duration="3.0" data-track-index="3">
+  <div id="open-h">Kuz Optik.</div>
+  <div id="open-s">YARIM ASIR · BÖLÜM 3</div>
+</div>
+<div id="m-sirkeci" class="clip marker" data-start="3.00" data-duration="2.50" data-track-index="3"><span class="marker-in label"><span class="rule"></span>Sirkeci</span></div><div id="m-aksaray" class="clip marker" data-start="6.65" data-duration="3.65" data-track-index="3"><span class="marker-in label"><span class="rule"></span>Aksaray</span></div><div id="m-beyazit" class="clip marker" data-start="17.50" data-duration="2.50" data-track-index="3"><span class="marker-in label"><span class="rule"></span>Beyazıt</span></div>
+<div id="yanil" data-layout-allow-occlusion class="clip" data-start="14.55" data-duration="2.45" data-track-index="1"><div id="yanil-h">Yanıldılar.</div></div>
+
+<p id="c1" class="clip cap" data-start="2.88" data-duration="1.87" data-track-index="4"><span class="w">İşi</span> <span class="w">Sirkeci'de</span> <span class="w">öğrendi.</span></p>
+<p id="c2" class="clip cap" data-start="5.30" data-duration="2.65" data-track-index="4"><span class="w">Kendi</span> <span class="w">ilk</span> <span class="w">mağazasını</span> <span class="w">ise</span> <span class="w">Aksaray'da</span> <span class="w">açtı:</span></p>
+<p id="c3" class="clip cap" data-start="7.90" data-duration="2.45" data-track-index="4"><span class="w">ailesiyle</span> <span class="w">birlikte,</span> <span class="w">Kuz</span> <span class="w">Optik</span> <span class="w">adıyla.</span></p>
+<p id="c4" class="clip cap" data-start="10.52" data-duration="1.88" data-track-index="4"><span class="w">Çevresindekiler,</span> <span class="w">piyasadan</span> <span class="w">uzakta</span></p>
+<p id="c5" class="clip cap" data-start="12.36" data-duration="2.19" data-track-index="4"><span class="w">bir</span> <span class="w">gözlükçünün</span> <span class="w">tutunamayacağını</span> <span class="w">düşündü.</span></p>
+<p id="c6" class="clip cap" data-start="16.94" data-duration="1.56" data-track-index="4"><span class="w">Ardından</span> <span class="w">Beyazıt</span> <span class="w">geldi.</span></p>
+<p id="c7" class="clip cap" data-start="18.46" data-duration="1.44" data-track-index="4"><span class="w">Çünkü</span> <span class="w">ona</span> <span class="w">göre</span> <span class="w">önemli</span> <span class="w">olan</span></p>
+<p id="c8" class="clip cap" data-start="19.86" data-duration="2.49" data-track-index="4"><span class="w">yalnızca</span> <span class="w">mekânlar</span> <span class="w">değil,</span> <span class="w">insanlardı;</span></p>
+<p id="c9" class="clip cap" data-start="22.34" data-duration="2.66" data-track-index="4"><span class="w">her</span> <span class="w">müşteri,</span> <span class="w">evine</span> <span class="w">gelmiş</span> <span class="w">bir</span> <span class="w">misafirdi.</span></p>
+<p id="c10" class="clip cap" data-start="25.30" data-duration="3.30" data-track-index="4"><span class="w">Ama</span> <span class="w">asıl</span> <span class="w">büyük</span> <span class="w">adım</span> <span class="w">daha</span> <span class="w">gelmemişti.</span></p>
+
+<div id="black" data-layout-allow-occlusion class="clip" data-start="35.5" data-duration="1.0" data-track-index="5"></div>
+<audio id="miks" class="clip" data-start="0" data-duration="36.5" data-track-index="6" data-volume="1" src="assets/audio/miks.m4a"></audio>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+// açılış
+tl.fromTo("#open-h",{opacity:0.0,y:10},{opacity:1,y:0,duration:0.7,ease:"power3.out"},0);
+tl.fromTo("#open-s",{opacity:0},{opacity:1,duration:0.6,ease:"power2.out"},0.5);
+tl.to("#open-h,#open-s",{opacity:0,duration:0.4,ease:"power1.in"},2.55);
+tl.fromTo("#s-acilis-m",{scale:1.0,y:0},{scale:1.08,y:0,duration:2.9,ease:"none"},0.0);
+tl.fromTo("#s-sirkeci-w",{scale:1.0,y:0},{scale:1.06,y:0,duration:2.7,ease:"none"},2.8);
+tl.fromTo("#s-sirkeci",{opacity:0},{opacity:1,duration:0.35,ease:"power1.inOut"},2.8);
+tl.fromTo("#s-aksaray-m",{scale:1.0,y:0},{scale:1.1,y:0,duration:5.1,ease:"none"},5.4);
+tl.fromTo("#s-aksaray",{opacity:0},{opacity:1,duration:0.4,ease:"power1.inOut"},5.4);
+tl.fromTo("#s-kitap-m",{scale:1.06,y:0},{scale:1.0,y:-30,duration:4.3,ease:"none"},10.4);
+tl.fromTo("#s-kitap",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},10.4);
+tl.fromTo("#s-vitrin-m",{scale:1.0,y:0},{scale:1.08,y:0,duration:3.3,ease:"none"},16.8);
+tl.fromTo("#s-vitrin",{opacity:0},{opacity:1,duration:0.6,ease:"power1.inOut"},16.8);
+tl.fromTo("#s-goz-m",{scale:1.08,y:0},{scale:1.02,y:0,duration:2.5,ease:"none"},20.0);
+tl.fromTo("#s-goz",{opacity:0},{opacity:1,duration:0.35,ease:"power1.inOut"},20.0);
+tl.fromTo("#s-kapi-m",{scale:1.0,y:0},{scale:1.06,y:0,duration:3.2,ease:"none"},22.4);
+tl.fromTo("#s-kapi",{opacity:0},{opacity:1,duration:0.4,ease:"power1.inOut"},22.4);
+tl.fromTo("#s-kapiyakin-m",{scale:1.0,y:0},{scale:1.07,y:0,duration:3.6,ease:"none"},25.5);
+tl.fromTo("#s-kapiyakin",{opacity:0},{opacity:1,duration:0.6,ease:"power1.inOut"},25.5);
+tl.fromTo("#c1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},2.88);
+tl.to("#c1",{opacity:0,duration:0.2,ease:"power1.in"},4.53);
+tl.fromTo("#c1 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.00);
+tl.fromTo("#c1 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.40);
+tl.fromTo("#c1 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.96);
+tl.fromTo("#c2",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},5.30);
+tl.to("#c2",{opacity:0,duration:0.2,ease:"power1.in"},7.73);
+tl.fromTo("#c2 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.42);
+tl.fromTo("#c2 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.78);
+tl.fromTo("#c2 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.94);
+tl.fromTo("#c2 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.54);
+tl.fromTo("#c2 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.74);
+tl.fromTo("#c2 .w:nth-child(6)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},7.34);
+tl.fromTo("#c3",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},7.90);
+tl.to("#c3",{opacity:0,duration:0.2,ease:"power1.in"},10.13);
+tl.fromTo("#c3 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},8.02);
+tl.fromTo("#c3 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},8.58);
+tl.fromTo("#c3 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},9.26);
+tl.fromTo("#c3 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},9.46);
+tl.fromTo("#c3 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},9.78);
+tl.fromTo("#c4",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},10.52);
+tl.to("#c4",{opacity:0,duration:0.2,ease:"power1.in"},12.18);
+tl.fromTo("#c4 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},10.64);
+tl.fromTo("#c4 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},11.60);
+tl.fromTo("#c4 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},12.12);
+tl.fromTo("#c5",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},12.36);
+tl.to("#c5",{opacity:0,duration:0.2,ease:"power1.in"},14.33);
+tl.fromTo("#c5 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},12.48);
+tl.fromTo("#c5 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},12.56);
+tl.fromTo("#c5 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},13.12);
+tl.fromTo("#c5 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},13.88);
+tl.fromTo("#c6",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},16.94);
+tl.to("#c6",{opacity:0,duration:0.2,ease:"power1.in"},18.28);
+tl.fromTo("#c6 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},17.06);
+tl.fromTo("#c6 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},17.58);
+tl.fromTo("#c6 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},17.98);
+tl.fromTo("#c7",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},18.46);
+tl.to("#c7",{opacity:0,duration:0.2,ease:"power1.in"},19.68);
+tl.fromTo("#c7 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},18.58);
+tl.fromTo("#c7 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},18.94);
+tl.fromTo("#c7 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},19.10);
+tl.fromTo("#c7 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},19.34);
+tl.fromTo("#c7 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},19.78);
+tl.fromTo("#c8",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},19.86);
+tl.to("#c8",{opacity:0,duration:0.2,ease:"power1.in"},22.13);
+tl.fromTo("#c8 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},19.98);
+tl.fromTo("#c8 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},20.46);
+tl.fromTo("#c8 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},21.02);
+tl.fromTo("#c8 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},21.46);
+tl.fromTo("#c9",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},22.34);
+tl.to("#c9",{opacity:0,duration:0.2,ease:"power1.in"},24.78);
+tl.fromTo("#c9 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},22.46);
+tl.fromTo("#c9 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},22.62);
+tl.fromTo("#c9 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},23.26);
+tl.fromTo("#c9 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},23.50);
+tl.fromTo("#c9 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},23.90);
+tl.fromTo("#c9 .w:nth-child(6)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},24.06);
+tl.fromTo("#c10",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},25.30);
+tl.to("#c10",{opacity:0,duration:0.2,ease:"power1.in"},28.38);
+tl.fromTo("#c10 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},25.42);
+tl.fromTo("#c10 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},25.78);
+tl.fromTo("#c10 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},26.10);
+tl.fromTo("#c10 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},26.34);
+tl.fromTo("#c10 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},26.58);
+tl.fromTo("#c10 .w:nth-child(6)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},26.82);
+tl.fromTo("#m-sirkeci .marker-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},3.05);
+tl.to("#m-sirkeci .marker-in",{opacity:0,duration:0.3},5.15);
+tl.fromTo("#m-aksaray .marker-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},6.70);
+tl.to("#m-aksaray .marker-in",{opacity:0,duration:0.3},9.95);
+tl.fromTo("#m-beyazit .marker-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},17.55);
+tl.to("#m-beyazit .marker-in",{opacity:0,duration:0.3},19.65);
+// "Yanıldılar."
+tl.fromTo("#yanil",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},14.55);
+tl.fromTo("#yanil-h",{opacity:0,y:12},{opacity:1,y:0,duration:0.6,ease:"power3.out"},15.15);
+tl.to("#yanil",{opacity:0,duration:0.5,ease:"power1.inOut"},16.5);
+// kapanış
+tl.fromTo("#end",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},29.0);
+tl.fromTo("#end-img",{scale:1.08},{scale:1.0,duration:7.5,ease:"none"},29.0);
+tl.fromTo("#end-h",{opacity:0,y:16},{opacity:1,y:0,duration:0.9,ease:"power3.out"},30.0);
+tl.fromTo("#end-bar",{scaleX:0},{scaleX:1,duration:0.7,ease:"power2.inOut"},30.7);
+tl.fromTo("#end-tag",{opacity:0,y:10},{opacity:1,y:0,duration:0.7,ease:"power3.out"},31.1);
+tl.fromTo("#end-ep",{opacity:0},{opacity:1,duration:0.6},32.0);
+tl.fromTo("#end-next",{opacity:0},{opacity:1,duration:0.8},33.0);
+tl.fromTo("#black",{opacity:0},{opacity:1,duration:0.9,ease:"power1.in"},35.5);
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
