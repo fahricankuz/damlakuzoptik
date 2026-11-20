@@ -34,6 +34,7 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
 /* açılış */
 #acilis-y { position:absolute; left:110px; right:110px; top:820px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:78px; line-height:1.15; color:var(--kagit); }
 .w { opacity:0; }
+#acilis-s { position:absolute; left:0; right:0; top:1150px; text-align:center; font-family:'Montserrat Local',sans-serif; font-weight:500; font-size:28px; letter-spacing:.34em; color:rgba(255,250,240,.66); padding-left:.34em; }
 /* montaj */
 #montaj-w { position:absolute; inset:0; overflow:hidden; }
 #montaj { position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; }
@@ -90,6 +91,7 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
 
 <div id="acilis" class="clip tam" data-start="0" data-duration="6.1" data-track-index="0">
   <div id="acilis-y"><span class="w">Yarım</span> <span class="w">asır</span> <span class="w">önce,</span> <span class="w">Aksaray'da</span> <span class="w">küçük</span> <span class="w">bir</span> <span class="w">dükkân.</span></div>
+  <div id="acilis-s">YARIM ASIR · BÖLÜM 9 · FİNAL</div>
 </div>
 
 <div id="montaj-w" class="clip" data-start="6.0" data-duration="16.2" data-track-index="1">
@@ -166,7 +168,8 @@ const tl = gsap.timeline({ paused: true });
 // açılış: kelimeler anlatıcıyla birlikte
 const aw = gsap.utils.toArray("#acilis-y .w");
 aw.forEach((el, i) => tl.fromTo(el, {opacity:0, y:12, filter:"blur(6px)"}, {opacity:1, y:0, filter:"blur(0px)", duration:0.7, ease:"power2.out"}, 1.15 + i*0.28));
-tl.to("#acilis-y", {opacity:0, duration:0.6, ease:"power1.in"}, 5.3);
+tl.fromTo("#acilis-s", {opacity:0}, {opacity:1, duration:0.8}, 3.4);
+tl.to("#acilis-y,#acilis-s", {opacity:0, duration:0.6, ease:"power1.in"}, 5.3);
 // montaj
 tl.fromTo("#montaj-w", {opacity:0}, {opacity:1, duration:0.35}, 6.0);
 tl.fromTo("#montaj", {scale:1.0}, {scale:1.06, duration:16.2, ease:"none"}, 6.0);
