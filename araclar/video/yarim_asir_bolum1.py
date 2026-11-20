@@ -29,9 +29,9 @@ SHOTS = [
     (6.0,  "v0", 96.0,  (0, 9, 270, 270),    True),   # göz muayenesi (sepya)
     (11.0, "v0", 112.0, (40, 0, 288, 288),   True),   # mağaza önü grup + vitrin
     (14.6, "v0", 81.0,  (48, 0, 288, 288),   True),   # 30. yıl kitabı
-    (18.4, "v0", 618.0, (100, 62, 184, 184), True),   # 90'lar, Fahri Kuz mağazada
+    (18.4, "v0", 612.4, (115, 45, 195, 195), True),   # 90'lar, Fahri Kuz mağazada
     (22.4, "v2", 32.0,  (90, 30, 300, 300),  False),  # bugün, Fahri Kuz
-    (26.4, "v2", 52.2,  (0, 0, 360, 360),    False),  # "Fahri Kuz 1960" imza
+    (26.4, "imza.png", 0, (0, 0, 360, 360),  False),  # "Fahri Kuz 1960" imza (v2 52.3 sn, durağan kare)
     (30.0, "v2", 73.2,  (100, 0, 300, 300),  False),  # alıntı: b-roll + Fahri Kuz konuşuyor
     (38.1, None, 0,     None,                False),  # kapanış kartı (siyah)
 ]
@@ -62,10 +62,13 @@ def build_shots():
                     f"s={CARD}x{CARD}:fps={FPS}")
             look = ("eq=contrast=1.04:saturation=0.85,vignette=PI/4.5"
                     if archive else "eq=contrast=1.03:saturation=1.0,vignette=PI/6")
-            vf = (f"crop={w}:{h}:{x}:{y},scale={big}:{big}:flags=lanczos,{zoom},{look},"
-                  f"setpts=N/{FPS}/TB,fps={FPS},setsar=1,format=yuv420p")
-            run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ss:.3f}", "-t", f"{dur:.3f}",
-                 "-i", str(SRC / f"{src}.mp4"), "-an", "-vf", vf, "-t", f"{dur:.3f}",
+            vf = (f"crop={w}:{h}:{x}:{y},scale={big}:{big}:flags=lanczos,fps={FPS},{zoom},{look},"
+                  f"setsar=1,format=yuv420p")
+            if src.endswith(".png"):
+                inp = ["-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", str(SRC / src)]
+            else:
+                inp = ["-ss", f"{ss:.3f}", "-t", f"{dur:.3f}", "-i", str(SRC / f"{src}.mp4")]
+            run(["ffmpeg", "-v", "error", "-y", *inp, "-an", "-vf", vf, "-t", f"{dur:.3f}",
                  "-c:v", "libx264", "-crf", "18", "-preset", "veryfast", str(out)])
         clips.append((out, dur))
         if nxt is not None:
@@ -102,11 +105,11 @@ WrapStyle: 0
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Header,Cormorant Garamond SemiBold,46,{gold},&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,14,0,1,0,0,8,60,60,250,1
-Style: Sub,Cormorant Garamond Medium,66,&H00F2F2F2,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,0,3,8,90,90,1410,1
-Style: Speaker,Cormorant Garamond Medium Italic,44,{gold},&H000000FF,&H00000000,&H00000000,0,1,0,0,100,100,2,0,1,0,0,8,90,90,1400,1
-Style: Quote,Cormorant Garamond Medium Italic,64,&H00F2F2F2,&H000000FF,&H00000000,&H64000000,0,1,0,0,100,100,0,0,1,0,3,8,90,90,1470,1
+Style: Sub,Cormorant Garamond Medium,74,&H00F2F2F2,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,0,3,8,90,90,1410,1
+Style: Speaker,Cormorant Garamond Medium Italic,48,{gold},&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,2,0,1,0,0,8,90,90,1400,1
+Style: Quote,Cormorant Garamond Medium Italic,70,&H00F2F2F2,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,0,3,8,90,90,1470,1
 Style: Title,Cormorant Garamond SemiBold,150,&H00F2F2F2,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,6,0,1,0,0,5,60,60,0,1
-Style: Tagline,Cormorant Garamond Medium Italic,62,{gold},&H000000FF,&H00000000,&H00000000,0,1,0,0,100,100,1,0,1,0,0,5,60,60,0,1
+Style: Tagline,Cormorant Garamond Medium Italic,62,{gold},&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,5,60,60,0,1
 Style: Small,Cormorant Garamond SemiBold,38,&H00BFBFBF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,16,0,1,0,0,5,60,60,0,1
 
 [Events]

@@ -1,0 +1,30 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Header,Cormorant Garamond SemiBold,46,&H006A9BB8,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,14,0,1,0,0,8,60,60,250,1
+Style: Sub,Cormorant Garamond Medium,74,&H00F2F2F2,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,0,3,8,90,90,1410,1
+Style: Speaker,Cormorant Garamond Medium Italic,48,&H006A9BB8,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,2,0,1,0,0,8,90,90,1400,1
+Style: Quote,Cormorant Garamond Medium Italic,70,&H00F2F2F2,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,0,3,8,90,90,1470,1
+Style: Title,Cormorant Garamond SemiBold,150,&H00F2F2F2,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,6,0,1,0,0,5,60,60,0,1
+Style: Tagline,Cormorant Garamond Medium Italic,62,&H006A9BB8,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,5,60,60,0,1
+Style: Small,Cormorant Garamond SemiBold,38,&H00BFBFBF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,16,0,1,0,0,5,60,60,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:37.90,Header,,0,0,0,,{\fad(300,300)}YARIM  ASIR
+Dialogue: 0,0:00:01.00,0:00:04.90,Sub,,0,0,0,,{\fad(300,300)}Yarım asır önce, Aksaray'da\Nküçük bir gözlükçü dükkânı açıldı.
+Dialogue: 0,0:00:06.30,0:00:10.90,Sub,,0,0,0,,{\fad(300,300)}Gözler ölçüldü, camlar kesildi,\Nher çerçeve bir yüze göre ayarlandı.
+Dialogue: 0,0:00:13.80,0:00:18.20,Sub,,0,0,0,,{\fad(300,300)}Yıllar içinde o dükkân, İstanbul'un\Ndört bir yanına yayılan bir zincire dönüştü.
+Dialogue: 0,0:00:22.60,0:00:27.00,Sub,,0,0,0,,{\fad(300,300)}Ve o usta, Fahri Kuz, bugün hâlâ\Naynı tutkuyla gözlük tasarlıyor.
+Dialogue: 0,0:00:30.10,0:00:37.90,Speaker,,0,0,0,,{\fad(300,300)}Fahri Kuz
+Dialogue: 0,0:00:30.20,0:00:34.20,Quote,,0,0,0,,{\fad(300,300)}“Biz önce bir optisyeniz, sonra\Ngözlük konusunda bir danışmanız,
+Dialogue: 0,0:00:34.30,0:00:37.90,Quote,,0,0,0,,{\fad(300,300)}ne tip yüze ne tip gözlük uyacağı\Nkonusunda bir estetisyeniz.”
+Dialogue: 0,0:00:38.60,0:00:44.00,Title,,0,0,0,,{\fad(300,300)}{\pos(540,880)}Yarım Asır
+Dialogue: 0,0:00:39.40,0:00:44.00,Tagline,,0,0,0,,{\fad(300,300)}{\pos(540,1010)}Bir gözlükçünün hikâyesi
+Dialogue: 0,0:00:40.40,0:00:44.00,Small,,0,0,0,,{\fad(300,300)}{\pos(540,1130)}BÖLÜM  1
+Dialogue: 0,0:00:41.40,0:00:44.00,Small,,0,0,0,,{\fad(300,300)}{\pos(540,1700)}DAMLA KUZ OPTİK
