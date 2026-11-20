@@ -1,6 +1,6 @@
 # Yarım Asır, Bölüm 5: Kendi Adı (metin taslağı, 2. sürüm)
 
-Durum: **Taslak, kullanıcı onayı bekliyor** (20 Kasım 2026). 1. sürüm onaylandı; bu sürüm deşifreden gelen alıntıları ve papağan logosunu ekliyor.
+Durum: **Onaylandı, taslak 1 hazır** (20 Kasım 2026). Yıllar (1990, 1993) Fahri Kuz'un kendi sözü olarak kalır; papağan logosu kullanıcının ilettiği net haliyle kullanıldı.
 Süre: yaklaşık 50 sn, 9:16. Görsel dil Bölüm 1–4 ile aynı.
 
 ## Fikir
