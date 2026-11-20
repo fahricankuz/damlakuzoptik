@@ -38,4 +38,5 @@
 | Kullanım | Türkçe seslendirme (TTS), ses efektleri, müzik, ses tasarımı, ses kaydını yazıya çevirme (altyazı), görsel/video üretimi ve sesli asistan |
 | Çıktı | `icerik/ses/` klasörüne kaydedilir (büyük dosyalar Drive'da). Üretimler ayrıca ElevenLabs'taki "flow" sayfasında da durur. |
 | Maliyet | Her üretim kredi harcar. Metin ve ses önce kullanıcıya sunulur, onayla üretilir. |
+| Deşifre (Scribe) | Uzun kayıtlar pahalı: dakikada ~330 kredi (20 Kasım 2026'da 15 dk = 4.950 kredi). Araçtaki ön tahmin (`estimate_only`) gerçeğin çok altında çıktı; güvenilmez. Yalnızca gereken kısa parça gönderilir. Bağlı TTS düğümünün deşifresi ücretsizdir. |
 | Sınır | Fahri Kuz'un sesi klonlanmaz veya taklit edilmez; yalnızca anlatıcı sesi, müzik ve efekt. |
