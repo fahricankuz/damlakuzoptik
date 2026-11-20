@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-300-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-ext-300-normal.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-300-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-ext-300-italic.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-400-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-ext-400-italic.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-500-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:block;src:url('assets/fonts/cormorant-garamond-latin-ext-500-italic.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter Local';font-style:normal;font-weight:500;font-display:block;src:url('assets/fonts/inter-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Inter Local';font-style:normal;font-weight:500;font-display:block;src:url('assets/fonts/inter-latin-ext-500-normal.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter Local';font-style:normal;font-weight:600;font-display:block;src:url('assets/fonts/inter-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}
+@font-face{font-family:'Inter Local';font-style:normal;font-weight:600;font-display:block;src:url('assets/fonts/inter-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+20A0-20C0,U+2C60-2C7F,U+A720-A7FF;}
+:root { --ground:#0b0907; --paper:rgba(255,250,240,.95); --gold:#d6c29a; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1920px; overflow:hidden; background:var(--ground); }
+#root { position:relative; width:100%; height:100%; overflow:hidden; background:var(--ground); }
+.shot, .shot-wrap { position:absolute; left:0; top:0; width:1080px; height:1920px; overflow:hidden; }
+.shot-media { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; transform-origin:50% 40%; }
+.shot-wrap { transform-origin:50% 40%; }
+.shot-video { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; }
+#shade { position:absolute; inset:0; z-index:40; pointer-events:none;
+  background:linear-gradient(180deg, rgba(11,9,7,.55) 0%, rgba(11,9,7,0) 20%, rgba(11,9,7,0) 46%, rgba(11,9,7,.62) 60%, rgba(11,9,7,.86) 72%, rgba(11,9,7,.9) 100%); }
+.cap { position:absolute; left:90px; right:170px; top:1110px; z-index:60; font-family:'Inter Local',Inter,sans-serif; font-weight:500;
+  font-size:54px; line-height:1.28; letter-spacing:-.008em; color:var(--paper); }
+.quote { position:absolute; left:90px; right:150px; top:1040px; z-index:60; font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-weight:400; font-size:86px; line-height:1.06; color:var(--paper); }
+.w, .qw { display:inline; }
+#who, #who2 { position:absolute; left:90px; top:1300px; z-index:60; }
+.label, .place-in { font-family:'Inter Local',Inter,sans-serif; font-weight:600; font-size:28px; letter-spacing:.38em; color:var(--gold); text-transform:uppercase; white-space:nowrap; }
+.place-in, #marker-in, .marker-in { font-size:36px; letter-spacing:.3em; color:var(--paper); text-shadow:0 2px 22px rgba(0,0,0,.9), 0 0 4px rgba(0,0,0,.7); }
+.rule { display:inline-block; width:56px; height:1px; background:var(--gold); vertical-align:middle; margin-right:22px; }
+.place { position:absolute; left:90px; z-index:60; }
+.place-in { display:inline-block; }
+#scrim { position:absolute; left:0; top:0; width:1080px; height:900px; z-index:55; background:radial-gradient(120% 90% at 0% 18%, rgba(11,9,7,.78) 0%, rgba(11,9,7,.45) 38%, rgba(11,9,7,0) 70%); }
+#who, #who2 { position:absolute; left:90px; top:1300px; z-index:60; }
+#marker, .marker { position:absolute; left:90px; top:250px; z-index:60; }
+#yanil { position:absolute; inset:0; z-index:50; background:#050403; }
+#yanil-h { position:absolute; left:0; right:0; top:860px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:150px; color:var(--paper); }
+#open { position:absolute; left:0; right:0; top:760px; z-index:60; text-align:center; }
+#open-h { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:184px; line-height:1; letter-spacing:-.01em; color:var(--paper); }
+#open-s { margin-top:44px; font-family:'Inter Local',Inter,sans-serif; font-weight:500; font-size:28px; letter-spacing:.34em; color:rgba(255,250,240,.66); padding-left:.34em; }
+#band { position:absolute; inset:0; z-index:45; background:var(--ground); }
+#band-img { position:absolute; left:0; top:656px; width:1080px; height:608px; object-fit:cover; }
+#band-top { position:absolute; left:0; right:0; top:540px; text-align:center; }
+#band-bot { position:absolute; left:0; right:0; top:1320px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:58px; color:rgba(255,250,240,.82); }
+#end { position:absolute; inset:0; z-index:45; }
+#end-img { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; }
+#end-t { position:absolute; left:0; right:0; top:720px; text-align:center; }
+#end-h { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:176px; line-height:1; color:var(--paper); }
+#end-bar { width:72px; height:1px; background:var(--gold); margin:58px auto 46px; }
+#end-tag { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:58px; color:rgba(255,250,240,.82); }
+#end-ep { margin-top:52px; font-family:'Inter Local',Inter,sans-serif; font-weight:500; font-size:28px; letter-spacing:.6em; padding-left:.6em; color:var(--gold); }
+#end-next { margin-top:120px; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:44px; color:rgba(255,250,240,.58); }
+#black { position:absolute; inset:0; z-index:90; background:#000; }
+
+#cizim { position:absolute; inset:0; z-index:5; }
+#cizim-svg { position:absolute; left:0; top:0; }
+#cizim-svg .ln { stroke:#d6c29a; stroke-width:3; stroke-dasharray:1; stroke-dashoffset:1; stroke-linecap:round; stroke-linejoin:round; }
+#cizim-svg .thin { stroke:rgba(214,194,154,.55); stroke-width:1.5; stroke-dasharray:1; stroke-dashoffset:1; }
+#cizim-svg .dim { stroke:rgba(214,194,154,.55); stroke-width:1.5; stroke-dasharray:1; stroke-dashoffset:1; }
+#cizim-svg .axis { stroke:rgba(214,194,154,.35); stroke-width:1; stroke-dasharray:1; stroke-dashoffset:1; }
+#cizim-svg text { font-family:'Inter Local',Inter,sans-serif; fill:#d6c29a; }
+#cizim-svg .lbl { font-size:28px; font-weight:500; letter-spacing:.08em; }
+#cizim-svg .note { font-size:22px; font-weight:600; letter-spacing:.3em; fill:rgba(214,194,154,.8); }
+#cizim-svg .tb { font-size:21px; font-weight:600; letter-spacing:.22em; fill:rgba(214,194,154,.85); }
+#cizim-svg .imza { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:54px; fill:#d6c29a; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="39.5" data-width="1080" data-height="1920">
+<div id="s-roportaj-w" class="shot-wrap" style="z-index:10"><video id="s-roportaj" class="clip shot-video" data-start="8.9" data-duration="2.3" data-track-index="2" data-media-start="0" src="assets/media/roportaj.mp4" muted playsinline></video></div>
+<div id="s-bugun1-w" class="shot-wrap" style="z-index:11"><video id="s-bugun1" class="clip shot-video" data-start="23.7" data-duration="3.0" data-track-index="2" data-media-start="0" src="assets/media/bugun1.mp4" muted playsinline></video></div>
+<div id="s-bugun2-w" class="shot-wrap" style="z-index:12"><video id="s-bugun2" class="clip shot-video" data-start="26.2" data-duration="2.9" data-track-index="2" data-media-start="0" src="assets/media/bugun2.mp4" muted playsinline></video></div>
+<div id="end" data-layout-allow-occlusion class="clip" data-start="32.2" data-duration="7.3" data-track-index="1">
+  <img id="end-img" src="assets/media/kapanis_zemin.jpg" alt="">
+  <div id="end-t" data-layout-allow-occlusion>
+    <div id="end-h">Yarım Asır</div>
+    <div id="end-bar"></div>
+    <div id="end-tag">Fabrika</div>
+    <div id="end-ep">BÖLÜM 4</div>
+    <div id="end-next">Hikâye devam ediyor.</div>
+  </div>
+</div>
+<div id="cizim" class="clip" data-layout-allow-overflow data-start="0" data-duration="32.6" data-track-index="0"><svg id="cizim-svg" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36,0 L0,0 0,36" fill="none" stroke="rgba(214,194,154,.07)" stroke-width="1"/></pattern>
+  <pattern id="grid5" width="180" height="180" patternUnits="userSpaceOnUse"><path d="M180,0 L0,0 0,180" fill="none" stroke="rgba(214,194,154,.12)" stroke-width="1"/></pattern>
+  <filter id="kaplumbaga" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="4" seed="7"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.62  0 0 0 0 0.36  0 0 0 0 0.14  0 0 0 2.6 -1.05"/>
+    <feComposite in2="SourceGraphic" operator="in"/>
+  </filter>
+</defs>
+<rect width="1080" height="1920" fill="#100d0a"/>
+<rect width="1080" height="1920" fill="url(#grid)"/>
+<rect width="1080" height="1920" fill="url(#grid5)"/>
+<g id="cz-asetat" opacity="0">
+  <rect x="126" y="1330" width="828" height="230" rx="10" fill="#3a2414"/>
+  <rect x="126" y="1330" width="828" height="230" rx="10" fill="#c8913f" filter="url(#kaplumbaga)"/>
+  <path d="M239.0,1360.0 L451.0,1360.0 Q485.0,1360.0 485.0,1394.0 L485.0,1475.6 Q485.0,1530.0 430.6,1530.0 L259.4,1530.0 Q205.0,1530.0 205.0,1475.6 L205.0,1394.0 Q205.0,1360.0 239.0,1360.0 Z M629.0,1360.0 L841.0,1360.0 Q875.0,1360.0 875.0,1394.0 L875.0,1475.6 Q875.0,1530.0 820.6,1530.0 L649.4,1530.0 Q595.0,1530.0 595.0,1475.6 L595.0,1394.0 Q595.0,1360.0 629.0,1360.0 Z" fill="none" stroke="#d6c29a" stroke-width="2" stroke-dasharray="10 8"/>
+  <text class="note" x="126" y="1312">ASETAT LEVHA · KESİM ŞABLONU</text>
+</g>
+<g id="cz-draw" transform="translate(54,90) scale(0.9)">
+<g id="cz-lines" fill="none">
+<path id="cz-lensL" class="ln" d="M171.0,380.0 L439.0,380.0 Q485.0,380.0 485.0,426.0 L485.0,586.4 Q485.0,660.0 411.4,660.0 L198.60000000000002,660.0 Q125.0,660.0 125.0,586.4 L125.0,426.0 Q125.0,380.0 171.0,380.0 Z" pathLength="1"/>
+<path id="cz-lensR" class="ln" d="M641.0,380.0 L909.0,380.0 Q955.0,380.0 955.0,426.0 L955.0,586.4 Q955.0,660.0 881.4,660.0 L668.6,660.0 Q595.0,660.0 595.0,586.4 L595.0,426.0 Q595.0,380.0 641.0,380.0 Z" pathLength="1"/>
+<path id="cz-bridge" class="ln" d="M485,440 C510,400 570,400 595,440" pathLength="1"/>
+<path id="cz-endL" class="ln" d="M125,430 L88,420 L80,432" pathLength="1"/>
+<path id="cz-endR" class="ln" d="M955,430 L992,420 L1000,432" pathLength="1"/>
+<path id="cz-inL" class="thin" d="M178.0,397.0 L432.0,397.0 Q468.0,397.0 468.0,433.0 L468.0,585.4 Q468.0,643.0 410.4,643.0 L199.6,643.0 Q142.0,643.0 142.0,585.4 L142.0,433.0 Q142.0,397.0 178.0,397.0 Z" pathLength="1"/>
+<path id="cz-inR" class="thin" d="M648.0,397.0 L902.0,397.0 Q938.0,397.0 938.0,433.0 L938.0,585.4 Q938.0,643.0 880.4,643.0 L669.6,643.0 Q612.0,643.0 612.0,585.4 L612.0,433.0 Q612.0,397.0 648.0,397.0 Z" pathLength="1"/>
+<path id="cz-dimA" class="dim" d="M125,330 L485,330 M125,318 L125,342 M485,318 L485,342" pathLength="1"/>
+<path id="cz-dimB" class="dim" d="M485,370 L595,370 M485,358 L485,382 M595,358 L595,382" pathLength="1"/>
+<path id="cz-dimC" class="dim" d="M80,730 L1000,730 M80,718 L80,742 M1000,718 L1000,742" pathLength="1"/>
+<path id="cz-axis" class="axis" d="M540,300 L540,760" pathLength="1"/>
+<path id="cz-temple" class="ln" d="M120,830 L860,830 C905,830 935,845 950,880" pathLength="1"/>
+<path id="cz-temple2" class="thin" d="M120,846 L860,846 C900,846 925,858 938,884" pathLength="1"/>
+<path id="cz-hinge" class="ln" d="M112,822 L112,854 M100,822 L124,822 M100,854 L124,854" pathLength="1"/>
+<path id="cz-screw" class="ln" d="M162,838 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0" pathLength="1"/>
+<path id="cz-curve" class="ln" d="M110,1040 Q300,920 490,1040" pathLength="1"/>
+<path id="cz-radius" class="dim" d="M300,1040 L300,960 M300,1040 L190,995" pathLength="1"/>
+<path id="cz-block" class="thin" d="M600,925 L1000,925 L1000,1060 L600,1060 Z M600,970 L1000,970 M600,1015 L1000,1015 M800,1015 L800,1060" pathLength="1"/>
+</g>
+<g id="cz-labels">
+<text class="lbl" x="305" y="312" text-anchor="middle">52</text>
+<text class="lbl" x="540" y="356" text-anchor="middle">18</text>
+<text class="lbl" x="540" y="772" text-anchor="middle">145</text>
+<text class="note" x="120" y="804">SAP · YAN GÖRÜNÜŞ</text>
+<text class="note" x="180" y="900">MENTEŞE · 5 BOĞUM</text>
+<text class="note" x="110" y="1082">BAZ EĞRİSİ 6.00</text>
+<text class="tb" x="616" y="956">YARIM ASIR · ÇİZİM NO. 04</text>
+<text class="tb" x="616" y="1001">MALZEME · ASETAT</text>
+<text class="tb" x="616" y="1046">İSTANBUL</text>
+<text class="tb" x="816" y="1046">ÖLÇEK 1:1</text>
+</g>
+</g>
+<text id="cz-imza" class="imza" x="90" y="268" opacity="0">Tasarım · Fahri Kuz</text>
+</svg></div>
+<div id="shade"></div>
+<div id="open" class="clip" data-start="0" data-duration="3.0" data-track-index="3">
+  <div id="open-h">Fabrika.</div>
+  <div id="open-s">YARIM ASIR · BÖLÜM 4</div>
+</div>
+<div id="m-istanbul" class="clip marker" data-start="11.30" data-duration="2.70" data-track-index="3"><span class="marker-in label"><span class="rule"></span>İstanbul</span></div>
+<div id="who" class="clip" data-start="8.0" data-duration="2.9" data-track-index="3"><span id="who-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
+<div id="who2" class="clip" data-start="23.8" data-duration="5.2" data-track-index="3"><span id="who2-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
+
+<p id="c1" class="clip cap" data-start="2.28" data-duration="1.84" data-track-index="4"><span class="w">Mağazalar</span> <span class="w">büyüdükçe,</span> <span class="w">aklında</span></p>
+<p id="c2" class="clip cap" data-start="4.12" data-duration="1.28" data-track-index="4"><span class="w">bir</span> <span class="w">soru</span> <span class="w">büyüyordu:</span></p>
+<p id="c3" class="clip cap" data-start="5.40" data-duration="2.35" data-track-index="4"><span class="w">Gözlük,</span> <span class="w">burada</span> <span class="w">da</span> <span class="w">yapılabilir</span> <span class="w">miydi?</span></p>
+<p id="c4" class="clip cap" data-start="11.10" data-duration="2.15" data-track-index="4"><span class="w">İstanbul'da</span> <span class="w">bir</span> <span class="w">gözlük</span> <span class="w">fabrikası</span> <span class="w">kurdu.</span></p>
+<p id="c5" class="clip cap" data-start="13.26" data-duration="2.59" data-track-index="4"><span class="w">Dönemin</span> <span class="w">en</span> <span class="w">modern</span> <span class="w">teknolojileriyle</span> <span class="w">donatılmış,</span></p>
+<p id="c6" class="clip cap" data-start="15.86" data-duration="2.19" data-track-index="4"><span class="w">kendi</span> <span class="w">kendine</span> <span class="w">yetebilen</span> <span class="w">bir</span> <span class="w">fabrika.</span></p>
+<p id="c7" class="clip cap" data-start="18.15" data-duration="1.67" data-track-index="4"><span class="w">Tasarımdan</span> <span class="w">üretime</span> <span class="w">her</span> <span class="w">aşama</span></p>
+<p id="c8" class="clip cap" data-start="19.83" data-duration="1.52" data-track-index="4"><span class="w">şirket</span> <span class="w">içinde</span> <span class="w">geliştirildi.</span></p>
+<p id="c9" class="clip cap" data-start="21.35" data-duration="2.25" data-track-index="4"><span class="w">AR-GE'si</span> <span class="w">tamamen</span> <span class="w">kendisine</span> <span class="w">aitti.</span></p>
+<p id="c10" class="clip cap" data-start="29.18" data-duration="2.87" data-track-index="4"><span class="w">Artık</span> <span class="w">sıra,</span> <span class="w">kendi</span> <span class="w">adını</span> <span class="w">taşıyan</span> <span class="w">bir</span> <span class="w">markadaydı.</span></p>
+<p id="q1" class="clip quote" data-start="7.93" data-duration="2.87" data-track-index="4"><span class="qw">“Türkiye'de</span> <span class="qw">yapılan</span> <span class="qw">var.</span> <span class="qw">Yapılan</span> <span class="qw">var.”</span></p>
+<p id="q2" class="clip quote" data-start="23.79" data-duration="1.41" data-track-index="4"><span class="qw">“Kendi</span> <span class="qw">tarzımız</span> <span class="qw">olan,</span></p>
+<p id="q3" class="clip quote" data-start="25.11" data-duration="1.71" data-track-index="4"><span class="qw">kendi</span> <span class="qw">design</span> <span class="qw">ettiğimiz</span></p>
+<p id="q4" class="clip quote" data-start="26.79" data-duration="2.11" data-track-index="4"><span class="qw">özel</span> <span class="qw">tasarım</span> <span class="qw">gözlükleri</span> <span class="qw">yapıyoruz.”</span></p>
+
+<div id="black" data-layout-allow-occlusion class="clip" data-start="38.5" data-duration="1.0" data-track-index="5"></div>
+<audio id="miks" class="clip" data-start="0" data-duration="39.5" data-track-index="6" data-volume="1" src="assets/audio/miks.m4a"></audio>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+// açılış
+tl.fromTo("#open-h",{opacity:0.0,y:10},{opacity:1,y:0,duration:0.7,ease:"power3.out"},0);
+tl.fromTo("#open-s",{opacity:0},{opacity:1,duration:0.6,ease:"power2.out"},0.5);
+tl.to("#open-h,#open-s",{opacity:0,duration:0.4,ease:"power1.in"},2.55);
+tl.fromTo("#s-roportaj-w",{scale:1.0,y:0},{scale:1.05,y:0,duration:2.3,ease:"none"},8.9);
+tl.fromTo("#s-roportaj",{opacity:0},{opacity:1,duration:0.35,ease:"power1.inOut"},8.9);
+tl.fromTo("#s-bugun1-w",{scale:1.0,y:0},{scale:1.05,y:0,duration:2.8,ease:"none"},23.7);
+tl.fromTo("#s-bugun1",{opacity:0},{opacity:1,duration:0.5,ease:"power1.inOut"},23.7);
+tl.fromTo("#s-bugun2-w",{scale:1.04,y:0},{scale:1.0,y:0,duration:2.9,ease:"none"},26.2);
+tl.fromTo("#s-bugun2",{opacity:0},{opacity:1,duration:0.45,ease:"power1.inOut"},26.2);
+tl.fromTo("#c1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},2.28);
+tl.to("#c1",{opacity:0,duration:0.2,ease:"power1.in"},3.90);
+tl.fromTo("#c1 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},2.40);
+tl.fromTo("#c1 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},2.96);
+tl.fromTo("#c1 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.76);
+tl.fromTo("#c2",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},4.12);
+tl.to("#c2",{opacity:0,duration:0.2,ease:"power1.in"},5.18);
+tl.fromTo("#c2 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.24);
+tl.fromTo("#c2 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.36);
+tl.fromTo("#c2 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.60);
+tl.fromTo("#c3",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},5.40);
+tl.to("#c3",{opacity:0,duration:0.2,ease:"power1.in"},7.53);
+tl.fromTo("#c3 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.52);
+tl.fromTo("#c3 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.24);
+tl.fromTo("#c3 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.52);
+tl.fromTo("#c3 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.64);
+tl.fromTo("#c3 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},7.16);
+tl.fromTo("#c4",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},11.10);
+tl.to("#c4",{opacity:0,duration:0.2,ease:"power1.in"},13.03);
+tl.fromTo("#c4 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},11.22);
+tl.fromTo("#c4 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},11.82);
+tl.fromTo("#c4 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},11.94);
+tl.fromTo("#c4 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},12.26);
+tl.fromTo("#c4 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},12.74);
+tl.fromTo("#c5",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},13.26);
+tl.to("#c5",{opacity:0,duration:0.2,ease:"power1.in"},15.63);
+tl.fromTo("#c5 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},13.38);
+tl.fromTo("#c5 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},13.94);
+tl.fromTo("#c5 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},14.10);
+tl.fromTo("#c5 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},14.42);
+tl.fromTo("#c5 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},15.22);
+tl.fromTo("#c6",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},15.86);
+tl.to("#c6",{opacity:0,duration:0.2,ease:"power1.in"},17.83);
+tl.fromTo("#c6 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},15.98);
+tl.fromTo("#c6 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},16.30);
+tl.fromTo("#c6 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},16.66);
+tl.fromTo("#c6 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},17.10);
+tl.fromTo("#c6 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},17.22);
+tl.fromTo("#c7",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},18.15);
+tl.to("#c7",{opacity:0,duration:0.2,ease:"power1.in"},19.60);
+tl.fromTo("#c7 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},18.27);
+tl.fromTo("#c7 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},18.79);
+tl.fromTo("#c7 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},19.39);
+tl.fromTo("#c7 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},19.63);
+tl.fromTo("#c8",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},19.83);
+tl.to("#c8",{opacity:0,duration:0.2,ease:"power1.in"},21.13);
+tl.fromTo("#c8 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},19.95);
+tl.fromTo("#c8 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},20.27);
+tl.fromTo("#c8 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},20.59);
+tl.fromTo("#c9",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},21.35);
+tl.to("#c9",{opacity:0,duration:0.2,ease:"power1.in"},23.38);
+tl.fromTo("#c9 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},21.47);
+tl.fromTo("#c9 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},22.03);
+tl.fromTo("#c9 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},22.47);
+tl.fromTo("#c9 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},23.07);
+tl.fromTo("#c10",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},29.18);
+tl.to("#c10",{opacity:0,duration:0.2,ease:"power1.in"},31.83);
+tl.fromTo("#c10 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},29.30);
+tl.fromTo("#c10 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},29.58);
+tl.fromTo("#c10 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},30.06);
+tl.fromTo("#c10 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},30.38);
+tl.fromTo("#c10 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},30.66);
+tl.fromTo("#c10 .w:nth-child(6)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},31.02);
+tl.fromTo("#c10 .w:nth-child(7)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},31.22);
+tl.fromTo("#q1",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},7.93);
+tl.to("#q1",{opacity:0,duration:0.25,ease:"power1.in"},10.53);
+tl.fromTo("#q1 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},8.08);
+tl.fromTo("#q1 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},8.50);
+tl.fromTo("#q1 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},8.88);
+tl.fromTo("#q1 .qw:nth-child(4)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},9.32);
+tl.fromTo("#q1 .qw:nth-child(5)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},9.86);
+tl.fromTo("#q2",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},23.79);
+tl.to("#q2",{opacity:0,duration:0.25,ease:"power1.in"},24.93);
+tl.fromTo("#q2 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},23.94);
+tl.fromTo("#q2 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},24.28);
+tl.fromTo("#q2 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},24.78);
+tl.fromTo("#q3",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},25.11);
+tl.to("#q3",{opacity:0,duration:0.25,ease:"power1.in"},26.55);
+tl.fromTo("#q3 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},25.26);
+tl.fromTo("#q3 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},25.80);
+tl.fromTo("#q3 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},26.16);
+tl.fromTo("#q4",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},26.79);
+tl.to("#q4",{opacity:0,duration:0.25,ease:"power1.in"},28.63);
+tl.fromTo("#q4 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},26.94);
+tl.fromTo("#q4 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},27.20);
+tl.fromTo("#q4 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},27.58);
+tl.fromTo("#q4 .qw:nth-child(4)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},28.08);
+tl.fromTo("#m-istanbul .marker-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},11.35);
+tl.to("#m-istanbul .marker-in",{opacity:0,duration:0.3},13.65);
+// teknik çizim
+tl.fromTo("#cz-lensL",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},0.15);
+tl.fromTo("#cz-lensR",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},0.50);
+tl.fromTo("#cz-bridge",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},0.85);
+tl.fromTo("#cz-endL",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},1.20);
+tl.fromTo("#cz-endR",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},1.55);
+tl.fromTo("#cz-inL",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.2,ease:"power2.inOut"},2.60);
+tl.fromTo("#cz-inR",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.2,ease:"power2.inOut"},2.95);
+tl.fromTo("#cz-dimA",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.8,ease:"power2.inOut"},3.30);
+tl.fromTo("#cz-dimB",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.8,ease:"power2.inOut"},3.65);
+tl.fromTo("#cz-dimC",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.8,ease:"power2.inOut"},4.00);
+tl.fromTo("#cz-axis",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.0,ease:"power2.inOut"},4.35);
+tl.fromTo("#cz-temple",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},11.40);
+tl.fromTo("#cz-temple2",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.2,ease:"power2.inOut"},11.75);
+tl.fromTo("#cz-hinge",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},12.10);
+tl.fromTo("#cz-screw",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},12.45);
+tl.fromTo("#cz-curve",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},15.00);
+tl.fromTo("#cz-radius",{strokeDashoffset:1},{strokeDashoffset:0,duration:0.8,ease:"power2.inOut"},15.35);
+tl.fromTo("#cz-block",{strokeDashoffset:1},{strokeDashoffset:0,duration:1.2,ease:"power2.inOut"},15.70);
+tl.fromTo("#cz-labels",{opacity:0},{opacity:1,duration:0.8},3.4);
+tl.fromTo("#cz-asetat",{opacity:0,y:30},{opacity:1,y:0,duration:1.0,ease:"power2.out"},18.6);
+tl.fromTo("#cz-imza",{opacity:0},{opacity:1,duration:1.0,ease:"power2.out"},29.6);
+tl.fromTo("#cizim-svg",{scale:1.0},{scale:1.06,duration:31,ease:"none",transformOrigin:"50% 35%"},0);
+// alıntı imzaları
+tl.fromTo("#who-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},8.05);
+tl.to("#who-in",{opacity:0,duration:0.3},10.55);
+tl.fromTo("#who2-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},23.9);
+tl.to("#who2-in",{opacity:0,duration:0.3},28.65);
+// kapanış
+tl.fromTo("#end",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},32.2);
+tl.fromTo("#end-img",{scale:1.08},{scale:1.0,duration:7.3,ease:"none"},32.2);
+tl.fromTo("#end-h",{opacity:0,y:16},{opacity:1,y:0,duration:0.9,ease:"power3.out"},32.8);
+tl.fromTo("#end-bar",{scaleX:0},{scaleX:1,duration:0.7,ease:"power2.inOut"},33.5);
+tl.fromTo("#end-tag",{opacity:0,y:10},{opacity:1,y:0,duration:0.7,ease:"power3.out"},33.75);
+tl.fromTo("#end-ep",{opacity:0},{opacity:1,duration:0.6},34.7);
+tl.fromTo("#end-next",{opacity:0},{opacity:1,duration:0.8},35.7);
+tl.fromTo("#black",{opacity:0},{opacity:1,duration:0.9,ease:"power1.in"},38.5);
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

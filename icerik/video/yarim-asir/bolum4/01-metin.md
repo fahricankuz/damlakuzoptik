@@ -1,6 +1,6 @@
 # Yarım Asır, Bölüm 4: Fabrika (metin taslağı)
 
-Durum: **Taslak, kullanıcı onayı bekliyor** (20 Kasım 2026)
+Durum: **Metin onaylandı, taslak 1 hazır** (20 Kasım 2026). Görsel: Mazzucchelli tarzından ilham alan, kodla üretilmiş özgün teknik çizim (üçüncü taraf görseli kullanılmadı).
 Süre: yaklaşık 42 sn, 9:16. Görsel dil Bölüm 1–3 ile aynı.
 
 ## Dil kuralları (kullanıcı, 20 Kasım 2026)
