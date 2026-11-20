@@ -36,7 +36,7 @@ vid   detay4    v2.mp4 28.54 1.42 "202:360:140:0" "$RENK" 1.2
 vid   bugun     v2.mp4 60.3  5.6 "202:360:140:0" "eq=saturation='0.3+0.7*min(t/1.0\,1)':contrast=1.04:eval=frame,vignette=PI/6,noise=alls=4:allf=t+u" 0.6
 vid   raflar    v2.mp4 15.15 2.0 "202:360:60:0"  "$RENK" 0.6       # mağaza duvarı (15.08–17.24 arası)
 vid   raf_yakin v2.mp4 19.45 2.0 "202:360:100:0" "$RENK" 0.6       # raflar yakın (19.40–21.56 arası)
-vid   gozluk    v2.mp4 41.42 2.0 "202:360:220:0" "$RENK" 0.6       # gözlük yakın plan (41.36 sonrası)
+vid   gozluk    v2.mp4 41.42 2.0 "202:360:140:0" "$RENK" 0.6       # gözlük yakın plan (41.36 sonrası)
 vid   fk_simdi  v2.mp4 10.2  4.7 "202:360:140:0" "$RENK" 0.8       # Fahri Kuz bugün (yazı ve nokta kadraj dışında)
 $FF -ss 113.0 -i "$FK/v0.mp4" -frames:v 1 -vf "tmix=frames=5,crop=162:288:77:0,scale=1242:2208,format=gray,format=rgb24,colorchannelmixer=rr=1:gg=.94:bb=.82,eq=brightness=-0.22:contrast=1.05,gblur=sigma=6,vignette=PI/3.5,noise=alls=6:allf=u" -q:v 2 "$M/kapanis_zemin.jpg"
 
