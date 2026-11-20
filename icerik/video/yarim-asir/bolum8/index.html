@@ -43,6 +43,7 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:var(--grou
 #marker, .marker { position:absolute; left:90px; top:250px; z-index:60; }
 #yanil { position:absolute; inset:0; z-index:50; background:#050403; }
 #yanil-h { position:absolute; left:0; right:0; top:860px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:150px; color:var(--paper); }
+#open-sis { position:absolute; inset:0; z-index:55; background:radial-gradient(90% 45% at 50% 46%, rgba(8,6,5,.88) 0%, rgba(8,6,5,.6) 55%, rgba(8,6,5,.25) 100%); }
 #open { position:absolute; left:0; right:0; top:760px; z-index:60; text-align:center; }
 #open-h { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:184px; line-height:1; letter-spacing:-.01em; color:var(--paper); }
 #open-s { margin-top:44px; font-family:'Inter Local',Inter,sans-serif; font-weight:500; font-size:28px; letter-spacing:.34em; color:rgba(255,250,240,.66); padding-left:.34em; }
@@ -113,17 +114,19 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:var(--grou
 </div>
 <div id="son" class="clip sahne" data-layout-allow-occlusion data-start="41.8" data-duration="3.8" data-track-index="0"><div id="isik"></div></div>
 <div id="shade"></div>
-<div id="open" class="clip" data-start="0" data-duration="3.0" data-track-index="3">
+<div id="open-sis" class="clip" data-start="0" data-duration="2.4" data-track-index="2"></div>
+<div id="open" class="clip" data-start="0" data-duration="2.4" data-track-index="3">
   <div id="open-h">Bugün.</div>
   <div id="open-s">YARIM ASIR · BÖLÜM 8</div>
 </div>
-<div id="m-atakoy" class="clip marker" data-start="7.30" data-duration="3.30" data-track-index="3"><span class="marker-in label"><span class="rule"></span>Ataköy Atrium AVM</span></div>
-<div id="who" class="clip" data-start="7.25" data-duration="3.3" data-track-index="3"><span id="who-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
+<div id="m-atakoy" class="clip marker" data-start="7.60" data-duration="3.00" data-track-index="3"><span class="marker-in label"><span class="rule"></span>Ataköy Atrium AVM</span></div>
+<div id="who" class="clip" data-start="7.55" data-duration="3.05" data-track-index="3"><span id="who-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
 <div id="who2" class="clip" data-start="21.5" data-duration="6.55" data-track-index="3"><span id="who2-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
 
-<p id="c1" class="clip cap" data-start="2.68" data-duration="0.85" data-track-index="4"><span class="w">Durmadı.</span></p>
-<p id="c2" class="clip cap" data-start="3.55" data-duration="1.45" data-track-index="4"><span class="w">Fahri</span> <span class="w">Kuz,</span> <span class="w">kızının</span> <span class="w">adını</span> <span class="w">da</span></p>
-<p id="c3" class="clip cap" data-start="5.02" data-duration="2.18" data-track-index="4"><span class="w">yanına</span> <span class="w">alarak</span> <span class="w">yeniden</span> <span class="w">başladı.</span></p>
+<p id="c1" class="clip cap" data-start="1.38" data-duration="0.85" data-track-index="4"><span class="w">Durmadı.</span></p>
+<p id="c2" class="clip cap" data-start="2.25" data-duration="1.54" data-track-index="4"><span class="w">Kuz</span> <span class="w">Optik'e</span> <span class="w">bir</span> <span class="w">damla</span> <span class="w">ekledi</span></p>
+<p id="c3" class="clip cap" data-start="3.81" data-duration="2.39" data-track-index="4"><span class="w">ve</span> <span class="w">yoluna</span> <span class="w">kızının</span> <span class="w">adıyla</span> <span class="w">devam</span> <span class="w">etti:</span></p>
+<p id="c3b" class="clip cap" data-start="6.13" data-duration="1.37" data-track-index="4"><span class="w">Damla</span> <span class="w">Kuz</span> <span class="w">Optik.</span></p>
 <p id="c4" class="clip cap" data-start="10.48" data-duration="2.33" data-track-index="4"><span class="w">Kendi</span> <span class="w">adıyla</span> <span class="w">ilk</span> <span class="w">mağazasını</span> <span class="w">açtığı</span> <span class="w">yere,</span></p>
 <p id="c5" class="clip cap" data-start="12.83" data-duration="2.57" data-track-index="4"><span class="w">Ataköy</span> <span class="w">Atrium</span> <span class="w">AVM'ye</span> <span class="w">geri</span> <span class="w">dönmüştü.</span></p>
 <p id="c6" class="clip cap" data-start="15.40" data-duration="1.40" data-track-index="4"><span class="w">Bugün</span> <span class="w">hâlâ</span> <span class="w">orada.</span></p>
@@ -133,8 +136,8 @@ html, body { width:1080px; height:1920px; overflow:hidden; background:var(--grou
 <p id="c10" class="clip cap" data-start="38.48" data-duration="1.82" data-track-index="4"><span class="w">Yarım</span> <span class="w">asır</span> <span class="w">geçti.</span></p>
 <p id="c11" class="clip cap" data-start="39.61" data-duration="2.29" data-track-index="4"><span class="w">Tutku</span> <span class="w">hâlâ</span> <span class="w">ilk</span> <span class="w">günkü</span> <span class="w">gibi.</span></p>
 <p id="c12" class="clip cap" data-start="42.08" data-duration="3.22" data-track-index="4"><span class="w">Ve</span> <span class="w">hikâye,</span> <span class="w">çok</span> <span class="w">yakında</span> <span class="w">yeni</span> <span class="w">bir</span> <span class="w">sayfa</span> <span class="w">açacak.</span></p>
-<p id="q1" class="clip quote" data-start="7.25" data-duration="1.23" data-track-index="4"><span class="qw">“On</span> <span class="qw">sene</span> <span class="qw">aradan</span> <span class="qw">sonra</span></p>
-<p id="q2" class="clip quote" data-start="8.39" data-duration="2.11" data-track-index="4"><span class="qw">tekrar</span> <span class="qw">Ataköy</span> <span class="qw">AVM'deyiz.”</span></p>
+<p id="q1" class="clip quote" data-start="7.57" data-duration="1.23" data-track-index="4"><span class="qw">“On</span> <span class="qw">sene</span> <span class="qw">aradan</span> <span class="qw">sonra</span></p>
+<p id="q2" class="clip quote" data-start="8.71" data-duration="1.89" data-track-index="4"><span class="qw">tekrar</span> <span class="qw">Ataköy</span> <span class="qw">Atrium</span> <span class="qw">AVM'deyiz.”</span></p>
 <p id="q3" class="clip quote" data-start="21.55" data-duration="1.05" data-track-index="4"><span class="qw">“Beyazı</span> <span class="qw">daha</span> <span class="qw">beyaz,</span></p>
 <p id="q4" class="clip quote" data-start="22.53" data-duration="1.97" data-track-index="4"><span class="qw">siyahı</span> <span class="qw">daha</span> <span class="qw">siyah</span> <span class="qw">gören</span></p>
 <p id="q5" class="clip quote" data-start="24.45" data-duration="1.05" data-track-index="4"><span class="qw">dünyanın</span> <span class="qw">en</span> <span class="qw">kaliteli</span></p>
@@ -150,7 +153,7 @@ const tl = gsap.timeline({ paused: true });
 // açılış
 tl.fromTo("#open-h",{opacity:0.0,y:10},{opacity:1,y:0,duration:0.7,ease:"power3.out"},0);
 tl.fromTo("#open-s",{opacity:0},{opacity:1,duration:0.6,ease:"power2.out"},0.5);
-tl.to("#open-h,#open-s",{opacity:0,duration:0.4,ease:"power1.in"},2.55);
+tl.to("#open-h,#open-s,#open-sis",{opacity:0,duration:0.4,ease:"power1.in"},1.95);
 tl.fromTo("#s-kutular-w",{scale:1.0,y:0},{scale:1.06,y:0,duration:3.0,ease:"none"},0.0);
 tl.fromTo("#s-magaza-w",{scale:1.0,y:0},{scale:1.08,y:0,duration:7.5,ease:"none"},3.0);
 tl.fromTo("#s-magaza",{opacity:0},{opacity:1,duration:0.5,ease:"power1.inOut"},3.0);
@@ -166,22 +169,29 @@ tl.fromTo("#s-genc-m",{scale:1.08,y:0},{scale:1.02,y:0,duration:1.75,ease:"none"
 tl.fromTo("#s-genc",{opacity:0},{opacity:1,duration:0.5,ease:"power1.inOut"},38.4);
 tl.fromTo("#s-simdi-w",{scale:1.02,y:0},{scale:1.08,y:0,duration:2.0,ease:"none"},40.0);
 tl.fromTo("#s-simdi",{opacity:0},{opacity:1,duration:0.6,ease:"power1.inOut"},40.0);
-tl.fromTo("#c1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},2.68);
-tl.to("#c1",{opacity:0,duration:0.2,ease:"power1.in"},3.31);
-tl.fromTo("#c1 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},2.80);
-tl.fromTo("#c2",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},3.55);
-tl.to("#c2",{opacity:0,duration:0.2,ease:"power1.in"},4.78);
-tl.fromTo("#c2 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.67);
-tl.fromTo("#c2 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.99);
-tl.fromTo("#c2 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.22);
-tl.fromTo("#c2 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.64);
-tl.fromTo("#c2 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.96);
-tl.fromTo("#c3",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},5.02);
-tl.to("#c3",{opacity:0,duration:0.2,ease:"power1.in"},6.98);
-tl.fromTo("#c3 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.14);
-tl.fromTo("#c3 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.51);
-tl.fromTo("#c3 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.88);
-tl.fromTo("#c3 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.30);
+tl.fromTo("#c1",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},1.38);
+tl.to("#c1",{opacity:0,duration:0.2,ease:"power1.in"},2.01);
+tl.fromTo("#c1 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},1.50);
+tl.fromTo("#c2",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},2.25);
+tl.to("#c2",{opacity:0,duration:0.2,ease:"power1.in"},3.57);
+tl.fromTo("#c2 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},2.37);
+tl.fromTo("#c2 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},2.60);
+tl.fromTo("#c2 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.01);
+tl.fromTo("#c2 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.24);
+tl.fromTo("#c2 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.56);
+tl.fromTo("#c3",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},3.81);
+tl.to("#c3",{opacity:0,duration:0.2,ease:"power1.in"},5.98);
+tl.fromTo("#c3 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},3.93);
+tl.fromTo("#c3 .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.12);
+tl.fromTo("#c3 .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.48);
+tl.fromTo("#c3 .w:nth-child(4)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},4.90);
+tl.fromTo("#c3 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.26);
+tl.fromTo("#c3 .w:nth-child(6)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},5.58);
+tl.fromTo("#c3b",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},6.13);
+tl.to("#c3b",{opacity:0,duration:0.2,ease:"power1.in"},7.28);
+tl.fromTo("#c3b .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.25);
+tl.fromTo("#c3b .w:nth-child(2)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.66);
+tl.fromTo("#c3b .w:nth-child(3)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},6.94);
 tl.fromTo("#c4",{opacity:0,y:14},{opacity:1,y:0,duration:0.35,ease:"power3.out"},10.48);
 tl.to("#c4",{opacity:0,duration:0.2,ease:"power1.in"},12.59);
 tl.fromTo("#c4 .w:nth-child(1)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},10.60);
@@ -247,17 +257,18 @@ tl.fromTo("#c12 .w:nth-child(5)",{opacity:0.32},{opacity:1,duration:0.18,ease:"p
 tl.fromTo("#c12 .w:nth-child(6)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},43.92);
 tl.fromTo("#c12 .w:nth-child(7)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},44.14);
 tl.fromTo("#c12 .w:nth-child(8)",{opacity:0.32},{opacity:1,duration:0.18,ease:"power1.out"},44.45);
-tl.fromTo("#q1",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},7.25);
-tl.to("#q1",{opacity:0,duration:0.25,ease:"power1.in"},8.21);
-tl.fromTo("#q1 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},7.40);
-tl.fromTo("#q1 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},7.58);
-tl.fromTo("#q1 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},7.84);
-tl.fromTo("#q1 .qw:nth-child(4)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},8.20);
-tl.fromTo("#q2",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},8.39);
-tl.to("#q2",{opacity:0,duration:0.25,ease:"power1.in"},10.23);
-tl.fromTo("#q2 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},8.54);
-tl.fromTo("#q2 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},9.30);
-tl.fromTo("#q2 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},9.64);
+tl.fromTo("#q1",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},7.57);
+tl.to("#q1",{opacity:0,duration:0.25,ease:"power1.in"},8.53);
+tl.fromTo("#q1 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},7.72);
+tl.fromTo("#q1 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},7.90);
+tl.fromTo("#q1 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},8.16);
+tl.fromTo("#q1 .qw:nth-child(4)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},8.52);
+tl.fromTo("#q2",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},8.71);
+tl.to("#q2",{opacity:0,duration:0.25,ease:"power1.in"},10.33);
+tl.fromTo("#q2 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},8.86);
+tl.fromTo("#q2 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},9.62);
+tl.fromTo("#q2 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},9.80);
+tl.fromTo("#q2 .qw:nth-child(4)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},9.96);
 tl.fromTo("#q3",{opacity:0,y:18},{opacity:1,y:0,duration:0.45,ease:"power3.out"},21.55);
 tl.to("#q3",{opacity:0,duration:0.25,ease:"power1.in"},22.33);
 tl.fromTo("#q3 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},21.70);
@@ -284,10 +295,10 @@ tl.to("#q7",{opacity:0,duration:0.25,ease:"power1.in"},27.73);
 tl.fromTo("#q7 .qw:nth-child(1)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},26.82);
 tl.fromTo("#q7 .qw:nth-child(2)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},27.08);
 tl.fromTo("#q7 .qw:nth-child(3)",{opacity:0.3},{opacity:1,duration:0.22,ease:"power1.out"},27.46);
-tl.fromTo("#m-atakoy .marker-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},7.35);
+tl.fromTo("#m-atakoy .marker-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},7.65);
 tl.to("#m-atakoy .marker-in",{opacity:0,duration:0.3},10.25);
 // alıntı imzaları
-tl.fromTo("#who-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},7.3);
+tl.fromTo("#who-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},7.6);
 tl.to("#who-in",{opacity:0,duration:0.3},10.25);
 tl.fromTo("#who2-in",{opacity:0,x:-16},{opacity:1,x:0,duration:0.45,ease:"power3.out"},21.6);
 tl.to("#who2-in",{opacity:0,duration:0.3},27.75);

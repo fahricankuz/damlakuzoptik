@@ -24,11 +24,12 @@ def dagit(a, b, metin, off):
         out.append((w, round(t + off, 2))); t += (b - a) * k / tot
     return out
 
-A = dagit(0.87, 3.91, "Fahri Kuz, kızının adını da yanına alarak yeniden başladı.", 2.8)
+B = dagit(0.91, 4.40, "Kuz Optik'e bir damla ekledi ve yoluna kızının adıyla devam etti:", 1.46)
 CAPS = [
-    ("c1", dagit(0.00, 0.57, "Durmadı.", 2.8), A[0][1] - 0.14),
-    ("c2", A[:5], A[5][1] - 0.14),
-    ("c3", A[5:], 7.2),
+    ("c1", dagit(0.00, 0.55, "Durmadı.", 1.5), B[0][1] - 0.14),
+    ("c2", B[:5], B[5][1] - 0.14),
+    ("c3", B[5:], 6.2),
+    ("c3b", dagit(5.08, 6.18, "Damla Kuz Optik.", 1.17), 7.5),
     ("c4", dagit(4.18, 6.36, "Kendi adıyla ilk mağazasını açtığı yere,", 6.42), 12.81),
     ("c5", dagit(6.53, 8.82, "Ataköy Atrium AVM'ye geri dönmüştü.", 6.42), 15.4),
     ("c6", dagit(9.10, 10.16, "Bugün hâlâ orada.", 6.42), 16.8),
@@ -40,8 +41,8 @@ CAPS = [
     ("c12", dagit(20.81, 21.48, "Ve hikâye,", 21.39) + dagit(21.66, 23.41, "çok yakında yeni bir sayfa açacak.", 21.39), 45.3),
 ]
 QUOTES = [
-    ("q1", [("“On", 7.40), ("sene", 7.58), ("aradan", 7.84), ("sonra", 8.20)], 8.48),
-    ("q2", [("tekrar", 8.54), ("Ataköy", 9.30), ("AVM'deyiz.”", 9.64)], 10.5),
+    ("q1", [("“On", 7.72), ("sene", 7.90), ("aradan", 8.16), ("sonra", 8.52)], 8.80),
+    ("q2", [("tekrar", 8.86), ("Ataköy", 9.62), ("Atrium", 9.80), ("AVM'deyiz.”", 9.96)], 10.6),
     ("q3", [("“Beyazı", 21.70), ("daha", 22.10), ("beyaz,", 22.36)], 22.6),
     ("q4", [("siyahı", 22.68), ("daha", 22.98), ("siyah", 23.24), ("gören", 23.52)], 24.5),
     ("q5", [("dünyanın", 24.60), ("en", 24.98), ("kaliteli", 25.14)], 25.5),
@@ -49,7 +50,7 @@ QUOTES = [
     ("q7", [("özel", 26.82), ("tasarım", 27.08), ("olarak.”", 27.46)], 28.0),
 ]
 PLACES = []
-MARKERS = [("m-atakoy", "Ataköy Atrium AVM", 7.3, 10.6)]
+MARKERS = [("m-atakoy", "Ataköy Atrium AVM", 7.6, 10.6)]
 
 
 def fontfaces():
@@ -160,6 +161,7 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
 #marker, .marker {{ position:absolute; left:90px; top:250px; z-index:60; }}
 #yanil {{ position:absolute; inset:0; z-index:50; background:#050403; }}
 #yanil-h {{ position:absolute; left:0; right:0; top:860px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:150px; color:var(--paper); }}
+#open-sis {{ position:absolute; inset:0; z-index:55; background:radial-gradient(90% 45% at 50% 46%, rgba(8,6,5,.88) 0%, rgba(8,6,5,.6) 55%, rgba(8,6,5,.25) 100%); }}
 #open {{ position:absolute; left:0; right:0; top:760px; z-index:60; text-align:center; }}
 #open-h {{ font-family:'Cormorant Garamond',serif; font-weight:300; font-size:184px; line-height:1; letter-spacing:-.01em; color:var(--paper); }}
 #open-s {{ margin-top:44px; font-family:'Inter Local',Inter,sans-serif; font-weight:500; font-size:28px; letter-spacing:.34em; color:rgba(255,250,240,.66); padding-left:.34em; }}
@@ -223,12 +225,13 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
 </div>
 <div id="son" class="clip sahne" data-layout-allow-occlusion data-start="41.8" data-duration="3.8" data-track-index="0"><div id="isik"></div></div>
 <div id="shade"></div>
-<div id="open" class="clip" data-start="0" data-duration="3.0" data-track-index="3">
+<div id="open-sis" class="clip" data-start="0" data-duration="2.4" data-track-index="2"></div>
+<div id="open" class="clip" data-start="0" data-duration="2.4" data-track-index="3">
   <div id="open-h">Bugün.</div>
   <div id="open-s">YARIM ASIR · BÖLÜM 8</div>
 </div>
 {markers_html}
-<div id="who" class="clip" data-start="7.25" data-duration="3.3" data-track-index="3"><span id="who-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
+<div id="who" class="clip" data-start="7.55" data-duration="3.05" data-track-index="3"><span id="who-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
 <div id="who2" class="clip" data-start="21.5" data-duration="6.55" data-track-index="3"><span id="who2-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
 {places_html}
 {chr(10).join(caps_html)}
@@ -242,10 +245,10 @@ const tl = gsap.timeline({{ paused: true }});
 // açılış
 tl.fromTo("#open-h",{{opacity:0.0,y:10}},{{opacity:1,y:0,duration:0.7,ease:"power3.out"}},0);
 tl.fromTo("#open-s",{{opacity:0}},{{opacity:1,duration:0.6,ease:"power2.out"}},0.5);
-tl.to("#open-h,#open-s",{{opacity:0,duration:0.4,ease:"power1.in"}},2.55);
+tl.to("#open-h,#open-s,#open-sis",{{opacity:0,duration:0.4,ease:"power1.in"}},1.95);
 {chr(10).join(tl)}
 // alıntı imzaları
-tl.fromTo("#who-in",{{opacity:0,x:-16}},{{opacity:1,x:0,duration:0.45,ease:"power3.out"}},7.3);
+tl.fromTo("#who-in",{{opacity:0,x:-16}},{{opacity:1,x:0,duration:0.45,ease:"power3.out"}},7.6);
 tl.to("#who-in",{{opacity:0,duration:0.3}},10.25);
 tl.fromTo("#who2-in",{{opacity:0,x:-16}},{{opacity:1,x:0,duration:0.45,ease:"power3.out"}},21.6);
 tl.to("#who2-in",{{opacity:0,duration:0.3}},27.75);
