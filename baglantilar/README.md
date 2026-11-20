@@ -5,8 +5,8 @@
 ## Güvenlik modeli
 
 - Token ve API anahtarları **sohbete veya repoya yazılmaz.** Bunlar güvenli kimlik bilgisi formuyla, çalışma ortamının ağ katmanında saklanır.
-- Anahtar yalnızca ilgili sunucuya giden isteklere otomatik eklenir: Meta için `graph.facebook.com`, ElevenLabs için `api.elevenlabs.io`. Claude anahtarın değerini hiçbir zaman görmez.
-- Anahtar iptal edilmek istenirse: Meta'da sistem kullanıcısının token'ı İşletme Ayarları'ndan iptal edilir; ElevenLabs'ta API anahtarı silinir.
+- Anahtar yalnızca ilgili sunucuya giden isteklere otomatik eklenir: Meta için `graph.facebook.com`, ElevenLabs bağlayıcısı ise kendi yetkilendirmesini kullanır. Claude anahtarın değerini hiçbir zaman görmez.
+- Anahtar iptal edilmek istenirse: Meta'da sistem kullanıcısının token'ı İşletme Ayarları'ndan iptal edilir; ElevenLabs bağlantısı claude.ai → Ayarlar → Bağlayıcılar bölümünden kaldırılır.
 
 ## Meta (doğrudan Graph / Marketing API)
 
@@ -29,11 +29,13 @@
 | Alternatif | İleride gerekirse doğrudan API: MCC hesabı → developer token başvurusu (Basic Access) → Google Cloud OAuth istemcisi. |
 | Hazırlık | GA4 ↔ Ads bağlantısı, `purchase` dönüşümü, Merchant Center + ikas feed'i, Business Profile konum öğesi |
 
-## ElevenLabs (doğrudan API)
+## ElevenLabs (bağlayıcı üzerinden)
 
 | Konu | Not |
 |---|---|
-| Yöntem | API anahtarı, `xi-api-key` başlığı |
-| Kullanım | Türkçe seslendirme (TTS), ses efektleri, müzik, marka sesi |
-| Çıktı | `icerik/ses/` klasörüne kaydedilir (büyük dosyalar Drive'da) |
-| Not | Dizindeki "ElevenLabs" bağlayıcısı yalnızca sesli asistan yönetimi içindir, bu iş için gerekmez. |
+| Yöntem | claude.ai ElevenLabs bağlayıcısı (20 Kasım 2026'da bağlandı ve doğrulandı). API anahtarı gerekmez. |
+| Plan | Creator: aylık 131.000 karakter, 30 ses yuvası |
+| Kullanım | Türkçe seslendirme (TTS), ses efektleri, müzik, ses tasarımı, ses kaydını yazıya çevirme (altyazı), görsel/video üretimi ve sesli asistan |
+| Çıktı | `icerik/ses/` klasörüne kaydedilir (büyük dosyalar Drive'da). Üretimler ayrıca ElevenLabs'taki "flow" sayfasında da durur. |
+| Maliyet | Her üretim kredi harcar. Metin ve ses önce kullanıcıya sunulur, onayla üretilir. |
+| Sınır | Fahri Kuz'un sesi klonlanmaz veya taklit edilmez; yalnızca anlatıcı sesi, müzik ve efekt. |

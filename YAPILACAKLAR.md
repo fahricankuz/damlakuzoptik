@@ -90,9 +90,8 @@ Son güncelleme: 20 Kasım 2026
 
 ## AŞAMA 3: ElevenLabs
 
-- [ ] **3.1** elevenlabs.io → Profil → **API Keys → Create API Key**. İzinler: Text to Speech, Sound Effects, Music, Voices (okuma).
-- [ ] **3.2** Sohbete "ElevenLabs anahtarı hazır" yazın, güvenli form açılacak.
-- [ ] **3.3** Kullanmak istediğiniz seslerin **Voice ID**'lerini ve adlarını iletin. Bunlar gizli değildir. Marka sesi olarak klonlanmış bir ses varsa onu belirtin.
+- [x] **3.1–3.2 Bağlantı tamam (20 Kasım 2026).** ElevenLabs bağlayıcısı Claude'a bağlı ve doğrulandı (Creator planı, aylık 131.000 karakter). API anahtarı oluşturmaya **gerek yok.**
+- [ ] **3.3** Anlatıcı sesini seçin. Claude, kütüphanedeki Türkçe seslerden (ör. Cem, Emir, Öykü Arel, Ali) aynı kısa metinle deneme okumaları hazırlar; siz birini seçersiniz. Fahri Kuz'un sesi klonlanmaz.
 
 ---
 
