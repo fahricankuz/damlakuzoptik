@@ -27,7 +27,7 @@ Bu repo, Damla Kuz Optik'in (Ocak 2027 sonundan itibaren **Kuz İstanbul**) sosy
 
 ## Skill'ler (video, hareket ve tasarım)
 
-`.claude/skills/` klasöründe 37 skill kuruludur: HyperFrames, motion-design, GSAP, Three.js, design-dna, cast/paint/bunshin, brag-slim, find-skills. Repo bir Claude oturumuna bağlandığında **otomatik yüklenir**; her oturumda yeniden kurmaya gerek yoktur. Sürümler `skills-lock.json` dosyasında tutulur. Güncelleme komutu: `npx skills update -p`.
+`.claude/skills/` klasöründe 37 skill kuruludur: HyperFrames, motion-design, GSAP, Three.js, design-dna, cast/paint/bunshin, brag-slim, find-skills ve **adspirer-performance-marketing** (Adspirer ile reklam analizi; yalnızca okuma ve taslak, değişiklik yapmaz). Repo bir Claude oturumuna bağlandığında **otomatik yüklenir**; her oturumda yeniden kurmaya gerek yoktur. Sürümler `skills-lock.json` dosyasında tutulur. Güncelleme komutu: `npx skills update -p`.
 
 Gerekli araçlar (bulut ortamında hazır): Node 18+, ffmpeg, Playwright + Chromium, Python (numpy, Pillow).
 
