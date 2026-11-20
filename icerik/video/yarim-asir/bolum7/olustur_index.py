@@ -2,15 +2,15 @@
 """Yarım Asır, Bölüm 7 (Devir): index.html üretici. Zamanlamalar ve metin burada tek yerde durur."""
 from pathlib import Path
 
-D = 37.0
+D = 46.4
 
 # görüntü klipleri: id, tür, kaynak, başlangıç, süre, hareket (ölçek başlangıç→bitiş, y kayması px)
 SHOTS = [
-    ("s-lazer",  "video", "lazer.mp4",  0.0,  7.2,  (1.00, 1.06, 0)),
-    ("s-defile", "video", "defile.mp4", 7.0,  4.75, (1.04, 1.00, 0)),
-    ("s-bugun",  "video", "bugun.mp4",  25.0, 5.9,  (1.00, 1.06, 0)),
+    ("s-lazer",  "video", "lazer.mp4",  0.0,  5.8,  (1.00, 1.06, 0)),
+    ("s-defile", "video", "defile.mp4", 16.3, 5.3,  (1.04, 1.00, 0)),
+    ("s-bugun",  "video", "bugun.mp4",  36.2, 4.5,  (1.00, 1.06, 0)),
 ]
-FADE = {"s-defile": 0.5, "s-bugun": 0.9}
+FADE = {"s-defile": 0.5, "s-bugun": 0.8}
 
 def dagit(a, b, metin, off):
     """Kelime zamanlarını konuşma aralığına harf uzunluğuna göre dağıtır (anlatım deşifresi yerine)."""
@@ -19,17 +19,18 @@ def dagit(a, b, metin, off):
         out.append((w, round(t + off, 2))); t += (b - a) * k / tot
     return out
 
-B = dagit(4.23, 8.41, "Türkiye'de o güne kadar eşi benzeri görülmemiş büyüklükte bir yabancı ortaklık.", 2.77)
-C = dagit(8.86, 13.11, "İki yıl süren bu ortaklığın ardından şirket, tamamen yabancı ortaklara devredildi.", 2.94)
+C = dagit(10.21, 14.67, "Türkiye'de o güne kadar eşi benzeri görülmemiş büyüklükte bir yabancı ortaklık doğdu.", 6.39)
+Dd = dagit(15.03, 19.25, "İki yıl sonra, en başta söz verdiği gibi, şirketi tamamen onlara bıraktı.", 6.57)
 CAPS = [
-    ("c1", dagit(0.00, 3.73, "İki binli yıllarda Fahri Kuz Optik, sektörde bir ilke imza attı:", 2.8), 6.75),
-    ("c2", B[:6], B[6][1] - 0.14),
-    ("c3", B[6:], 11.6),
-    ("c4", C[:5], C[5][1] - 0.14),
-    ("c5", C[5:], 16.4),
-    ("c6", dagit(13.47, 15.37, "Ertesi gün gazeteler şöyle yazdı:", 3.33), 18.95),
-    ("c7", dagit(17.78, 18.92, "Bir dönem kapanmıştı.", 5.62), 25.2),
-    ("c8", dagit(19.28, 21.35, "Ama Fahri Kuz için hikâye bitmemişti.", 6.32), 30.5),
+    ("c1", dagit(0.00, 2.75, "İki binli yıllarda kapıyı bir dünya devi çaldı:", 2.8), 5.95),
+    ("c2", dagit(3.19, 6.18, "dört binden fazla mağazası olan yabancı bir optik zinciri.", 2.81), 9.2),
+    ("c3", dagit(6.59, 7.96, "Türkiye'ye gelmek istiyordu.", 2.71), 11.0),
+    ("c4", dagit(8.41, 9.81, "Fahri Kuz'un cevabı netti.", 2.79), 12.75),
+    ("c5", C[:6], C[6][1] - 0.14),
+    ("c6", C[6:], 21.2),
+    ("c7", Dd[:7], Dd[7][1] - 0.14),
+    ("c8", Dd[7:], 26.1),
+    ("c9", dagit(19.58, 21.40, "Ertesi gün gazeteler şöyle yazdı:", 6.72), 28.35),
 ]
 QUOTES = []
 PLACES = []
@@ -159,19 +160,30 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
 #end-ep {{ margin-top:52px; font-family:'Inter Local',Inter,sans-serif; font-weight:500; font-size:28px; letter-spacing:.6em; padding-left:.6em; color:var(--gold); }}
 #end-next {{ margin-top:120px; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:44px; color:rgba(255,250,240,.58); }}
 #black {{ position:absolute; inset:0; z-index:90; background:#000; }}
-#logo {{ position:absolute; inset:0; z-index:25; opacity:0; background:radial-gradient(110% 70% at 50% 36%, #2a2119 0%, #15100c 55%, #0b0907 100%); }}
-#logo-card {{ position:absolute; left:70px; top:330px; width:940px; padding:34px 30px 30px; background:#fbfaf6; border-radius:6px;
-  box-shadow:0 30px 80px rgba(0,0,0,.7), 0 4px 12px rgba(0,0,0,.45); transform-origin:50% 50%; }}
-#manset {{ position:absolute; left:90px; right:90px; top:1030px; z-index:60; }}
+.sahne {{ position:absolute; inset:0; z-index:25; opacity:0; background:radial-gradient(120% 70% at 50% 38%, #2a2119 0%, #15100c 55%, #0b0907 100%); }}
+#duel-sol, #duel-sag {{ position:absolute; top:430px; width:540px; text-align:center; }}
+#duel-sol {{ left:0; }} #duel-sag {{ left:540px; }}
+.duel-n {{ font-family:'Cormorant Garamond',serif; font-weight:300; font-size:168px; line-height:1; color:var(--paper); font-variant-numeric:lining-nums; white-space:nowrap; }}
+.duel-l {{ margin-top:34px; font-family:'Inter Local',Inter,sans-serif; font-weight:600; font-size:24px; letter-spacing:.32em; padding-left:.32em; color:var(--gold); }}
+#duel-cizgi {{ position:absolute; left:539px; top:420px; width:1px; height:330px; background:var(--gold); opacity:.5; transform-origin:50% 0; }}
+.kart {{ position:absolute; left:80px; width:920px; padding:76px 70px 60px; background:#efe7d3; box-shadow:0 30px 80px rgba(0,0,0,.65), 0 4px 12px rgba(0,0,0,.4); }}
+.kart-q {{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:84px; line-height:1.08; color:#2a2420; }}
+.kart-q + .kart-q {{ margin-top:26px; }}
+.kart-q b {{ font-weight:500; }}
+.kart-k {{ margin-top:44px; font-family:'Inter Local',Inter,sans-serif; font-weight:600; font-size:20px; letter-spacing:.14em; color:#7a6a55; white-space:nowrap; text-transform:uppercase; }}
+.kart-k .rule {{ background:#a48a5e; }}
+#kart1 {{ top:470px; }} #kart2 {{ top:420px; }}
+#isik {{ position:absolute; left:-200px; top:200px; width:1480px; height:1100px; background:radial-gradient(closest-side, rgba(255,226,180,.30), rgba(255,226,180,.08) 55%, rgba(255,226,180,0) 100%); }}
+#logo-img {{ position:absolute; left:90px; top:500px; width:900px; height:auto; filter:drop-shadow(0 18px 30px rgba(0,0,0,.7)); }}
+#manset {{ position:absolute; left:90px; right:90px; top:1090px; z-index:60; }}
 #manset-l {{ margin-bottom:30px; }}
 #manset-h {{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:104px; line-height:1.04; color:var(--paper); }}
-#logo-img {{ display:block; width:880px; height:auto; }}
 </style>
 </head>
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{D}" data-width="1080" data-height="1920">
 {chr(10).join(shots_html)}
-<div id="end" data-layout-allow-occlusion class="clip" data-start="30.6" data-duration="{D-30.6:.1f}" data-track-index="1">
+<div id="end" data-layout-allow-occlusion class="clip" data-start="40.4" data-duration="{D-40.4:.1f}" data-track-index="1">
   <img id="end-img" src="assets/media/kapanis_zemin.jpg" alt="">
   <div id="end-t" data-layout-allow-occlusion>
     <div id="end-h">Yarım Asır</div>
@@ -181,18 +193,33 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
     <div id="end-next">Hikâye devam ediyor.</div>
   </div>
 </div>
-<div id="logo" class="clip" data-layout-allow-occlusion data-start="11.5" data-duration="13.8" data-track-index="0"><div id="logo-card"><img id="logo-img" src="assets/media/papagan_logo.png" alt="Fahri Kuz Optik papağan logosu"></div></div>
+<div id="duel" class="clip sahne" data-layout-allow-occlusion data-start="5.4" data-duration="5.85" data-track-index="0">
+  <div id="duel-sol"><div class="duel-n" id="n26">0</div><div class="duel-l">Fahri Kuz Optik</div></div>
+  <div id="duel-cizgi"></div>
+  <div id="duel-sag"><div class="duel-n" id="n4000">0</div><div class="duel-l">Yabancı zincir</div></div>
+</div>
+<div id="alinti1" class="clip sahne" data-layout-allow-occlusion data-start="11.0" data-duration="5.6" data-track-index="0">
+  <div id="kart1" class="kart"><div class="kart-q">“Rakip olacağıma ortak oldum.”</div>
+  <div class="kart-k"><span class="rule"></span>Fahri Kuz · Takvim, 2009 · Savaş Ay söyleşisi</div></div>
+</div>
+<div id="logo" class="clip sahne" data-layout-allow-occlusion data-start="21.3" data-duration="10.1" data-track-index="0">
+  <div id="isik"></div><img id="logo-img" src="assets/media/papagan_seffaf.png" alt="Fahri Kuz Optik papağan logosu">
+</div>
+<div id="alinti2" class="clip sahne" data-layout-allow-occlusion data-start="31.2" data-duration="5.4" data-track-index="0">
+  <div id="kart2" class="kart"><div class="kart-q">— Rahat durabilir mi o Bozkırlı çocuk?</div><div id="k2b" class="kart-q"><b>— Durmaz. Durmadı da zaten.</b></div>
+  <div class="kart-k"><span class="rule"></span>Takvim, 2009 · Savaş Ay söyleşisi</div></div>
+</div>
 <div id="shade"></div>
 <div id="open" class="clip" data-start="0" data-duration="3.0" data-track-index="3">
   <div id="open-h">Devir.</div>
   <div id="open-s">YARIM ASIR · BÖLÜM 7</div>
 </div>
 {markers_html}
-<div id="manset" class="clip" data-start="19.0" data-duration="4.4" data-track-index="4"><div id="manset-l" class="label"><span class="rule"></span>Basında, ertesi gün</div><div id="manset-h">“Güle güle gözlüklü papağan.”</div></div>
+<div id="manset" class="clip" data-start="28.3" data-duration="3.0" data-track-index="4"><div id="manset-l" class="label"><span class="rule"></span>Basında, ertesi gün</div><div id="manset-h">“Güle güle gözlüklü papağan.”</div></div>
 {places_html}
 {chr(10).join(caps_html)}
 
-<div id="black" data-layout-allow-occlusion class="clip" data-start="36.0" data-duration="1.0" data-track-index="5"></div>
+<div id="black" data-layout-allow-occlusion class="clip" data-start="45.4" data-duration="1.0" data-track-index="5"></div>
 <audio id="miks" class="clip" data-start="0" data-duration="{D}" data-track-index="6" data-volume="1" src="assets/audio/miks.m4a"></audio>
 </div>
 <script>
@@ -203,28 +230,50 @@ tl.fromTo("#open-h",{{opacity:0.0,y:10}},{{opacity:1,y:0,duration:0.7,ease:"powe
 tl.fromTo("#open-s",{{opacity:0}},{{opacity:1,duration:0.6,ease:"power2.out"}},0.5);
 tl.to("#open-h,#open-s",{{opacity:0,duration:0.4,ease:"power1.in"}},2.55);
 {chr(10).join(tl)}
-// papağan logosu: renkli gelir, yavaşça solar ve kararır
-tl.fromTo("#logo",{{opacity:0}},{{opacity:1,duration:0.6,ease:"power1.inOut"}},11.5);
-tl.fromTo("#logo-card",{{opacity:0,y:30,scale:0.95}},{{opacity:1,y:0,scale:1,duration:1.0,ease:"power3.out"}},11.6);
-tl.fromTo("#logo-card",{{filter:"grayscale(0) brightness(1)"}},{{filter:"grayscale(1) brightness(0.55)",duration:9.0,ease:"power1.inOut",immediateRender:false}},13.4);
-tl.fromTo("#logo-card",{{scale:1}},{{scale:0.97,duration:10,ease:"none",immediateRender:false}},12.6);
-tl.to("#logo-card",{{opacity:0,duration:1.2,ease:"power1.in"}},22.0);
-tl.to("#logo",{{opacity:0,duration:0.4}},24.9);
+// 26 ve 4.000+
+tl.fromTo("#duel",{{opacity:0}},{{opacity:1,duration:0.5,ease:"power1.inOut"}},5.4);
+tl.fromTo("#duel-cizgi",{{scaleY:0}},{{scaleY:1,duration:0.8,ease:"power2.inOut"}},5.6);
+const n1 = {{ v: 0 }}, n2 = {{ v: 0 }};
+tl.fromTo(n1,{{v:0}},{{v:26,duration:1.0,ease:"power2.out",onUpdate:()=>{{ document.getElementById("n26").textContent = Math.round(n1.v); }}}},5.7);
+tl.fromTo(n2,{{v:0}},{{v:4000,duration:1.8,ease:"power2.out",onUpdate:()=>{{ const v = Math.round(n2.v/10)*10; document.getElementById("n4000").textContent = v.toLocaleString("tr-TR") + (v >= 4000 ? "+" : ""); }}}},6.6);
+tl.fromTo("#duel-sol",{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.6,ease:"power3.out"}},5.6);
+tl.fromTo("#duel-sag",{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.6,ease:"power3.out"}},6.5);
+tl.fromTo("#duel-sag .duel-n",{{scale:0.94}},{{scale:1.02,duration:3.8,ease:"power1.out"}},6.6);
+tl.to("#duel",{{opacity:0,duration:0.35,ease:"power1.in"}},10.9);
+// söyleşi kartları
+tl.fromTo("#alinti1",{{opacity:0}},{{opacity:1,duration:0.4}},11.0);
+tl.fromTo("#kart1",{{opacity:0,y:60,rotation:2.5}},{{opacity:1,y:0,rotation:-1.2,duration:0.9,ease:"power3.out"}},12.75);
+tl.fromTo("#kart1",{{scale:1}},{{scale:1.03,duration:3.5,ease:"none",immediateRender:false}},13.65);
+tl.to("#alinti1",{{opacity:0,duration:0.4,ease:"power1.in"}},16.25);
+tl.fromTo("#alinti2",{{opacity:0}},{{opacity:1,duration:0.4}},31.2);
+tl.fromTo("#kart2",{{opacity:0,y:60,rotation:-2.5}},{{opacity:1,y:0,rotation:1.0,duration:0.9,ease:"power3.out"}},31.3);
+tl.fromTo("#k2b",{{opacity:0,y:12}},{{opacity:1,y:0,duration:0.7,ease:"power2.out"}},33.0);
+tl.fromTo("#kart2",{{scale:1}},{{scale:1.03,duration:4.4,ease:"none",immediateRender:false}},32.2);
+tl.to("#alinti2",{{opacity:0,duration:0.5,ease:"power1.in"}},36.1);
+// papağan: sıcak ışık altında; ışık çekilir, renk solar
+tl.fromTo("#logo",{{opacity:0}},{{opacity:1,duration:0.7,ease:"power1.inOut"}},21.3);
+tl.fromTo("#logo-img",{{opacity:0,y:30}},{{opacity:1,y:0,duration:1.2,ease:"power3.out"}},21.5);
+tl.fromTo("#logo-img",{{scale:1}},{{scale:1.05,duration:9,ease:"none",immediateRender:false}},22.7);
+tl.fromTo("#isik",{{opacity:0}},{{opacity:1,duration:1.5}},21.5);
+tl.to("#isik",{{opacity:0,duration:4.0,ease:"power1.inOut"}},26.0);
+tl.fromTo("#logo-img",{{filter:"drop-shadow(0 18px 30px rgba(0,0,0,.7)) grayscale(0) brightness(1)"}},{{filter:"drop-shadow(0 18px 30px rgba(0,0,0,.7)) grayscale(1) brightness(0.45)",duration:4.5,ease:"power1.inOut",immediateRender:false}},26.0);
+tl.to("#logo-img",{{opacity:0,duration:1.0,ease:"power1.in"}},30.2);
+tl.to("#logo",{{opacity:0,duration:0.4}},31.0);
 // gazete başlığı (yalnızca yazı)
-tl.fromTo("#manset-l",{{opacity:0,x:-16}},{{opacity:1,x:0,duration:0.5,ease:"power3.out"}},19.05);
-tl.fromTo("#manset-h",{{opacity:0,y:18}},{{opacity:1,y:0,duration:0.8,ease:"power3.out"}},19.2);
-tl.to("#manset",{{opacity:0,duration:0.5,ease:"power1.in"}},22.85);
+tl.fromTo("#manset-l",{{opacity:0,x:-16}},{{opacity:1,x:0,duration:0.5,ease:"power3.out"}},28.35);
+tl.fromTo("#manset-h",{{opacity:0,y:18}},{{opacity:1,y:0,duration:0.8,ease:"power3.out"}},28.45);
+tl.to("#manset",{{opacity:0,duration:0.5,ease:"power1.in"}},30.75);
 // bugün: renk geri gelir
-tl.fromTo("#s-bugun",{{filter:"grayscale(1) brightness(0.7)"}},{{filter:"grayscale(0) brightness(1)",duration:3.0,ease:"power1.inOut",immediateRender:false}},25.6);
+tl.fromTo("#s-bugun",{{filter:"grayscale(1) brightness(0.7)"}},{{filter:"grayscale(0) brightness(1)",duration:3.0,ease:"power1.inOut",immediateRender:false}},36.6);
 // kapanış
-tl.fromTo("#end",{{opacity:0}},{{opacity:1,duration:1.0,ease:"power1.inOut"}},30.6);
-tl.fromTo("#end-img",{{scale:1.08}},{{scale:1.0,duration:6.4,ease:"none"}},30.6);
-tl.fromTo("#end-h",{{opacity:0,y:16}},{{opacity:1,y:0,duration:0.9,ease:"power3.out"}},31.2);
-tl.fromTo("#end-bar",{{scaleX:0}},{{scaleX:1,duration:0.7,ease:"power2.inOut"}},31.9);
-tl.fromTo("#end-tag",{{opacity:0,y:10}},{{opacity:1,y:0,duration:0.7,ease:"power3.out"}},32.2);
-tl.fromTo("#end-ep",{{opacity:0}},{{opacity:1,duration:0.6}},33.0);
-tl.fromTo("#end-next",{{opacity:0}},{{opacity:1,duration:0.8}},33.9);
-tl.fromTo("#black",{{opacity:0}},{{opacity:1,duration:0.9,ease:"power1.in"}},36.0);
+tl.fromTo("#end",{{opacity:0}},{{opacity:1,duration:1.0,ease:"power1.inOut"}},40.4);
+tl.fromTo("#end-img",{{scale:1.08}},{{scale:1.0,duration:6.0,ease:"none"}},40.4);
+tl.fromTo("#end-h",{{opacity:0,y:16}},{{opacity:1,y:0,duration:0.9,ease:"power3.out"}},41.0);
+tl.fromTo("#end-bar",{{scaleX:0}},{{scaleX:1,duration:0.7,ease:"power2.inOut"}},41.7);
+tl.fromTo("#end-tag",{{opacity:0,y:10}},{{opacity:1,y:0,duration:0.7,ease:"power3.out"}},42.0);
+tl.fromTo("#end-ep",{{opacity:0}},{{opacity:1,duration:0.6}},42.9);
+tl.fromTo("#end-next",{{opacity:0}},{{opacity:1,duration:0.8}},43.8);
+tl.fromTo("#black",{{opacity:0}},{{opacity:1,duration:0.9,ease:"power1.in"}},45.4);
 window.__timelines["main"] = tl;
 </script>
 </body>
