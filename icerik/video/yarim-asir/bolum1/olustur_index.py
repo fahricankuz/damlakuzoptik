@@ -62,6 +62,8 @@ MEDIA_START = {}
 shots_html = []
 for i, (sid, kind, src, st, du, _) in enumerate(SHOTS):
     z = 10 + i
+    if i + 1 < len(SHOTS) and SHOTS[i+1][3] <= st + du + 0.01:
+        du = max(du, SHOTS[i+1][3] - st + FADE.get(SHOTS[i+1][0], 0.25) + 0.05)
     if kind == "img":
         shots_html.append(
             f'<div id="{sid}" class="clip shot" data-start="{st}" data-duration="{du}" data-track-index="1" style="z-index:{z}">'
