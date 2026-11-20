@@ -5,7 +5,7 @@ metin fontu Montserrat. Logo vektörleri Drive'daki master dosyadan (logo_yollar
 from pathlib import Path
 from logo_yollari import PATHS, BOX
 
-D = 90.0
+D = 84.8
 SAND, SIYAH, KREM, SEFTALI = "#B2937F", "#231F20", "#F8F1E8", "#FEDCC7"
 
 
@@ -33,8 +33,9 @@ def logo_svg(lid, renk):
 
 
 # Montaj üzerindeki yer işaretleri (montaj 6.0 sn'de başlar)
-YERLER = [("AKSARAY", 6.15, 7.6), ("SİRKECİ", 7.75, 9.1), ("AKSARAY · BEYAZIT", 10.2, 11.45),
-          ("FAHRİ KUZ OPTİK", 13.85, 15.0), ("2000 · 30. YIL", 18.65, 19.45), ("BUGÜN", 20.95, 22.1)]
+# (parça süreleri: assets/media/montaj_parcalar.txt; "Bugün" parçaları kullanıcı isteğiyle çıkarıldı)
+YERLER = [("AKSARAY", 6.1, 7.55), ("SİRKECİ", 7.7, 9.2), ("AKSARAY · BEYAZIT", 9.4, 10.55),
+          ("FAHRİ KUZ OPTİK", 14.35, 15.9), ("2000 · 30. YIL", 18.15, 19.65)]
 
 
 def kelimeler(metin, cls):
@@ -78,7 +79,7 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
 /* damla ve doğuş */
 #dogus {{ background:#000; }}
 #krem {{ position:absolute; inset:0; background:var(--krem); }}
-#desen {{ position:absolute; left:-300px; top:-200px; width:3002px; height:1502px; opacity:0; background:url('assets/media/desen.png'); background-size:1501px 751px; }}
+#desen {{ position:absolute; left:-300px; top:-200px; width:3002px; height:2400px; opacity:0; background:url('assets/media/desen.png') repeat; background-size:1501px 751px; }}
 #damla-svg {{ position:absolute; left:0; top:0; width:1080px; height:1920px; }}
 #logo-w {{ position:absolute; left:140px; top:728px; width:800px; }}
 .logo {{ display:block; width:100%; height:auto; overflow:visible; }}
@@ -90,24 +91,23 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
 .buyuk {{ font-family:'Nord Yerine',sans-serif; text-transform:uppercase; font-size:92px; line-height:1.08; letter-spacing:.01em; }}
 .alt {{ font-family:'Montserrat Local',sans-serif; font-weight:400; font-size:38px; line-height:1.35; }}
 .blok {{ position:absolute; left:100px; right:100px; }}
-#sA {{ background:var(--sand); }} #sB {{ background:var(--krem); }} #sC {{ background:#000; }} #sD {{ background:var(--siyah); }}
-.desen-a {{ position:absolute; left:-200px; top:-100px; width:3002px; height:1502px; background-size:1501px 751px; opacity:.12; }}
+#sA {{ background:var(--sand); }} #sB {{ background:var(--krem); }} #sC {{ background:#000; }}
+.desen-a {{ position:absolute; left:-200px; top:-160px; width:3002px; height:2320px; background-repeat:repeat; background-size:1501px 751px; opacity:.12; }}
 #sayi26 {{ font-family:'Nord Yerine',sans-serif; font-size:250px; line-height:1; color:#fff; }}
 #fkvid {{ position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; }}
 #sC-perde {{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,.85) 70%, rgba(0,0,0,.95) 100%); }}
-#cerceve {{ position:absolute; left:110px; top:420px; width:860px; height:860px; }}
-/* duyuru */
+/* duyuru: krem, ince kesik köşeli çerçeve, bol boşluk */
 #duyuru {{ background:var(--krem); }}
-#d1 {{ position:absolute; left:0; right:0; top:560px; text-align:center; font-size:56px; font-weight:400; color:var(--siyah); }}
-#d2 {{ position:absolute; left:0; right:0; top:660px; text-align:center; font-size:30px; font-weight:500; letter-spacing:.4em; color:var(--sand); }}
-#logo2-w {{ position:absolute; left:190px; top:760px; width:700px; }}
-#bilgi {{ position:absolute; left:190px; right:190px; top:1080px; background:var(--seftali); padding:34px 40px 30px; text-align:center; }}
-#b1 {{ font-family:'Nord Yerine',sans-serif; font-size:46px; color:var(--siyah); }}
-#b2 {{ margin-top:14px; font-family:'Montserrat Local',sans-serif; font-weight:600; font-size:34px; color:var(--siyah); letter-spacing:.04em; }}
-#b3 {{ margin-top:8px; font-family:'Montserrat Local',sans-serif; font-weight:500; font-size:24px; letter-spacing:.3em; color:#6b5a4c; }}
-#gecici {{ position:absolute; left:110px; right:110px; top:1300px; text-align:center; }}
-#g1 {{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:52px; color:var(--siyah); }}
-#g2 {{ margin-top:14px; display:inline-block; font-family:'Montserrat Local',sans-serif; font-weight:600; font-size:20px; letter-spacing:.2em; color:#fff; background:#c0392b; padding:6px 14px; }}
+#dy-cer {{ position:absolute; left:90px; top:430px; width:900px; height:1110px; }}
+#dy-tarih {{ position:absolute; left:0; right:0; top:560px; text-align:center; font-family:'Montserrat Local',sans-serif; font-weight:500; font-size:24px; letter-spacing:.52em; color:var(--sand); padding-left:.52em; }}
+#dy-tarih .ck {{ display:inline-block; width:64px; height:1px; background:var(--sand); vertical-align:middle; margin:0 28px; opacity:.7; }}
+#logo2-w {{ position:absolute; left:215px; top:660px; width:650px; }}
+#dy-cizgi {{ position:absolute; left:500px; top:960px; width:80px; height:1px; background:var(--sand); }}
+#dy-adres {{ position:absolute; left:0; right:0; top:1000px; text-align:center; font-family:'Montserrat Local',sans-serif; font-weight:300; font-size:46px; letter-spacing:.06em; color:var(--siyah); }}
+#dy-yer {{ position:absolute; left:0; right:0; top:1078px; text-align:center; font-family:'Montserrat Local',sans-serif; font-weight:500; font-size:20px; letter-spacing:.42em; color:#8c7b6e; padding-left:.42em; }}
+#dy-soz {{ position:absolute; left:150px; right:150px; top:1210px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:54px; line-height:1.18; color:#4a3d34; }}
+#dy-imza {{ position:absolute; left:0; right:0; top:1365px; text-align:center; font-family:'Montserrat Local',sans-serif; font-weight:500; font-size:20px; letter-spacing:.42em; color:var(--sand); padding-left:.42em; }}
+#dy-demo {{ position:absolute; left:0; right:0; top:1590px; text-align:center; font-family:'Montserrat Local',sans-serif; font-weight:400; font-size:21px; letter-spacing:.16em; color:#9d8f83; }}
 /* son */
 #son {{ background:var(--sand); }}
 #logo3-w {{ position:absolute; left:190px; top:800px; width:700px; }}
@@ -122,10 +122,10 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
   <div id="acilis-y">{kelimeler("Yarım asır önce, Aksaray'da küçük bir dükkân.", "w")}</div>
 </div>
 
-<div id="montaj-w" class="clip" data-start="6.0" data-duration="16.25" data-track-index="1">
-  <video id="montaj" class="clip" data-start="6.0" data-duration="16.23" data-track-index="2" src="assets/media/montaj.mp4" muted playsinline></video>
+<div id="montaj-w" class="clip" data-start="6.0" data-duration="16.2" data-track-index="1">
+  <video id="montaj" class="clip" data-start="6.0" data-duration="16.2" data-track-index="2" src="assets/media/montaj.mp4" muted playsinline></video>
 </div>
-<div id="golge" class="clip" data-start="6.0" data-duration="16.25" data-track-index="2"></div>
+<div id="golge" class="clip" data-start="6.0" data-duration="16.2" data-track-index="2"></div>
 {yer_html}
 
 <div id="soylesi" class="clip tam" data-layout-allow-occlusion data-start="23.6" data-duration="7.2" data-track-index="0">
@@ -147,12 +147,11 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
   </svg>
   <div id="logo-w">{logo_svg("lg", SAND)}</div>
   <div id="tag1" class="nord">Miras, modern lüksle buluşuyor.</div>
-  <div id="tag2" class="mont">Yarım asırlık ustalık, yeni bir isimle.</div>
+  <div id="tag2" class="mont">Yarım asırlık hikâye, özüne dönüyor.</div>
 </div>
 
 <div id="sA" class="clip sahne" data-layout-allow-occlusion data-start="51.4" data-duration="5.4" data-track-index="0">
   <div class="desen-a" style="background-image:url('assets/media/desen_beyaz.png')"></div>
-  <div class="blok" style="top:470px"><div class="etiket" style="color:#fff">1990'LAR</div></div>
   <div class="blok" style="top:560px"><div id="sayi26">26</div><div class="etiket" style="color:#fff;margin-top:10px">MAĞAZA</div></div>
   <div class="blok buyuk" style="top:900px;color:#fff">Türkiye'nin ilk optik zinciri.</div>
 </div>
@@ -168,29 +167,27 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:#000; }}
   <div class="blok" style="top:1000px"><div class="etiket" style="color:var(--sand)">USTALIK</div></div>
   <div class="blok buyuk" style="top:1060px;color:#fff">Her çerçevede zarafet.</div>
 </div>
-<div id="sD" class="clip sahne" data-layout-allow-occlusion data-start="67.2" data-duration="5.4" data-track-index="0">
-  <div class="desen-a" style="background-image:url('assets/media/desen.png');opacity:.16"></div>
-  <svg id="cerceve" viewBox="0 0 860 860" xmlns="http://www.w3.org/2000/svg"><path id="cer-yol" d="M90,2 L858,2 L858,858 L2,858 L2,90 Z" fill="none" stroke="{SAND}" stroke-width="2" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
-  <div class="blok buyuk" style="top:640px;left:170px;right:170px;color:#fff">Sizin için tasarlandı.</div>
-  <div class="blok alt" style="top:990px;left:170px;right:170px;color:var(--sand)">Kişiye özel, el yapımı, tek ve eşsiz.</div>
+
+<div id="duyuru" class="clip sahne" data-layout-allow-occlusion data-start="67.2" data-duration="10.2" data-track-index="0">
+  <div class="desen-a" style="background-image:url('assets/media/desen.png');opacity:.045"></div>
+  <svg id="dy-cer" viewBox="0 0 900 1110" xmlns="http://www.w3.org/2000/svg"><path id="dy-yol" d="M70,1 L899,1 L899,1040 L830,1109 L1,1109 L1,70 Z" fill="none" stroke="{SAND}" stroke-width="1.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+  <div id="dy-tarih"><span class="ck"></span>1 ŞUBAT 2027<span class="ck"></span></div>
+  <div id="logo2-w">{logo_svg("lg2", SIYAH)}</div>
+  <div id="dy-cizgi"></div>
+  <div id="dy-adres">kuz.istanbul</div>
+  <div id="dy-yer">ATAKÖY ATRIUM AVM</div>
+  <div id="dy-soz">“Yarım asırdır, aynı heyecanla.”</div>
+  <div id="dy-imza">FAHRİ KUZ</div>
+  <div id="dy-demo">demo · geçici ses · Fahri Kuz'un kendi kaydı eklenecek</div>
 </div>
 
-<div id="duyuru" class="clip sahne" data-layout-allow-occlusion data-start="72.4" data-duration="10.2" data-track-index="0">
-  <div class="desen-a" style="background-image:url('assets/media/desen.png');opacity:.07"></div>
-  <div id="d1" class="mont">Damla Kuz Optik,</div>
-  <div id="d2" class="mont">ARTIK</div>
-  <div id="logo2-w">{logo_svg("lg2", SAND)}</div>
-  <div id="bilgi"><div id="b1">1 Şubat 2027</div><div id="b2">kuz.istanbul</div><div id="b3">ATAKÖY ATRIUM AVM</div></div>
-  <div id="gecici"><div id="g1">“Yarım asırdır, aynı heyecanla. Kuz İstanbul.”</div><div id="g2">DEMO · GEÇİCİ SES · FAHRİ KUZ'UN KAYDI EKLENECEK</div></div>
-</div>
-
-<div id="son" class="clip sahne" data-layout-allow-occlusion data-start="82.4" data-duration="7.6" data-track-index="0">
+<div id="son" class="clip sahne" data-layout-allow-occlusion data-start="77.2" data-duration="7.6" data-track-index="0">
   <div class="desen-a" style="background-image:url('assets/media/desen_beyaz.png');opacity:.08"></div>
   <div id="logo3-w">{logo_svg("lg3", "#ffffff")}</div>
   <div id="son-adres">KUZ.ISTANBUL</div>
 </div>
 
-<div id="karart" data-layout-allow-occlusion class="clip" data-start="89.0" data-duration="1.0" data-track-index="5"></div>
+<div id="karart" data-layout-allow-occlusion class="clip" data-start="83.8" data-duration="1.0" data-track-index="5"></div>
 <audio id="miks" class="clip" data-start="0" data-duration="{D}" data-track-index="6" data-volume="1" src="assets/audio/miks.m4a"></audio>
 </div>
 <script>
@@ -203,7 +200,7 @@ tl.to("#acilis-y", {{opacity:0, duration:0.6, ease:"power1.in"}}, 5.3);
 // montaj
 tl.fromTo("#montaj-w", {{opacity:0}}, {{opacity:1, duration:0.35}}, 6.0);
 tl.fromTo("#montaj", {{scale:1.0}}, {{scale:1.06, duration:16.2, ease:"none"}}, 6.0);
-tl.to("#montaj-w", {{opacity:0, duration:0.25, ease:"power1.in"}}, 21.95);
+tl.to("#montaj-w", {{opacity:0, duration:0.25, ease:"power1.in"}}, 21.9);
 document.querySelectorAll(".yer").forEach((el) => {{
   const a = parseFloat(el.dataset.start), d = parseFloat(el.dataset.duration);
   tl.fromTo(el.querySelector(".yer-in"), {{opacity:0, x:-14}}, {{opacity:1, x:0, duration:0.3, ease:"power3.out"}}, a + 0.05);
@@ -252,25 +249,28 @@ tl.fromTo(s26, {{v:1}}, {{v:26, duration:1.2, ease:"power2.out", onUpdate:() => 
 sahne("#sB", 56.6, [[".blok:nth-of-type(2)", 0.35], [".buyuk", 0.6], [".alt", 1.5]]);
 sahne("#sC", 61.9, [[".blok:nth-of-type(3)", 0.6], [".buyuk", 0.9]]);
 tl.fromTo("#fkvid", {{scale:1.04}}, {{scale:1.0, duration:5.4, ease:"none"}}, 61.9);
-sahne("#sD", 67.2, [[".buyuk", 0.9], [".alt", 1.6]]);
-tl.to("#cer-yol", {{strokeDashoffset:0, duration:1.4, ease:"power2.inOut"}}, 67.6);
 // duyuru
-tl.fromTo("#duyuru", {{opacity:0}}, {{opacity:1, duration:0.6}}, 72.4);
-tl.fromTo("#d1", {{opacity:0, y:16}}, {{opacity:1, y:0, duration:0.7, ease:"power3.out"}}, 72.95);
-tl.fromTo("#d2", {{opacity:0}}, {{opacity:1, duration:0.5}}, 74.1);
-tl.set("#lg2-kuz path,#lg2-ist path,#lg2-mark path", {{opacity:0}}, 72.4);
-tl.fromTo("#lg2-mark path", {{opacity:0, y:20}}, {{opacity:1, y:0, duration:0.5, stagger:0.08, ease:"power3.out"}}, 74.5);
-tl.fromTo("#lg2-kuz path", {{opacity:0, y:20}}, {{opacity:1, y:0, duration:0.5, stagger:0.08, ease:"power3.out"}}, 74.75);
-tl.fromTo("#lg2-ist path", {{opacity:0}}, {{opacity:1, duration:0.4, stagger:0.05}}, 75.2);
-tl.fromTo("#bilgi", {{opacity:0, y:30}}, {{opacity:1, y:0, duration:0.8, ease:"power3.out"}}, 76.2);
-tl.fromTo("#gecici", {{opacity:0}}, {{opacity:1, duration:0.6}}, 78.3);
-tl.to("#duyuru", {{opacity:0, duration:0.5}}, 82.2);
+tl.fromTo("#duyuru", {{opacity:0}}, {{opacity:1, duration:0.7}}, 67.2);
+tl.to("#dy-yol", {{strokeDashoffset:0, duration:1.8, ease:"power2.inOut"}}, 67.4);
+tl.fromTo("#dy-tarih", {{opacity:0, y:10}}, {{opacity:1, y:0, duration:1.0, ease:"power2.out"}}, 67.8);
+tl.set("#lg2-kuz path,#lg2-ist path,#lg2-mark path", {{opacity:0}}, 67.2);
+tl.fromTo("#lg2-mark path", {{opacity:0, y:18}}, {{opacity:1, y:0, duration:0.6, stagger:0.09, ease:"power3.out"}}, 68.6);
+tl.fromTo("#lg2-kuz path", {{opacity:0, y:18}}, {{opacity:1, y:0, duration:0.6, stagger:0.09, ease:"power3.out"}}, 68.9);
+tl.fromTo("#lg2-ist path", {{opacity:0}}, {{opacity:1, duration:0.45, stagger:0.05}}, 69.4);
+tl.fromTo("#dy-cizgi", {{scaleX:0}}, {{scaleX:1, duration:0.7, ease:"power3.inOut"}}, 70.2);
+tl.fromTo("#dy-adres", {{opacity:0, y:12}}, {{opacity:1, y:0, duration:0.8, ease:"power3.out"}}, 70.5);
+tl.fromTo("#dy-yer", {{opacity:0}}, {{opacity:1, duration:0.8}}, 71.0);
+tl.fromTo("#dy-soz", {{opacity:0, y:12, filter:"blur(4px)"}}, {{opacity:1, y:0, filter:"blur(0px)", duration:1.0, ease:"power2.out"}}, 73.1);
+tl.fromTo("#dy-imza", {{opacity:0}}, {{opacity:1, duration:0.8}}, 74.4);
+tl.fromTo("#dy-demo", {{opacity:0}}, {{opacity:1, duration:0.6}}, 74.8);
+tl.fromTo("#duyuru .desen-a", {{x:0}}, {{x:-140, duration:10.2, ease:"none"}}, 67.2);
+tl.to("#duyuru", {{opacity:0, duration:0.5}}, 77.0);
 // son
-tl.fromTo("#son", {{opacity:0}}, {{opacity:1, duration:0.6}}, 82.4);
-tl.fromTo("#logo3-w", {{opacity:0, scale:0.94}}, {{opacity:1, scale:1, duration:1.6, ease:"power3.out"}}, 82.7);
-tl.fromTo("#son-adres", {{opacity:0, y:10}}, {{opacity:1, y:0, duration:0.8}}, 84.2);
-tl.fromTo("#son .desen-a", {{x:0}}, {{x:-120, duration:7.6, ease:"none"}}, 82.4);
-tl.fromTo("#karart", {{opacity:0}}, {{opacity:1, duration:1.0, ease:"power1.in"}}, 89.0);
+tl.fromTo("#son", {{opacity:0}}, {{opacity:1, duration:0.6}}, 77.2);
+tl.fromTo("#logo3-w", {{opacity:0, scale:0.94}}, {{opacity:1, scale:1, duration:1.6, ease:"power3.out"}}, 77.5);
+tl.fromTo("#son-adres", {{opacity:0, y:10}}, {{opacity:1, y:0, duration:0.8}}, 79.0);
+tl.fromTo("#son .desen-a", {{x:0}}, {{x:-120, duration:7.6, ease:"none"}}, 77.2);
+tl.fromTo("#karart", {{opacity:0}}, {{opacity:1, duration:1.0, ease:"power1.in"}}, 83.8);
 window.__timelines["main"] = tl;
 </script>
 </body>

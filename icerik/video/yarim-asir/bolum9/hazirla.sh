@@ -28,15 +28,12 @@ LISTE=(
   "../bolum6/assets/media/tv.mp4|3.2|$DOGAL"
   "../bolum7/assets/media/lazer.mp4|3.3|$DOGAL"
   "../bolum7/assets/media/defile.mp4|1.0|$DOGAL"
-  "../bolum8/assets/media/magaza.mp4|1.0|$DOGAL"
-  "../bolum8/assets/media/el.mp4|0.5|$DOGAL"
-  "../bolum8/assets/media/beyaz.mp4|0.4|$DOGAL"
 )
 : > "$T/liste.txt"
 i=0
 for satir in "${LISTE[@]}"; do
   IFS='|' read -r src ss gor <<< "$satir"
-  d=$(awk -v i=$i 'BEGIN{printf "%.3f", (i==0?1.8:1.6) - 0.07*i}')
+  d=$(awk -v i=$i 'BEGIN{printf "%.3f", (i==0?1.95:1.75) - 0.07*i}')
   out="$T/p$(printf %02d $i).mp4"
   case "$src" in
     *.jpg|*.png)
@@ -47,17 +44,18 @@ for satir in "${LISTE[@]}"; do
   echo "file '$out'" >> "$T/liste.txt"
   i=$((i+1))
 done
+for p in "$T"/p*.mp4; do ffprobe -v error -show_entries format=duration -of csv=p=0 "$p"; done > "$M/montaj_parcalar.txt"
 $FF -f concat -safe 0 -i "$T/liste.txt" -c:v libx264 -crf 17 -preset medium -r 30 -g 30 "$M/montaj.mp4"
 # bugünden Fahri Kuz (marka dünyası arka planı için yavaş, renkli)
 $FF -ss 0.2 -t 5.4 -i ../bolum8/assets/media/bugun.mp4 -an -vf "fps=30,eq=contrast=1.04:saturation=0.85,format=yuv420p" -c:v libx264 -crf 18 -preset medium -g 30 "$M/fk_bugun.mp4"
 
-D=90.0
+D=84.8
 F=""
 F+="[0:a]afade=t=in:d=0.8,afade=t=out:st=22.4:d=1.3,volume=0.85,apad=whole_dur=$D[ma];"
-F+="[1:a]adelay=31000:all=1,volume=0.95,apad=whole_dur=$D[mb];"
+F+="[1:a]adelay=31000:all=1,volume=0.95,afade=t=out:st=81.6:d=3.2,apad=whole_dur=$D[mb];"
 F+="[2:a]atrim=0:2.72,asetpts=PTS-STARTPTS,afade=t=out:st=2.62:d=0.1,adelay=1200:all=1,apad=whole_dur=$D[v1];"
-F+="[2:a]atrim=2.95:5.76,asetpts=PTS-STARTPTS,afade=t=in:d=0.04,adelay=73000:all=1,apad=whole_dur=$D[v2];"
-F+="[3:a]atrim=0:4.05,asetpts=PTS-STARTPTS,adelay=78400:all=1,apad=whole_dur=$D[v3];"
+F+="[2:a]atrim=2.95:5.76,asetpts=PTS-STARTPTS,afade=t=in:d=0.04,adelay=67800:all=1,apad=whole_dur=$D[v2];"
+F+="[3:a]atrim=0:4.05,asetpts=PTS-STARTPTS,adelay=73300:all=1,apad=whole_dur=$D[v3];"
 F+="[4:a]volume=1.2,adelay=32950:all=1,apad=whole_dur=$D[dm];"
 F+="[v1][v2][v3]amix=inputs=3:normalize=0,volume=1.5[vo];[vo]asplit=2[vo1][vo2];"
 F+="[mb][vo2]sidechaincompress=threshold=0.03:ratio=5:attack=20:release=500[mbd];"
