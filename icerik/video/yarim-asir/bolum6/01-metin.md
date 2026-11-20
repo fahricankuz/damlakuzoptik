@@ -1,6 +1,6 @@
 # Yarım Asır, Bölüm 6: Zirve (metin taslağı)
 
-Durum: **Taslak, kullanıcı onayı bekliyor** (20 Kasım 2026)
+Durum: **Onaylandı, taslak 1 hazır** (20 Kasım 2026). Kullanıcı yanıtları: 1 uygun, 2 olduğu gibi, 3 diyebiliriz, 4 1997 bilgisi eklendi.
 Süre: yaklaşık 45–50 sn, 9:16. Görsel dil Bölüm 1–5 ile aynı.
 
 ## Fikir
@@ -24,7 +24,7 @@ Bölüm 5 "çok daha büyük bir hikâyenin yalnızca başlangıcıydı" diye bi
 
 > Doksanlar boyunca mağazalar birbirini izledi. İstanbul'dan Türkiye'nin dört bir yanına… Sayı yirmi altıya ulaştı.
 >
-> Fahri Kuz Optik artık dönemin en büyük, Türkiye'nin ilk optik ve saat zinciriydi.
+> Fahri Kuz Optik artık dönemin en büyük, Türkiye'nin ilk optik ve saat zinciriydi. 1997'de, Türkiye'nin en iyi yüz mağazası arasında, sektörünün bir numarası seçildi.
 >
 > Televizyon programları, lansmanlar, kalabalık açılışlar… Gözlüklü papağan artık herkesin tanıdığı bir simgeydi.
 >
