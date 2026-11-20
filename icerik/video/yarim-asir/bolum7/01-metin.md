@@ -55,3 +55,39 @@ Fahri Kuz alıntısı çıkarıldı; bölüm yalnızca anlatıcıyla, sakin ve t
 - Anlatım (Cem): ~250–300 kredi.
 - Alıntının müziğini ayırma (~11 sn): ~185 kredi.
 - Toplam: ~450–500 kredi. Yeni deşifre gerekmez.
+
+---
+
+## 2. sürüm önerisi (20 Kasım 2026, kullanıcı geri bildirimi sonrası)
+
+Geri bildirim: Taslak 1 "öylesine ve amatörce"; beyaz arka planlı logo "tak diye" konmuş. Kullanıcı Takvim'deki 2009 Savaş Ay söyleşisini iletti (`../04-kaynak-takvim-savas-ay-2009.md`).
+
+### Anlatıcı metni (Cem, öneri)
+
+> İki binli yıllarda kapıyı bir dünya devi çaldı: dört binden fazla mağazası olan yabancı bir optik zinciri. Türkiye'ye gelmek istiyordu.
+>
+> Fahri Kuz'un cevabı netti.
+>
+> *(Ekranda, sessizce: "Rakip olacağıma ortak oldum." — Fahri Kuz, Takvim, 2009)*
+>
+> Türkiye'de o güne kadar eşi benzeri görülmemiş büyüklükte bir yabancı ortaklık doğdu.
+>
+> İki yıl sonra, en başta söz verdiği gibi, şirketi tamamen onlara bıraktı.
+>
+> Ertesi gün gazeteler şöyle yazdı: Güle güle, gözlüklü papağan.
+>
+> *(Ekranda, sessizce: "— Rahat durabilir mi o Bozkırlı çocuk?" / "— Durmaz. Durmadı da zaten." — Takvim, 2009, Savaş Ay söyleşisi)*
+>
+> Yarım Asır. Devir.
+
+### Görsel plan
+
+| Süre | Görüntü |
+|---|---|
+| 0–4 | Lazerle yazılan "30. YIL" (2000), başlık "Devir." |
+| 4–10 | Tipografik karşılaştırma: solda **26** (Fahri Kuz Optik), sağda **4.000+** (dünya devi); ince altın çizgiler, sayılar sayarak gelir |
+| 10–14 | Söyleşi alıntısı, krem kâğıt dokulu bir alıntı kartında büyük serif yazı: "Rakip olacağıma ortak oldum." Altında kaynak satırı |
+| 14–19 | 30. yıl defilesi (arka planda Fahri Kuz yazısı) |
+| 19–27 | Logo beyaz kutusuz, kendi renkleriyle karanlık zeminde, sıcak ışık altında (örnek: `../tasarim/b7-logo-ornek.png`); ışık yavaşça çekilir, renk solar; "Güle güle gözlüklü papağan." başlığı yazı olarak |
+| 27–33 | Söyleşinin kapanışı, iki satırlık diyalog kartı; ardından bugünden Fahri Kuz, renk geri gelir |
+| 33–40 | Kapanış kartı |
