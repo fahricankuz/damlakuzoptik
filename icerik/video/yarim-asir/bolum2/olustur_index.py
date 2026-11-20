@@ -2,7 +2,7 @@
 """Yarım Asır, Bölüm 2 (Usta Eli): index.html üretici. Zamanlamalar ve metin burada tek yerde durur."""
 from pathlib import Path
 
-D = 41.0
+D = 52.0
 
 # görüntü klipleri: id, tür, kaynak, başlangıç, süre, hareket (ölçek başlangıç→bitiş, y kayması px)
 SHOTS = [
@@ -15,26 +15,36 @@ SHOTS = [
     ("s-detay2",  "video", "detay2.mp4",    23.7, 1.55, (1.03, 1.00, 0)),
     ("s-detay3",  "video", "detay3.mp4",    25.15,1.55, (1.00, 1.03, 0)),
     ("s-detay4",  "video", "detay4.mp4",    26.6, 2.6,  (1.03, 1.00, 0)),
-    ("s-bugun",   "video", "bugun.mp4",     28.9, 4.6,  (1.00, 1.04, 0)),
+    ("s-bugun",   "video", "bugun.mp4",     28.9, 6.0,  (1.00, 1.04, 0)),
+    ("s-raflar",  "video", "raflar.mp4",    34.7, 2.3,  (1.00, 1.05, 0)),
+    ("s-rafyakin","video", "raf_yakin.mp4", 36.8, 2.2,  (1.04, 1.00, 0)),
+    ("s-gozluk",  "video", "gozluk.mp4",    38.8, 2.1,  (1.00, 1.04, 0)),
+    ("s-fksimdi", "video", "fk_simdi.mp4",  40.7, 4.8,  (1.00, 1.05, 0)),
 ]
 FADE = {"s-sirkeci": 0.35, "s-roportaj": 0.4, "s-olcum": 0.35, "s-goz": 0.35, "s-detay1": 0.45,
-        "s-detay2": 0.4, "s-detay3": 0.4, "s-detay4": 0.4, "s-bugun": 0.5}
+        "s-detay2": 0.4, "s-detay3": 0.4, "s-detay4": 0.4, "s-bugun": 0.5,
+        "s-raflar": 0.45, "s-rafyakin": 0.4, "s-gozluk": 0.4, "s-fksimdi": 0.45}
 
 # altyazı grupları: id, [(kelime, zaman)], bitiş  (anlatım kelime zamanları + yerleşim farkı)
-O1, O2, O3 = 3.00, 15.10 - 3.62, 29.20 - 9.18
+O1, O2, O3, O4 = 3.00, 15.10 - 3.70, 29.20 - 9.67, 33.40 - 13.68
 CAPS = [
-    ("c1", [("Hikâye,", 0.00+O1), ("Sirkeci'nin", 0.80+O1), ("saat", 1.44+O1), ("ve", 1.80+O1)], 4.85),
-    ("c2", [("gözlük", 1.92+O1), ("çarşısında", 2.32+O1), ("başladı.", 2.88+O1)], 6.55),
-    ("c3", [("Önce", 3.68+O2), ("gözü", 3.96+O2), ("ölçmeyi", 4.24+O2), ("öğrendi.", 4.64+O2)], 16.85),
-    ("c4", [("Sonra", 5.44+O2), ("camı,", 5.80+O2), ("sonra", 6.40+O2), ("çerçeveyi;", 6.64+O2)], 18.95),
-    ("c5", [("her", 7.60+O2), ("birini", 7.76+O2), ("bir", 8.16+O2), ("yüze", 8.36+O2), ("göre.", 8.64+O2)], 21.20),
-    ("c6", [("Yarım", 9.227+O3), ("asır", 9.52+O3), ("sonra", 9.80+O3), ("bile", 10.04+O3), ("ölçü", 10.32+O3), ("aynı:", 10.64+O3)], 31.15),
-    ("c7", [("önce", 11.32+O3), ("göz,", 11.64+O3), ("sonra", 12.28+O3), ("gözlük.", 12.52+O3)], 33.60),
+    ("c1", [("Hikâye,", 0.00+O1), ("Sirkeci'nin", 0.80+O1), ("saat", 1.52+O1), ("ve", 1.84+O1)], 4.90),
+    ("c2", [("gözlük", 2.00+O1), ("çarşısında", 2.32+O1), ("başladı.", 2.92+O1)], 6.55),
+    ("c3", [("Önce", 3.76+O2), ("göz", 4.16+O2), ("ölçülerini", 4.40+O2), ("almayı", 4.88+O2), ("öğrendi.", 5.20+O2)], 17.35),
+    ("c4", [("Sonra", 6.04+O2), ("camı,", 6.32+O2), ("sonra", 6.96+O2), ("çerçeveyi;", 7.20+O2)], 19.45),
+    ("c5", [("her", 8.16+O2), ("birini", 8.32+O2), ("bir", 8.72+O2), ("yüze", 8.88+O2), ("göre.", 9.12+O2)], 21.30),
+    ("c6", [("Yarım", 9.733+O3), ("asır", 10.00+O3), ("sonra", 10.24+O3), ("bile", 10.52+O3), ("ölçü", 10.80+O3), ("aynı:", 11.12+O3)], 31.20),
+    ("c7", [("önce", 11.76+O3), ("göz,", 12.08+O3), ("sonra", 12.72+O3), ("gözlük.", 12.96+O3)], 33.25),
+    ("c8", [("Göz", 13.733+O4), ("numarası,", 13.92+O4), ("yaşam", 14.68+O4), ("tarzı,", 15.04+O4)], 35.35),
+    ("c9", [("kullanım", 15.76+O4), ("alışkanlıkları,", 16.08+O4), ("giyim", 17.12+O4), ("tarzı…", 17.44+O4)], 37.75),
+    ("c10", [("Hepsine", 18.16+O4), ("uyacak", 18.52+O4), ("çerçeveyi", 18.84+O4), ("bulmak", 19.36+O4), ("için", 19.68+O4)], 39.65),
+    ("c11", [("önce", 20.08+O4), ("bir", 20.32+O4), ("optisyen,", 20.52+O4), ("sonra", 21.28+O4), ("bir", 21.52+O4), ("danışman,", 21.60+O4)], 42.05),
+    ("c12", [("sonra", 22.44+O4), ("da", 22.72+O4), ("yüze", 22.88+O4), ("yakışanı", 23.12+O4), ("seçen", 23.60+O4), ("bir", 23.92+O4), ("estetisyen.", 24.12+O4)], 45.10),
 ]
 # Fahri Kuz'un kendi sesi: 90'lar röportajı (kaynak − 308.7) ve tanıtım filmi (kaynak − 8.7)
 R1, R2 = -308.7, 22.4 - 31.1
 QUOTES = [
-    ("q1", [("“Sekiz", 315.62+R1), ("yaşta", 315.88+R1), ("yetiştirildik,", 316.18+R1), ("tabirle.", 317.02+R1)], 9.60),
+    ("q1", [("“Çekirdekten", 315.62+R1), ("yetiştirildik,", 316.18+R1), ("tabirle.", 317.02+R1)], 9.60),
     ("q2", [("Küçük", 318.42+R1), ("yaşlarda", 318.58+R1), ("işe", 319.02+R1), ("başladık", 319.22+R1)], 11.45),
     ("q3", [("ve", 320.24+R1), ("zamanla", 320.36+R1), ("işi", 321.26+R1), ("çok", 321.50+R1), ("özümsedik,", 322.08+R1), ("benimsedik.”", 322.80+R1)], 15.00),
     ("q4", [("“Camının", 31.28+R2), ("bombesinden", 32.18+R2), ("rengine", 33.30+R2), ("kadar,", 33.86+R2)], 25.45),
@@ -163,7 +173,7 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{D}" data-width="1080" data-height="1920">
 {chr(10).join(shots_html)}
-<div id="end" data-layout-allow-occlusion class="clip" data-start="33.3" data-duration="{D-33.3:.1f}" data-track-index="1">
+<div id="end" data-layout-allow-occlusion class="clip" data-start="45.3" data-duration="{D-45.3:.1f}" data-track-index="1">
   <img id="end-img" src="assets/media/kapanis_zemin.jpg" alt="">
   <div id="end-t" data-layout-allow-occlusion>
     <div id="end-h">Yarım Asır</div>
@@ -175,7 +185,7 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
 </div>
 <div id="shade"></div>
 <div id="open" class="clip" data-start="0" data-duration="3.0" data-track-index="3">
-  <div id="open-h">Sekiz yaşında.</div>
+  <div id="open-h">On yaşında.</div>
   <div id="open-s">YARIM ASIR · BÖLÜM 2</div>
 </div>
 <div id="marker" class="clip" data-start="2.95" data-duration="4.5" data-track-index="3"><span id="marker-in" class="label"><span class="rule"></span>Sirkeci</span></div>
@@ -183,7 +193,7 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:var(--gro
 {chr(10).join(caps_html)}
 <div id="who" class="clip" data-start="6.7" data-duration="8.4" data-track-index="3"><span id="who-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
 <div id="who2" class="clip" data-start="22.5" data-duration="6.6" data-track-index="3"><span id="who2-in" class="label"><span class="rule"></span>Fahri Kuz</span></div>
-<div id="black" data-layout-allow-occlusion class="clip" data-start="40.0" data-duration="1.0" data-track-index="5"></div>
+<div id="black" data-layout-allow-occlusion class="clip" data-start="51.0" data-duration="1.0" data-track-index="5"></div>
 <audio id="miks" class="clip" data-start="0" data-duration="{D}" data-track-index="6" data-volume="1" src="assets/audio/miks.m4a"></audio>
 </div>
 <script>
@@ -202,14 +212,14 @@ tl.to("#who-in",{{opacity:0,duration:0.3}},14.75);
 tl.fromTo("#who2-in",{{opacity:0,x:-16}},{{opacity:1,x:0,duration:0.45,ease:"power3.out"}},22.6);
 tl.to("#who2-in",{{opacity:0,duration:0.3}},28.75);
 // kapanış
-tl.fromTo("#end",{{opacity:0}},{{opacity:1,duration:1.0,ease:"power1.inOut"}},33.3);
-tl.fromTo("#end-img",{{scale:1.08}},{{scale:1.0,duration:7.7,ease:"none"}},33.3);
-tl.fromTo("#end-h",{{opacity:0,y:16}},{{opacity:1,y:0,duration:0.9,ease:"power3.out"}},33.9);
-tl.fromTo("#end-bar",{{scaleX:0}},{{scaleX:1,duration:0.7,ease:"power2.inOut"}},34.6);
-tl.fromTo("#end-tag",{{opacity:0,y:10}},{{opacity:1,y:0,duration:0.7,ease:"power3.out"}},34.95);
-tl.fromTo("#end-ep",{{opacity:0}},{{opacity:1,duration:0.6}},36.0);
-tl.fromTo("#end-next",{{opacity:0}},{{opacity:1,duration:0.8}},37.0);
-tl.fromTo("#black",{{opacity:0}},{{opacity:1,duration:0.9,ease:"power1.in"}},40.0);
+tl.fromTo("#end",{{opacity:0}},{{opacity:1,duration:1.0,ease:"power1.inOut"}},45.3);
+tl.fromTo("#end-img",{{scale:1.08}},{{scale:1.0,duration:6.7,ease:"none"}},45.3);
+tl.fromTo("#end-h",{{opacity:0,y:16}},{{opacity:1,y:0,duration:0.9,ease:"power3.out"}},46.0);
+tl.fromTo("#end-bar",{{scaleX:0}},{{scaleX:1,duration:0.7,ease:"power2.inOut"}},46.7);
+tl.fromTo("#end-tag",{{opacity:0,y:10}},{{opacity:1,y:0,duration:0.7,ease:"power3.out"}},47.0);
+tl.fromTo("#end-ep",{{opacity:0}},{{opacity:1,duration:0.6}},48.0);
+tl.fromTo("#end-next",{{opacity:0}},{{opacity:1,duration:0.8}},49.0);
+tl.fromTo("#black",{{opacity:0}},{{opacity:1,duration:0.9,ease:"power1.in"}},51.0);
 window.__timelines["main"] = tl;
 </script>
 </body>

@@ -21,13 +21,13 @@ Bir etkinlikte konukların anonsu: ATV, Türkan Şoray, Elite Model Look Türkiy
 
 - Sunucu: "Fahri Bey uzun yıllardır bu sektörün içindesiniz. Kaç yıl oldu?"
 - **Fahri Kuz:** "Efendim, işe başlama tarihimiz 1960." (Sunucu: "Yaklaşık 38–39 senedir…" → yayın 1998–99 civarı)
-- **Fahri Kuz:** "Sekiz yaşta yetiştirildik tabirle. Küçük yaşlarda işe başladık ve zamanla işi çok özümsedik, benimsedik ve bir yerlere gelmeye çalıştık."
+- **Fahri Kuz:** "Çekirdekten yetiştirildik tabirle. Küçük yaşlarda işe başladık ve zamanla işi çok özümsedik, benimsedik ve bir yerlere gelmeye çalıştık."
 
 ## Seri için zaman çizelgesi
 
 | Yıl | Olay | Kaynak |
 |---|---|---|
-| 1960 civarı | Fahri Kuz, Sirkeci'de saat ve gözlük piyasasında, küçük yaşta işe başlar | Röportaj + 30. Yıl filmi |
+| 1960 civarı | Fahri Kuz, Sirkeci'de saat ve gözlük piyasasında, on yaşında işe başlar | Röportaj + 30. Yıl filmi |
 | 1970 | İlk mağaza, **Aksaray** | 30. Yıl filmi |
 | Sonra | İkinci mağaza, **Beyazıt** | 30. Yıl filmi |
 | 1990'lar | Büyük alışveriş merkezleri (Akmerkez, Ataköy) | 30. Yıl filmi + tanıtım filmi |
@@ -37,7 +37,9 @@ Bir etkinlikte konukların anonsu: ATV, Türkan Şoray, Elite Model Look Türkiy
 
 ## Sonraki bölümler için güçlü cümleler
 
-- "Sekiz yaşta yetiştirildik." (Fahri Kuz, kendi sesi; 2. bölüm "Usta eli" için)
+- "Çekirdekten yetiştirildik." (Fahri Kuz, kendi sesi; 2. bölüm "Usta eli" için)
+
+> Düzeltme (20 Kasım 2026, kullanıcı): Otomatik deşifre "çekirdekten" kelimesini yanlışlıkla "sekiz yaşta" olarak yazmıştı. Fahri Kuz **on yaşında** işe başladı.
 - "Müşterilerini evine gelmiş bir misafir olarak gören bu anlayış." (anlatıcı)
 - "Önemli olan yalnızca mekânlar değil, insanlar." (anlatıcı)
 - Sirkeci'den Aksaray'a "zarar görür" denilen taşınma ve tarihin onları yanıltması (3. bölüm "İlk zincir" için güçlü bir hikâye)

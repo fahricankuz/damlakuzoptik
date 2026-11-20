@@ -33,17 +33,21 @@ vid   detay1    v2.mp4 23.95 1.45 "202:360:144:0" "$RENK" 0.6      # büst ve g�
 vid   detay2    v2.mp4 25.50 1.42 "202:360:144:0" "$RENK" 0.6
 vid   detay3    v2.mp4 27.02 1.42 "202:360:140:0" "$RENK" 0.6
 vid   detay4    v2.mp4 28.54 1.42 "202:360:140:0" "$RENK" 1.2
-vid   bugun     v2.mp4 60.3  4.4 "202:360:140:0" "eq=saturation='0.3+0.7*min(t/1.0\,1)':contrast=1.04:eval=frame,vignette=PI/6,noise=alls=4:allf=t+u" 0.6
+vid   bugun     v2.mp4 60.3  5.6 "202:360:140:0" "eq=saturation='0.3+0.7*min(t/1.0\,1)':contrast=1.04:eval=frame,vignette=PI/6,noise=alls=4:allf=t+u" 0.6
+vid   raflar    v2.mp4 15.15 2.0 "202:360:60:0"  "$RENK" 0.6       # mağaza duvarı (15.08–17.24 arası)
+vid   raf_yakin v2.mp4 19.45 2.0 "202:360:100:0" "$RENK" 0.6       # raflar yakın (19.40–21.56 arası)
+vid   gozluk    v2.mp4 41.42 2.0 "202:360:220:0" "$RENK" 0.6       # gözlük yakın plan (41.36 sonrası)
+vid   fk_simdi  v2.mp4 10.2  4.7 "202:360:140:0" "$RENK" 0.8       # Fahri Kuz bugün (yazı ve nokta kadraj dışında)
 $FF -ss 113.0 -i "$FK/v0.mp4" -frames:v 1 -vf "tmix=frames=5,crop=162:288:77:0,scale=1242:2208,format=gray,format=rgb24,colorchannelmixer=rr=1:gg=.94:bb=.82,eq=brightness=-0.22:contrast=1.05,gblur=sigma=6,vignette=PI/3.5,noise=alls=6:allf=u" -q:v 2 "$M/kapanis_zemin.jpg"
 
-# ---- Ses miksi (41 sn) ----
-D=41
+# ---- Ses miksi (52 sn) ----
+D=52
 VOICE="highpass=f=90,lowpass=f=9500,afftdn=nr=8,acompressor=threshold=-20dB:ratio=3:attack=5:release=120,equalizer=f=3000:t=q:w=1.2:g=2,volume=1.6"
 F=""
 # anlatım cümleleri: kaynak başlangıç, bitiş, videodaki başlangıç
-N=(0.00 3.40 3.00   3.62 8.95 15.10   9.18 13.05 29.20   13.48 15.44 34.00)
+N=(0.00 3.45 3.00   3.70 9.45 15.10   9.67 13.45 29.20   13.68 24.75 33.40   24.99 26.88 46.00)
 L=""
-for i in 0 1 2 3; do
+for i in 0 1 2 3 4; do
   a=${N[$((i*3))]}; b=${N[$((i*3+1))]}; t=${N[$((i*3+2))]}
   d=$(awk -v a=$a -v b=$b 'BEGIN{printf "%.2f", b-a-0.06}'); ms=$(awk -v t=$t 'BEGIN{printf "%d", t*1000}')
   F+="[0:a]atrim=$a:$b,asetpts=PTS-STARTPTS,afade=t=in:d=0.04,afade=t=out:st=$d:d=0.06,adelay=$ms:all=1[n$i];"; L+="[n$i]"
@@ -52,8 +56,8 @@ done
 F+="[1:a]atrim=0.2:8.2,asetpts=PTS-STARTPTS,$VOICE,afade=t=in:d=0.25,afade=t=out:st=7.5:d=0.5,adelay=6800:all=1[q1];"; L+="[q1]"
 # Fahri Kuz 2 (tanıtım filmi): v2 31.1–37.75 → videoda 22.4
 F+="[2:a]atrim=31.1:37.75,asetpts=PTS-STARTPTS,$VOICE,afade=t=in:d=0.25,afade=t=out:st=6.15:d=0.5,adelay=22400:all=1[q2];"; L+="[q2]"
-F+="${L}amix=inputs=6:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur=$D[vo];"
-F+="[3:a]atrim=0:$D,asetpts=PTS-STARTPTS,volume=0.6,afade=t=in:d=1.0,afade=t=out:st=37.5:d=3.5[mu];"
+F+="${L}amix=inputs=7:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur=$D[vo];"
+F+="[3:a]atempo=0.865,atrim=0:$D,asetpts=PTS-STARTPTS,volume=0.6,afade=t=in:d=1.0,afade=t=out:st=48.0:d=4.0[mu];"
 SH=(2.80 7.30 14.80 18.50)
 for i in "${!SH[@]}"; do ms=$(awk -v t=${SH[$i]} 'BEGIN{printf "%d", t*1000}'); F+="[4:a]asetpts=PTS-STARTPTS,volume=0.35,adelay=$ms:all=1[s$i];"; done
 SL=$(for i in "${!SH[@]}"; do printf "[s$i]"; done)
