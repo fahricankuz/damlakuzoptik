@@ -50,5 +50,5 @@ Gerekli araçlar (bulut ortamında hazır): Node 18+, ffmpeg, Playwright + Chrom
 | Facebook Sayfa ID | `102141373241402` |
 | Instagram hesap ID | `17841402357718660` (@damlakuzoptik) |
 | Meta Katalog ID | `518476831352210` |
-| Google Ads müşteri no | _bekleniyor_ |
+| Google Ads müşteri no | `919-709-9903` "Damla Kuz Optik İkas" (eski: `405-297-4129`). Bağlantı: Adspirer bağlayıcısı (aylık 15 işlem kotası) |
 | Merchant Center ID | _bekleniyor_ |

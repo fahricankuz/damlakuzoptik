@@ -75,7 +75,9 @@ Son güncelleme: 20 Kasım 2026
 
 ---
 
-## AŞAMA 2: Google (Ads + Merchant Center + Business Profile)
+## AŞAMA 2: Google (Ads + Merchant Center + Business Profile) 🟡 Google Ads BAĞLANDI (20 Kasım)
+
+> Ajans erişimleri verdi; Google Ads Adspirer ile bağlandı. **Kritik bulgu:** satın alma dönüşümü büyük olasılıkla çalışmıyor (`raporlar/2026-11-20-google-ads-durumu.md`). Kalan: Merchant Center kimliği, GA4 mülk kimliği, Temmuz 2025 – Ağustos 2026 Google Ads raporu (panelden dışa aktarım), eski hesap 405-297-4129 kontrolü.
 
 - [ ] **2.1 GA4 ↔ Google Ads bağlantısı.** GA4 → Yönetici → Ürün Bağlantıları → Google Ads bağlantıları → hesabı bağlayın. Ardından Google Ads → Hedefler → Dönüşümler → **İçe aktar → GA4 → `purchase`**.
 - [ ] **2.2 Merchant Center.** ikas'ın Google feed bağlantısını (ikas paneli → Satış Kanalları → Google) Merchant Center'a **birincil veri kaynağı** olarak ekleyin. Merchant Center'da damlakuzoptik.com'u **doğrulayıp sahiplenin**, sonra Google Ads hesabına bağlayın.

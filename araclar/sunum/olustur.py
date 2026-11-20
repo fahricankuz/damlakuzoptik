@@ -297,11 +297,11 @@ S(f"""<div class="k">Yönetici özeti</div>
 <div class="kpi"><div class="v">126</div><div class="l">Online sipariş (ikas, Tem 2025 – 14 Kas 2026). Meta yalnızca {int(tot_pur)}'unu ölçebilmiş</div></div>
 <div class="kpi"><div class="v">985.150 TL</div><div class="l">Net online ciro (iadeler düşülmüş)</div></div>
 <div class="kpi"><div class="v">2,98</div><div class="l">Net ciro / Meta harcaması, tüm dönem (Google harcaması hariç)</div></div>
-<div class="kpi"><div class="v" style="color:#B4483C">0,99</div><div class="l">Net ciro / Meta harcaması, Ağustos – Kasım 2026</div></div>
+<div class="kpi"><div class="v" style="color:#B4483C">0,60</div><div class="l">Net ciro / Meta + Google harcaması, Ağustos – Kasım 2026</div></div>
 </div>
 <div class="grid g2">
 <div><h3>Temel bulgular</h3><ul>
-<li>ikas'a göre aynı dönemde <b>126 online sipariş, 985 bin TL net ciro</b>; Meta bunların yalnızca 39'unu ölçebilmiş. Ölçüm ve raporlama zayıf.</li><li>Ağustos–Kasım 2026: 71 bin TL harcama, <b>13 sipariş</b>, net ciro harcamaya eşit (0,99).</li>
+<li>ikas'a göre aynı dönemde <b>126 online sipariş, 985 bin TL net ciro</b>; Meta bunların yalnızca 39'unu ölçebilmiş. Ölçüm ve raporlama zayıf.</li><li>Ağustos–Kasım 2026: Meta + Google <b>118 bin TL</b> harcama, <b>13 sipariş</b>, 71 bin TL net ciro: her 1 TL reklama <b>0,60 TL</b>.</li><li>Google Ads'te satın alma ölçümü büyük olasılıkla bozuk: 47 bin TL'ye 3 kayıtlı satış.</li>
 <li>Bütçenin <b>{tl(boost_spend)}</b>'si satış hedefi olmayan "öne çıkarılan gönderi"lere gitti: <b>0 satış</b>.</li>
 <li>Siparişlerin %21'i tamamen iade edilmiş; iade tutarı brüt cironun %16'sı.</li>
 <li>Instagram etkileşimi %{d(er,2)}; gönderi başına ortalama {med_like} beğeni, 60 gönderide {comments} yorum.</li>
@@ -327,8 +327,8 @@ S(f"""<div class="k">Kapsam ve yöntem</div>
 <li>ikas Google ve Meta ürün feed'leri (514 varyant)</li>
 <li>7 rakip sitesi</li></ul></div>
 <div class="card"><h3>Erişilemeyen (ajansta)</h3><ul>
-<li><b>Google Ads</b>: hesap şirkette görünmüyor, harcama ve sonuç bilinmiyor</li>
-<li><b>Google Merchant Center</b>: hesap şirkette görünmüyor</li>
+<li><b>Google Ads</b>: 20 Kasım'da bağlandı; 9 Ağustos öncesi veri henüz yok</li>
+<li><b>Google Merchant Center</b>: erişim alındı, incelenecek</li>
 <li><b>Google Analytics 4</b>: erişim teyit edilmedi</li>
 <li>Ajansın kreatif arşivi, raporları, sözleşme kapsamı</li></ul>
 <p class="note">Notlar: (1) Meta yalnızca kendi ölçebildiği satışları gösterir; gerçek online satış ve mağaza satışları daha yüksek olabilir. Sonuçlar ikas sipariş verisiyle karşılaştırılmalıdır. (2) Tutarlar KDV hariç reklam harcamasıdır.</p></div>
@@ -405,6 +405,25 @@ if IK:
 <div class="card"><h3>İadeler yüksek</h3><p>{T['fullref']} sipariş tamamen iade (%{d(T['fullref']/T['orders']*100,0)}); iade tutarı brüt cironun %{d(T['refund']/T['gross']*100,0)}'sı. Haziran'da %35. Ürün beklentisi, renk ve beden uyumu incelenmeli.</p></div>
 </div>""")
 
+    S("""<div class="k">Google Ads · 9 Ağustos – 19 Kasım 2026</div>
+<h2 style="font-size:32px">Google'da 47 bin TL, 3 kayıtlı satış; asıl sorun satışların ölçülmemesi</h2>
+<div class="grid g4" style="margin-bottom:16px">
+<div class="kpi"><div class="v">46.920 TL</div><div class="l">Google Ads harcaması (~3,5 ay)</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">Google'ın kaydettiği satış; son 7 günde 0</div></div>
+<div class="kpi"><div class="v" style="color:#B4483C">0,60</div><div class="l">Ağu–Kas: net online ciro / Meta + Google harcaması (118 bin TL)</div></div>
+<div class="kpi"><div class="v">C</div><div class="l">Dönüşüm ölçümü denetim notu (73/100)</div></div>
+</div>
+<div class="grid g2">
+<div><table class="small"><tr><th>Kampanya</th><th class="r">Harcama</th><th class="r">Satış</th><th class="r">ROAS</th></tr>
+<tr><td>All Placement Performance Max</td><td class="r">23.852 TL</td><td class="r">2</td><td class="r neg">0,42</td></tr>
+<tr><td>Ray-Ban &amp; Vogue Performance Max</td><td class="r">13.743 TL</td><td class="r">1</td><td class="r neg">0,53</td></tr>
+<tr><td>Marka araması ("fahri kuz", "damla kuz")</td><td class="r">8.096 TL</td><td class="r neg">0</td><td class="r neg">0</td></tr>
+<tr><td>Güneş gözlüğü araması</td><td class="r">1.229 TL</td><td class="r">0</td><td class="r neg">0</td></tr></table>
+<p class="note">Eski dönem (Temmuz 2025 – Ağustos 2026) bağlayıcıda yok; Google Ads panelinden dışa aktarılacak.</p></div>
+<div><div class="card" style="margin-bottom:12px"><h3>Satın alma ölçümü büyük olasılıkla bozuk</h3><p>Markanızı arayıp tıklayanlar (tıklama oranı %15) normalde en çok satın alan kitledir; 8 bin TL'den 0 satış kaydı, ölçümün çalışmadığına işaret eder. Performance Max bu yüzden satış sinyali olmadan körlemesine teklif veriyor.</p></div>
+<div class="card"><h3>Bütçe en rekabetçi markalara gitmiş</h3><p>Ayrı bir Ray-Ban &amp; Vogue kampanyası var; bu markalarda rakipler %25–50 indirim yapıyor. Üst lüks markalar (Chopard, Maybach) için ayrı bir yapı yok.</p></div></div>
+</div>""")
+
 # 9 Organik bölüm
 S("""<div class="k">Bölüm 2</div><h1 style="margin-top:160px">Instagram:<br><i>organik görünüm</i></h1>""", "dark")
 
@@ -461,13 +480,13 @@ S("""<div class="k">Bölüm 4</div><h1 style="margin-top:160px">Ajanstan ayrılm
 S(f"""<div class="k">Gerekçeler · veriye dayalı</div>
 <h2 style="font-size:32px;margin-bottom:12px">Ayrılık kararı kişisel değil, ölçülebilir sonuçlara dayanıyor.</h2>
 <div class="grid g2" style="gap:6px 40px">
-<div class="reason"><div class="num">1</div><div><h3>Son dört ayda geri dönüş yok</h3><p>Ağustos–Kasım 2026'da Meta'ya 71 bin TL harcandı; ikas'ta 13 sipariş, 71 bin TL net ciro. Ürün maliyeti düşülünce zarar.</p></div></div>
+<div class="reason"><div class="num">1</div><div><h3>Son dört ayda geri dönüş yok</h3><p>Ağustos–Kasım 2026'da Meta ve Google'a 118 bin TL harcandı; ikas'ta 13 sipariş, 71 bin TL net ciro (0,60).</p></div></div>
 <div class="reason"><div class="num">2</div><div><h3>Bütçe yanlış hedefe harcandı</h3><p>{tl(boost_spend)} (%{d(boost_spend/tot_spend*100,1)}), satış değil tıklama hedefli 34 öne çıkarmaya gitti: 0 satış. Uygulama bugün de sürüyor.</p></div></div>
 <div class="reason"><div class="num">3</div><div><h3>Sezona uyum ve müdahale yok</h3><p>Yaz sonunda talep düşerken harcama ve yapı aynı kaldı. Kasım “net %30” kampanyası 14 Kasım'a kadar 1 online sipariş getirdi.</p></div></div>
 <div class="reason"><div class="num">4</div><div><h3>Dağınık yapı, yorgun kreatif</h3><p>14 satış kampanyasından {len(sales_zero)}'i sıfır satış. Remarketing sıklığı 12. Kreatifler aylarca yenilenmemiş.</p></div></div>
 <div class="reason"><div class="num">5</div><div><h3>Altyapı hijyeni ihmal edildi</h3><p>Test ürünü feed'de ve satışta; barkodlar geçersiz; feed başlıkları optimize edilmemiş; Audience Network kapatılmamış.</p></div></div>
 <div class="reason"><div class="num">6</div><div><h3>Organik iletişimde strateji yok</h3><p>Etkileşim %{d(er,2)}, Reels %{d(reels_share,0)}. Marka mirası, uzmanlık ve Kuz AI gibi ayrıştırıcılar kullanılmamış; dil indirim ağırlıklı.</p></div></div>
-<div class="reason"><div class="num">7</div><div><h3>Sahiplik ve şeffaflık riski</h3><p>Google Ads ve Merchant Center şirketin erişiminde değil. Harcama ve sonuçlar şirket tarafından denetlenemiyor.</p></div></div>
+<div class="reason"><div class="num">7</div><div><h3>Sahiplik ve şeffaflık</h3><p>Google Ads ve Merchant Center erişimi ancak talep üzerine (Kasım 2026) şirkete verildi. Google'da satın alma ölçümü çalışmıyor; bunu raporlamamışlar.</p></div></div>
 <div class="reason"><div class="num">8</div><div><h3>Ölçüm ve raporlama yetersiz</h3><p>Meta, siparişlerin yalnızca %31'ini görüyor; ikas ile karşılaştırma ve iade takibi (%16) yapılmamış. Kararlar eksik veriyle alınmış.</p></div></div>
 </div>""")
 
@@ -777,7 +796,7 @@ S("""<div class="k">Kararlar ve sonraki adımlar</div>
 <table><tr><th>#</th><th>Karar</th><th>Not</th></tr>
 <tr><td>1</td><td>Devir tarihi (T günü) ve fesih bildirim zamanı</td><td>Sözleşme süresine göre</td></tr>
 <tr><td>2</td><td>Hesap envanteri e-postasının gönderilmesi</td><td>Taslak hazır; ajansla ilişkiyi bozmadan sahipliği güvenceye alır</td></tr>
-<tr><td>3</td><td>Google Ads harcama verisi (ajanstan)</td><td>ikas cirosuyla birlikte gerçek toplam getiri hesabı</td></tr>
+<tr><td>3</td><td>Google satın alma ölçümünün onarılması</td><td>47 bin TL'ye 3 kayıtlı satış; ölçüm olmadan Performance Max öğrenemez</td></tr>
 <tr><td>4</td><td>Brüt marj oranı</td><td>ikas'ta ürün alış fiyatları boş; başa baş hedef için gerekli</td></tr>
 <tr><td>5</td><td>Fiyat politikası (kalıcı %30) ve taksit sayısı</td><td>Dönüşüm ve marka algısı</td></tr>
 <tr><td>6</td><td>İşletme doğrulaması ve eski hesabın bakiyesi</td><td>Meta hesap sağlığı</td></tr>

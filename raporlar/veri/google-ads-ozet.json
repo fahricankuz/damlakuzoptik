@@ -1,0 +1,47 @@
+{
+ "kaynak": "Adspirer / Google Ads API, 20 Kasım 2026",
+ "hesap": "9197099903",
+ "kapsam": "2026-08-09 .. 2026-11-19 (bağlayıcının sakladığı en eski veri)",
+ "aylik_harcama": {
+  "2026-08": 11068.11,
+  "2026-09": 13580.57,
+  "2026-10": 11762.18,
+  "2026-11": 10508.94
+ },
+ "toplam": {
+  "harcama": 46919.75,
+  "donusum": 3,
+  "tiklama": 5310,
+  "gosterim": 467375,
+  "roas": 0.37
+ },
+ "kampanyalar": [
+  {
+   "ad": "23112025 All Placement PMax",
+   "tur": "PMax",
+   "harcama": 23852.02,
+   "donusum": 2,
+   "roas": 0.42
+  },
+  {
+   "ad": "04032026 Rayban Vogue PMax",
+   "tur": "PMax",
+   "harcama": 13742.9,
+   "donusum": 1,
+   "roas": 0.53
+  },
+  {
+   "ad": "18072025 Brand Search",
+   "tur": "Arama",
+   "harcama": 8096.28,
+   "donusum": 0,
+   "ctr": 15.24
+  },
+  {
+   "ad": "18072025 Sunglasses Search",
+   "tur": "Arama",
+   "harcama": 1228.55,
+   "donusum": 0
+  }
+ ]
+}
