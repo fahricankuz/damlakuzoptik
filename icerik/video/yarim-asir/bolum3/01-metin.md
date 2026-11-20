@@ -18,7 +18,7 @@ Sirkeci'de işi öğrenen genç adam ilk kez kendi mağazasını açar: Aksaray'
 | 6–12 | Sepya: mağaza vitrini ve önünde aile/çalışanlar (Bölüm 1'den farklı kadraj) | **Anlatıcı:** Kendi ilk mağazasını ise Aksaray'da açtı: ailesiyle birlikte, Kuz Optik adıyla. | Sol üstte **AKSARAY** |
 | 12–17 | Sepya, yavaş yaklaşma | **Anlatıcı:** Çevresindekiler, piyasadan uzakta bir gözlükçünün tutunamayacağını düşündü. | Kelime kelime altyazı |
 | 17–19 | Siyah ekran | **Anlatıcı:** Yanıldılar. | Büyük serif: **"Yanıldılar."** |
-| 19–30 | 90'lar mağaza içleri (turuncu gözlük duvarı, vitrinler), Fahri Kuz mağazada | **Anlatıcı:** Ardından Beyazıt geldi, sonra Kuz Optik'in diğer mağazaları. Çünkü ona göre önemli olan yalnızca mekânlar değil, insanlardı; her müşteri, evine gelmiş bir misafirdi. | **BEYAZIT** |
+| 19–30 | Kuz Optik dönemi fotoğrafları (Drive'a yüklenmesi bekleniyor); yoksa Aksaray mağaza önü fotoğrafından yakın kadrajlar | **Anlatıcı:** Ardından Beyazıt geldi. Çünkü ona göre önemli olan yalnızca mekânlar değil, insanlardı; her müşteri, evine gelmiş bir misafirdi. | **BEYAZIT** |
 | 30–35 | Arşivden Fahri Kuz, yakın plan | **Anlatıcı:** Ama asıl büyük adım daha gelmemişti. | Kelime kelime altyazı |
 | 35–42 | Kapanış kartı | **Anlatıcı:** Yarım Asır. Aile dükkânı. | **Yarım Asır** / *Aile dükkânı* / BÖLÜM 3 / *Hikâye devam ediyor.* |
 
@@ -32,7 +32,7 @@ Sirkeci'de işi öğrenen genç adam ilk kez kendi mağazasını açar: Aksaray'
 >
 > Yanıldılar.
 >
-> Ardından Beyazıt geldi, sonra Kuz Optik'in diğer mağazaları. Çünkü ona göre önemli olan yalnızca mekânlar değil, insanlardı; her müşteri, evine gelmiş bir misafirdi.
+> Ardından Beyazıt geldi. Çünkü ona göre önemli olan yalnızca mekânlar değil, insanlardı; her müşteri, evine gelmiş bir misafirdi.
 >
 > Ama asıl büyük adım daha gelmemişti.
 >
@@ -44,8 +44,12 @@ Sirkeci'de işi öğrenen genç adam ilk kez kendi mağazasını açar: Aksaray'
 - "Tutunamaz" düşüncesi ve yanılmaları; "önemli olan yalnızca mekânlar değil, insanlar"; "müşterilerini evine gelmiş bir misafir olarak gören anlayış": 30. Yıl filmi (`../02-desifre-arsiv-30-yil.md`).
 - "Asıl büyük adım": bir sonraki bölümdeki fabrikaya köprü.
 
-## Açık sorular
+## Kullanıcı yanıtları (20 Kasım 2026)
 
-1. Arşivdeki sepya mağaza önü fotoğrafı (Bölüm 1'de de kullanıldı) Aksaray'daki Kuz Optik mi?
-2. Kuz Optik'in kaç mağazası vardı ve nerelerdeydi (Beyazıt dışında)? Yer işaretlerine eklenebilir.
-3. 90'lardaki turuncu gözlük duvarlı TV röportajı mağazası Kuz Optik mi, Fahri Kuz Optik mi? Bölüm 3 mü, Bölüm 5–6 mı için uygun?
+1. Sepya mağaza önü fotoğrafı **Aksaray'daki Kuz Optik**; tüm bölümlerin kapağı olabilir.
+2. Yalnızca **Aksaray ve Beyazıt** anılır.
+3. 90'lar turuncu duvarlı mağaza **Fahri Kuz Optik**; bu bölümde kullanılmaz.
+
+## Görsel ihtiyacı
+
+Kuz Optik dönemine ait (Aksaray, Beyazıt, aile) fotoğraflar Drive'a yüklendiğinde 19–30. saniyeler onlarla kurulur.
