@@ -1,6 +1,6 @@
 # Yarım Asır, Bölüm 8: Bugün (metin taslağı)
 
-Durum: **Taslak, kullanıcı onayı bekliyor** (20 Kasım 2026)
+Durum: **Onaylandı, taslak 1 hazır** (20 Kasım 2026). Kullanıcı yanıtları: metin uygun (mağaza adı "Ataköy Atrium AVM"); "her modelden bir tane" doğru; online mağaza damlakuzoptik.com (ekranda Kuz AI Gözlük Seçim Asistanı; kampanya bandı ve fiyatlar gösterilmez); final ipucu cümlesi eklendi; Bölüm 7'nin son çekimi değiştirildi.
 Süre: yaklaşık 45–50 sn, 9:16. Görsel dil Bölüm 1–7 ile aynı; bu bölüm tam renk, aydınlık.
 
 ## Fikir
@@ -26,13 +26,15 @@ Bölüm 7 Savaş Ay'ın sorusuyla bitti: "Rahat durabilir mi o Bozkırlı çocuk
 
 > Durmadı. Fahri Kuz, kızının adını da yanına alarak yeniden başladı.
 >
-> Kendi adıyla ilk mağazasını açtığı yere geri dönmüştü. Bugün hâlâ orada.
+> Kendi adıyla ilk mağazasını açtığı yere, Ataköy Atrium AVM'ye geri dönmüştü. Bugün hâlâ orada.
 >
 > Her gözlük kişiye özel tasarlanıyor; her modelden yalnızca bir tane.
 >
 > Ve bugün, birçok yeniliğiyle online mağazasında da.
 >
 > Yarım asır geçti. Tutku hâlâ ilk günkü gibi.
+>
+> Ve hikâye, çok yakında yeni bir sayfa açacak.
 >
 > Yarım Asır. Bugün.
 

@@ -22,7 +22,7 @@ bant() { # ad kaynak baslangic sure bekletme: 4:3 kare ortada, arkada bulanık b
 }
 bant lazer   v1.mp4 840.00 6.40 0.6   # 2000, 30. yıl kutlaması: lazerle "30. YIL" (tam kare)
 bant defile  v1.mp4 668.30 4.50 0.8   # 30. yıl defilesi, arka planda Fahri Kuz yazısı (tam kare)
-vid  bugun   v2.mp4 44.60  4.60 "202:360:100:0" "eq=contrast=1.04:saturation=0.95,vignette=PI/6,noise=alls=4:allf=t+u" 0.4   # bugün Fahri Kuz (yazı ve nokta kadraj dışında)
+vid  bugun   v2.mp4 83.70  2.90 "202:360:120:0" "eq=contrast=1.04:saturation=0.95,vignette=PI/6,noise=alls=4:allf=t+u" 1.7   # bugün Fahri Kuz (Bölüm 8 ile tekrar etmesin diye 83,7 sn; etiket kadraj dışında)
 $FF -ss 116.0 -i "$FK/v0.mp4" -frames:v 1 -vf "tmix=frames=5,crop=162:288:77:0,scale=1242:2208,format=gray,format=rgb24,colorchannelmixer=rr=1:gg=.94:bb=.82,eq=brightness=-0.22:contrast=1.05,gblur=sigma=6,vignette=PI/3.5,noise=alls=6:allf=u" -q:v 2 "$M/kapanis_zemin.jpg"
 
 D=46.4
