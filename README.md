@@ -38,7 +38,7 @@ Gerekli araçlar (bulut ortamında hazır): Node 18+, ffmpeg, Playwright + Chrom
 | Varlık | Kimlik |
 |---|---|
 | Meta Pixel | `1032130095734490` |
-| Google Analytics 4 | `G-8BTM6DPJRS` |
+| Google Analytics 4 | Ölçüm kimliği `G-8BTM6DPJRS` · Hesap `360950242` · Mülk `496174315` ("Damla Kuz Optik İkas"). Adspirer'da bağlı değil (Plus plan gerekiyor) |
 | Google Tag Manager | `GTM-5VJ9GD74` |
 | Meta Conversion API | ikas üzerinden açık (sunucu tarafı). Token yalnızca ikas panelinde. |
 | GA4 Measurement Protocol | ikas üzerinden açık. Gizli anahtar yalnızca ikas panelinde. |

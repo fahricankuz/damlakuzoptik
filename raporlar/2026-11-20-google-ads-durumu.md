@@ -74,7 +74,7 @@ Son dört ayda reklama harcanan her 1 TL'ye karşılık 0,60 TL net online ciro 
 
 **Teşhis:** Ürün ve liste sayfalarındaki etiket çalışıyor, ama **ödeme ve satın alma adımlarında etiket çalışmıyor**. En olası neden ikas'ın ödeme sayfalarında Google Ads etiketinin tetiklenmemesi veya satın alma olayının gerekli bilgileri (tutar, para birimi, sipariş no) taşımaması. Mağaza işlemleri (yol tarifi, arama) ise tamamen kaldırılmış; Business Profile bağlantısı kopmuş olabilir.
 
-**Önerilen onarım (uygulama talimatla; Black Friday/Cyber Monday sonrası, 1 Aralık önerilir):**
+**Önerilen onarım: ERTELENDİ.** Şirket sahibinin 20 Kasım talimatı: ajansla çalışma sürdükçe hiçbir ayar değiştirilmeyecek. Bu adımlar ajansla çalışma sona erdiğinde uygulanacak.
 1. GA4'te satın almaların kaydedildiğini doğrulamak (ikas, Measurement Protocol ile sunucu tarafından GA4'e satın alma gönderiyor). GA4 → Raporlar → Para kazanma → E-ticaret satın alımları.
 2. Google Ads'e **GA4 `purchase` olayını içe aktarmak** ve birincil dönüşüm yapmak. Sunucu tarafı veri olduğu için tarayıcı ve ödeme sayfası sorunlarından etkilenmez.
 3. Hatalı `purchase` (web sitesi) dönüşümünü **silmeden ikincile almak** (çift sayımı önler, geçmiş korunur).
