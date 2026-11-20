@@ -15,9 +15,10 @@ RENK="eq=contrast=1.04:saturation=0.95,vignette=PI/6,noise=alls=4:allf=t+u"
 vid() { # ad kaynak baslangic sure crop görünüm bekletme
   $FF -ss "$3" -t "$4" -i "$FK/$2" -an -vf "crop=$5,scale=1080:1920:flags=lanczos,fps=30,$TEMIZ,$KESKIN,$6,tpad=stop_mode=clone:stop_duration=$7,format=yuv420p" -c:v libx264 -crf 18 -preset medium "$M/$1.mp4"
 }
-vid roportaj v0.mp4 353.65 2.0  "116:206:100:38"  "$SOLUK" 0.5   # 90'lar STV: "Türkiye'de yapılan var"
-vid bugun1   v2.mp4 57.35 2.40 "202:360:140:0"  "$RENK" 0.6   # "Fahri Kuz" kutusu üzerinde gözlük (57.28–59.84 arası)
-vid bugun2   v2.mp4 41.42 2.0  "202:360:140:0"  "$RENK" 0.8   # gözlük yakın plan
+vid roportaj v0.mp4 353.50 2.0  "116:206:100:38"  "$SOLUK" 0.5   # 90'lar STV: "Türkiye'de yapılan var"
+vid ozel     v2.mp4 6.42  2.70 "136:242:298:54"  "$RENK" 0.3   # "kişiye özel" yuvarlak degrade cam (6.28–9.36 arası; yazı ve nokta kadraj dışında)
+vid mor      v2.mp4 71.55 1.88 "202:360:150:0"  "$RENK" 0.3   # mor kutu üzerinde çerçevesiz gözlük (71.48–73.48 arası)
+vid raf      v2.mp4 54.48 1.26 "202:360:260:0"  "$RENK" 0.5   # rafta pembe güneş gözlüğü (54.44–55.76 arası)
 $FF -ss 116.0 -i "$FK/v0.mp4" -frames:v 1 -vf "tmix=frames=5,crop=162:288:77:0,scale=1242:2208,format=gray,format=rgb24,colorchannelmixer=rr=1:gg=.94:bb=.82,eq=brightness=-0.22:contrast=1.05,gblur=sigma=6,vignette=PI/3.5,noise=alls=6:allf=u" -q:v 2 "$M/kapanis_zemin.jpg"
 
 D=39.5
@@ -35,7 +36,7 @@ F+="[1:a]atrim=1.15:3.5,asetpts=PTS-STARTPTS,$VOICE,afade=t=in:d=0.15,afade=t=ou
 F+="[2:a]atrim=26.35:31.0,asetpts=PTS-STARTPTS,$VOICE,afade=t=in:d=0.2,afade=t=out:st=4.2:d=0.45,adelay=23850:all=1[q2];"; L+="[q2]"
 F+="${L}amix=inputs=7:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur=$D[vo];"
 F+="[3:a]atrim=0:$D,asetpts=PTS-STARTPTS,volume=0.6,afade=t=in:d=1.0,afade=t=out:st=36.0:d=3.5[mu];"
-SH=(8.90 23.70 26.20)
+SH=(9.05 23.70 26.30 28.05)
 for i in "${!SH[@]}"; do ms=$(awk -v t=${SH[$i]} 'BEGIN{printf "%d", t*1000}'); F+="[4:a]asetpts=PTS-STARTPTS,volume=0.3,adelay=$ms:all=1[s$i];"; done
 SL=$(for i in "${!SH[@]}"; do printf "[s$i]"; done)
 F+="${SL}amix=inputs=${#SH[@]}:normalize=0[sh];"

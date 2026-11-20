@@ -7,11 +7,12 @@ D = 39.5
 
 # görüntü klipleri: id, tür, kaynak, başlangıç, süre, hareket (ölçek başlangıç→bitiş, y kayması px)
 SHOTS = [
-    ("s-roportaj","video", "roportaj.mp4",  8.9,  2.3,  (1.00, 1.05, 0)),
-    ("s-bugun1",  "video", "bugun1.mp4",    23.7, 2.8,  (1.00, 1.05, 0)),
-    ("s-bugun2",  "video", "bugun2.mp4",    26.2, 2.9,  (1.04, 1.00, 0)),
+    ("s-roportaj","video", "roportaj.mp4",  9.05, 2.15,  (1.00, 1.05, 0)),
+    ("s-ozel",    "video", "ozel.mp4",      23.7, 2.9,  (1.00, 1.05, 0)),
+    ("s-mor",     "video", "mor.mp4",       26.3, 2.0,  (1.04, 1.00, 0)),
+    ("s-raf",     "video", "raf.mp4",       28.05, 1.55, (1.00, 1.04, 0)),
 ]
-FADE = {"s-roportaj": 0.35, "s-bugun1": 0.5, "s-bugun2": 0.45}
+FADE = {"s-roportaj": 0.35, "s-ozel": 0.5, "s-mor": 0.3, "s-raf": 0.3}
 
 O1, O2, O3, O4 = 2.40, 11.20 - 5.50, 18.20 - 12.25, 29.20 - 17.70
 CAPS = [
