@@ -83,7 +83,7 @@ Her bölüm 40–55 saniyelik, 9:16 dikey Reels. Belgesel tonunda anlatıcı (El
 | 2 | Usta eli | Sirkeci'de çıraklık, göz ölçüsü, cam ve çerçeve; optisyen, danışman, estetisyen | Taslak 2 hazır |
 | 3 | Aile dükkânı | Aksaray'da ailesiyle Kuz Optik; "tutunamaz" diyenlerin yanılması; Beyazıt | Metin taslağı (2. sürüm); dönem fotoğrafları bekleniyor |
 | 4 | Fabrika | İstanbul'da, dönemin en modern teknolojileriyle, kendi kendine yeten gözlük fabrikası; şirket içi AR-GE | Metin yazılabilir; görsel bekleniyor |
-| 5 | Kendi adı | 90'ların başı: Fahri Kuz Optik; ilk mağaza Ataköy Atrium, sonra Akmerkez, Carousel | Metin yazılabilir (90'lar TV arşivi uygun) |
+| 5 | Kendi adı | 90'ların başı: Fahri Kuz Optik; ilk mağaza Ataköy Atrium, sonra Akmerkez, Carousel; simge: gözlüklü papağan | Metin taslağı (2. sürüm) |
 | 6 | Zirve | 26 mağaza; dönemin en büyük ve Türkiye'nin ilk optik ve saat zinciri; TV, lansmanlar (arşiv) | Metin yazılabilir |
 | 7 | Devir | 2000'li yıllar: 2 yıllık yabancı ortaklık, şirketin devri (ortak adı anılmaz) | Metin yazılabilir |
 | 8 | Bugün | Kendi adıyla açtığı ilk mağaza Ataköy Atrium'da hâlâ; online mağaza; kişiye özel tasarım | Metin yazılabilir |
@@ -109,3 +109,9 @@ Not: Kapanışta, tanıtım filminden Fahri Kuz'un kendi sesiyle kısa bir cüml
 - Anlatıcı sesi seçimi: Cem ve Emir denemeleri `ses-denemeleri/` klasöründe.
 - Bölüm 1 metninin son onayı.
 - Aile bölümü için görüntüler.
+
+
+## Notlar (20 Kasım 2026, kullanıcı)
+
+- Fahri Kuz Optik'in ikonik bir **gözlüklü papağan** logosu vardı. Bölüm 5'te tanıtılır.
+- Devir gerçekleştiğinde basında "Güle güle gözlüklü papağan" gibi haberler çıktı. Bölüm 7 (devir) için kullanılabilir.
