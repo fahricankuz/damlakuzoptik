@@ -63,7 +63,11 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* ARKA YÜZ */
 .back{background:var(--ink);color:var(--ivory);padding:0}
 .back .frame{position:absolute;inset:9mm;border:0.3mm solid rgba(201,162,74,.75)}
-.lens{position:absolute;left:50%;top:86mm;transform:translate(-50%,-50%);opacity:.16}
+
+.glow{position:absolute;left:50%;top:70mm;width:190mm;height:150mm;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(201,162,74,.13) 0%,rgba(201,162,74,.05) 38%,rgba(18,18,18,0) 70%)}
+.back .frame2{position:absolute;inset:11mm;border:0.15mm solid rgba(201,162,74,.45)}
+.orn{position:absolute;width:3.2mm;height:3.2mm;background:var(--ink);border:0.3mm solid var(--gold2);transform:rotate(45deg)}
+.orn.tl{left:8.4mm;top:8.4mm}.orn.tr{right:8.4mm;top:8.4mm}.orn.bl{left:8.4mm;bottom:8.4mm}.orn.br{right:8.4mm;bottom:8.4mm}
 .bwrap{position:absolute;inset:9mm;padding:16mm 12mm 12mm;text-align:center;display:flex;flex-direction:column;align-items:center}
 .b-eyebrow{font-family:Mont;font-weight:600;font-size:9.5pt;letter-spacing:.5em;color:var(--gold2);text-transform:uppercase}
 .name{font-family:Play;font-style:italic;font-weight:400;font-size:80pt;line-height:1;margin-top:6mm;color:var(--ivory)}
@@ -107,7 +111,7 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     <div class="row n36"><p>Ailenizin gözlükçüsü.</p><span class="n">N 36</span></div>
     <div class="row n24"><p>Yarım asırdır aynı özen, aynı ustalık.</p><span class="n">N 24</span></div>
     <div class="row n18"><p>Fahri Kuz, Yenikapı’daki ilk mağazasında tek bir şeye inandı: doğru gözlük, bakışı değiştirir.</p><span class="n">N 18</span></div>
-    <div class="row n14"><p>O küçük mağaza zamanla büyüdü ve Türkiye’nin ilk optik zincirine dönüştü.</p><span class="n">N 14</span></div>
+    <div class="row n14"><p>O mağaza zamanla büyüdü ve Türkiye’nin ilk optik zincirine dönüştü.</p><span class="n">N 14</span></div>
     <div class="row n12"><p>Organik ve çok odaklı camların, titanyum çerçevelerin Türkiye’ye gelişinde öncü oldu; kaliteden ödün vermeyen bir gelenek kurdu.</p><span class="n">N 12</span></div>
     <div class="row n10"><p>Bugün aynı ekolle yetişen optisyenlerimiz, her yüzün ve her reçetenin kendine özgü olduğunu bilerek çalışıyor.</p><span class="n">N 10</span></div>
     <div class="row n8"><p>Çocuğunuzun ilk gözlüğünden büyüklerinizin okuma gözlüğüne kadar, ailenizin her bireyi için doğru çerçeve ve doğru cam.</p><span class="n">N 8</span></div>
@@ -128,21 +132,16 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 
 <!-- ARKA YÜZ -->
 <section class="page back">
+  <div class="glow"></div>
   <div class="frame"></div>
-  <svg class="lens" width="150mm" height="150mm" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C9A24A">
-    <circle cx="100" cy="100" r="98" stroke-width=".35"/>
-    <circle cx="100" cy="100" r="84" stroke-width=".25"/>
-    <circle cx="100" cy="100" r="70" stroke-width=".2"/>
-    <circle cx="100" cy="100" r="56" stroke-width=".15"/>
-    <line x1="2" y1="100" x2="198" y2="100" stroke-width=".15"/>
-    <line x1="100" y1="2" x2="100" y2="198" stroke-width=".15"/>
-  </svg>
+  <div class="frame2"></div>
+  <span class="orn tl"></span><span class="orn tr"></span><span class="orn bl"></span><span class="orn br"></span>
   <div class="bwrap">
     <div class="b-eyebrow">Yarım asırdır</div>
     <div class="name">Fahri Kuz</div>
     <div class="b-rule"></div>
     <div class="motto">Ailenizin gözlükçüsü</div>
-    <p class="story">Yenikapı’da açılan küçük bir mağazayla başlayan yolculuk, Türkiye’nin ilk optik zincirine uzandı. Fahri Kuz’un bakışı hiç değişmedi: her gözlük, onu takacak kişi için ölçülür, seçilir ve özenle hazırlanır. Bugün aynı ustalığı ailenizin her kuşağıyla paylaşıyoruz.</p>
+    <p class="story">Yenikapı’da açılan ilk mağazayla başlayan yolculuk, Türkiye’nin ilk optik zincirine uzandı. Fahri Kuz’un bakışı hiç değişmedi: her gözlük, onu takacak kişi için ölçülür, seçilir ve özenle hazırlanır. Bugün aynı ustalığı ailenizin her kuşağıyla paylaşıyoruz.</p>
     <div class="pillars">
       <div class="pillar"><div class="k">Ustalık</div><div class="t">Kuşaktan kuşağa</div><div class="d">Fahri Kuz ekolüyle yetişen<br>optisyenler, hassas ölçüm</div></div>
       <div class="pillar"><div class="k">İlkler</div><div class="t">Öncü bir bakış</div><div class="d">Türkiye’nin ilk optik zinciri,<br>yeni cam ve çerçeve teknolojileri</div></div>
@@ -151,7 +150,7 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     <div class="timeline">
       <div class="step"><div class="dotc"></div><div class="st">Yenikapı</div><div class="sd">Fahri Kuz’un açtığı<br>ilk mağaza</div></div>
       <div class="step"><div class="dotc"></div><div class="st">İlk optik zincir</div><div class="sd">Önde gelen alışveriş<br>merkezlerinde Kuz Optik</div></div>
-      <div class="step"><div class="dotc"></div><div class="st">İlkler</div><div class="sd">Organik ve çok odaklı camlar,<br>titanyum çerçeveler</div></div>
+      <div class="step"><div class="dotc"></div><div class="st">İlkler</div><div class="sd">Çok odaklı camlar,<br>titanyum çerçeveler</div></div>
       <div class="step"><div class="dotc"></div><div class="st">Bugün</div><div class="sd">Ataköy Atrium AVM’de<br>aynı ustalık</div></div>
     </div>
     <p class="quote">Gözlerinizin vazgeçilmez dostu, gözlüklerinizin sihirli eli.</p>
